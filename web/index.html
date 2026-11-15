@@ -98,7 +98,14 @@
           <div>
             <p class="hero-eyebrow" data-i18n="hero.eyebrow">Masjid Kampung Sungai Lang Baru, Banting</p>
             <h1 data-i18n-html="hero.titleHtml">Kem <span>Sahabat</span><br>Quran 2026</h1>
-            <p class="hero-terminal" dir="ltr" aria-label="KSQ 2026"><span class="term-prompt" aria-hidden="true">&gt;</span> KSQ 2026<span class="term-cursor" aria-hidden="true"></span></p>
+            <p class="hero-terminal" dir="ltr">
+              <span class="term-prompt" aria-hidden="true">&gt;</span>
+              <span class="sr-only">KSQ 2026</span>
+              <span class="term-text">
+                <span class="term-ghost" aria-hidden="true">KSQ 2026</span>
+                <span class="term-live" aria-hidden="true"><span class="term-typed">KSQ 2026</span><span class="term-cursor"></span></span>
+              </span>
+            </p>
             <p class="hero-slogan" data-i18n="hero.slogan">“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”</p>
 
             <div class="hero-meta">
@@ -638,6 +645,7 @@
     </div>
   </footer>
 
+  <script type="module" src="js/hero-typing.js"></script>
   <script type="module" src="js/i18n.js"></script>
   <script type="module" src="js/register.js"></script>
   <script type="module" src="js/poster.js"></script>

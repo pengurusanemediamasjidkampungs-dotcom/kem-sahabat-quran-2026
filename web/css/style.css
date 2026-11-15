@@ -647,10 +647,33 @@ ul, ol {
   color: var(--gold-dark);
 }
 
+.term-text {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.term-ghost {
+  visibility: hidden;
+}
+
+.term-live {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.term-typed {
+  white-space: pre;
+}
+
 .term-cursor {
   display: inline-block;
   width: 0.5em;
   height: 1.05em;
+  margin-left: 0.08em;
   background: var(--forest);
   vertical-align: -0.12em;
   animation: term-blink 1.05s steps(1, end) infinite;
