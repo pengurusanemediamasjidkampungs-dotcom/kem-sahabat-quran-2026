@@ -604,6 +604,11 @@ export const STRINGS = {
     'Sharing is not available. Please download the poster and share it manually.',
     'المشاركة غير متاحة. يرجى تنزيل الملصق ومشاركته يدويًا.'
   ],
+  'poster.shareCopied': [
+    'Pautan poster disalin ke clipboard.',
+    'Poster link copied to clipboard.',
+    'تم نسخ رابط الملصق إلى الحافظة.'
+  ],
 
   /* ---------- Registration form ---------- */
   'daftar.eyebrow': ['Pendaftaran online', 'Online registration', 'التسجيل الإلكتروني'],

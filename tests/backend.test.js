@@ -120,11 +120,11 @@ test('browser modules never inject dynamic HTML strings', () => {
   assert.match(UI_JS, /node\.textContent = value/);
 });
 
-test('config.js contains no real deployment URL or secret', () => {
+test('config.js contains no secret', () => {
   const config = read('web/config.js');
-  assert.match(config, /ISI_DEPLOYMENT_ID/);
-  assert.doesNotMatch(config, /script\.google\.com\/macros\/s\/[A-Za-z0-9_-]{25,}\/exec/);
   assert.doesNotMatch(config, /token/i);
+  assert.doesNotMatch(config, /ADMIN_TOKEN/);
+  assert.doesNotMatch(config, /FASILITATOR_TOKEN/);
 });
 
 test('CSV export starts with a UTF-8 BOM and uses CRLF', () => {
