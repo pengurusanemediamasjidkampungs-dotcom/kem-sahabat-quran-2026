@@ -739,9 +739,9 @@ export const STRINGS = {
   ],
   'faq.q6': ['Siapa boleh saya hubungi?', 'Who can I contact?', 'بمن يمكنني التواصل؟'],
   'faq.a6': [
-    'Sila hubungi urus setia masjid: 013 693 0292 atau 018 2150 108 (WhatsApp).',
-    'Please contact the mosque secretariat: 013 693 0292 or 018 2150 108 (WhatsApp).',
-    'يرجى التواصل مع أمانة المسجد: 013 693 0292 أو 018 2150 108 (واتساب).'
+    'Sila hubungi Urusetia KEM SAHABAT QURAN:\n013 693 0292 Ustaz Naudi (WhatsApp)\n018 2150 108 Ustaz Aiman (WhatsApp)',
+    'Please contact KEM SAHABAT QURAN Secretariat:\n013 693 0292 Ustaz Naudi (WhatsApp)\n018 2150 108 Ustaz Aiman (WhatsApp)',
+    'يرجى التواصل مع أمانة مخيم صاحب القرآن:\n013 693 0292 الأستاذ نودي (واتساب)\n018 2150 108 الأستاذ أيمن (واتساب)'
   ],
 
   /* ---------- Footer ---------- */
@@ -820,9 +820,9 @@ export const STRINGS = {
     'واتساب الأمانة: {phone}.'
   ],
   'js.contactDefault': [
-    'Urusetia KEM SAHABAT QURAN: 013 693 0292 / 018 2150 108 (WhatsApp)',
-    'KEM SAHABAT QURAN Secretariat: 013 693 0292 / 018 2150 108 (WhatsApp)',
-    'أمانة مخيم صاحب القرآن: 013 693 0292 / 018 2150 108 (واتساب)'
+    'Urusetia KEM SAHABAT QURAN:\n013 693 0292 Ustaz Naudi (WhatsApp)\n018 2150 108 Ustaz Aiman (WhatsApp)',
+    'KEM SAHABAT QURAN Secretariat:\n013 693 0292 Ustaz Naudi (WhatsApp)\n018 2150 108 Ustaz Aiman (WhatsApp)',
+    'أمانة مخيم صاحب القرآن:\n013 693 0292 الأستاذ نودي (واتساب)\n018 2150 108 الأستاذ أيمن (واتساب)'
   ],
   'js.footerContact': [
     'Urusetia KEM SAHABAT QURAN · {phone}',
@@ -830,9 +830,9 @@ export const STRINGS = {
     'أمانة مخيم صاحب القرآن · {phone}'
   ],
   'js.footerContactDefault': [
-    'Urusetia KEM SAHABAT QURAN: 013 693 0292 / 018 2150 108',
-    'KEM SAHABAT QURAN Secretariat: 013 693 0292 / 018 2150 108',
-    'أمانة مخيم صاحب القرآن: 013 693 0292 / 018 2150 108'
+    'Urusetia KEM SAHABAT QURAN:\n013 693 0292 Ustaz Naudi\n018 2150 108 Ustaz Aiman',
+    'KEM SAHABAT QURAN Secretariat:\n013 693 0292 Ustaz Naudi\n018 2150 108 Ustaz Aiman',
+    'أمانة مخيم صاحب القرآن:\n013 693 0292 الأستاذ نودي\n018 2150 108 الأستاذ أيمن'
   ],
   'js.noticeAttention': ['Perhatian: ', 'Attention: ', 'تنبيه: '],
   'js.notOpen': [
