@@ -767,8 +767,8 @@ export const STRINGS = {
     '14–16 ديسمبر 2026<br>الاثنين–الأربعاء · 8:00 صباحًا–5:00 مساءً<br>اليوم 1–2: مسجد كامبونغ سوغاي لانغ بارو<br>اليوم 3: شاه علم (حافلة)'
   ],
   'footer.contactTitle': ['Hubungi', 'Contact', 'التواصل'],
-  'footer.contactDefault': ['Urus setia KSQ 2026', 'KSQ 2026 secretariat', 'أمانة مخيم 2026'],
-  'footer.whatsapp': ['WhatsApp urus setia', 'Secretariat WhatsApp', 'واتساب الأمانة'],
+  'footer.contactDefault': ['Urusetia KEM SAHABAT QURAN', 'KEM SAHABAT QURAN Secretariat', 'أمانة مخيم صاحب القرآن'],
+  'footer.whatsapp': ['WhatsApp Urusetia KEM SAHABAT QURAN', 'KEM SAHABAT QURAN Secretariat WhatsApp', 'واتساب أمانة مخيم صاحب القرآن'],
   'footer.register': ['Daftar peserta', 'Register a participant', 'تسجيل مشارك'],
   'footer.copyright': [
     '© 2026 Masjid Kampung Sungai Lang Baru',
@@ -820,19 +820,19 @@ export const STRINGS = {
     'واتساب الأمانة: {phone}.'
   ],
   'js.contactDefault': [
-    'Urus setia KSQ 2026: 013 693 0292 / 018 2150 108 (WhatsApp)',
-    'KSQ 2026 secretariat: 013 693 0292 / 018 2150 108 (WhatsApp)',
-    'أمانة مخيم 2026: 013 693 0292 / 018 2150 108 (واتساب)'
+    'Urusetia KEM SAHABAT QURAN: 013 693 0292 / 018 2150 108 (WhatsApp)',
+    'KEM SAHABAT QURAN Secretariat: 013 693 0292 / 018 2150 108 (WhatsApp)',
+    'أمانة مخيم صاحب القرآن: 013 693 0292 / 018 2150 108 (واتساب)'
   ],
   'js.footerContact': [
-    'Urus setia KSQ 2026 · {phone}',
-    'KSQ 2026 secretariat · {phone}',
-    'أمانة مخيم 2026 · {phone}'
+    'Urusetia KEM SAHABAT QURAN · {phone}',
+    'KEM SAHABAT QURAN Secretariat · {phone}',
+    'أمانة مخيم صاحب القرآن · {phone}'
   ],
   'js.footerContactDefault': [
-    'Urus setia KSQ 2026: 013 693 0292 / 018 2150 108',
-    'KSQ 2026 secretariat: 013 693 0292 / 018 2150 108',
-    'أمانة مخيم 2026: 013 693 0292 / 018 2150 108'
+    'Urusetia KEM SAHABAT QURAN: 013 693 0292 / 018 2150 108',
+    'KEM SAHABAT QURAN Secretariat: 013 693 0292 / 018 2150 108',
+    'أمانة مخيم صاحب القرآن: 013 693 0292 / 018 2150 108'
   ],
   'js.noticeAttention': ['Perhatian: ', 'Attention: ', 'تنبيه: '],
   'js.notOpen': [
