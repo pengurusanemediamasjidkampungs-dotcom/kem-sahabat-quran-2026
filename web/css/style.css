@@ -718,7 +718,7 @@ ul, ol {
   position: relative;
 }
 
-.hero-photo {
+.hero-video {
   position: relative;
   overflow: hidden;
   border: 3px solid var(--gold);
@@ -728,14 +728,14 @@ ul, ol {
   background: var(--forest-deep);
 }
 
-.hero-photo img {
+.hero-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 55%;
 }
 
-.hero-photo::after {
+.hero-video::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -3026,7 +3026,7 @@ pre.code-block {
     white-space: normal;
   }
 
-  .hero-photo {
+  .hero-video {
     aspect-ratio: 16 / 12;
   }
 
