@@ -126,6 +126,14 @@ Selepas itu, jalankan **Uji API** dalam tab Tetapan.
 
 ## 5. Hoskan halaman awam di GitHub Pages
 
+> **Nota penting tentang privasi fail repo:** GitHub Pages menerbitkan
+> **seluruh** branch `main` sebagai fail statik. Kerana itu `backend/Code.gs`,
+> `TODO-PEMILIK.md`, `PLAN.md`, `AGENTS.md` dan `tests/api-smoke.js` boleh
+> dibuka pada URL awam (contohnya `/backend/Code.gs`) walaupun tiada pautan
+> kepadanya. Jangan letak token, nombor telefon sebenar atau butiran bayaran
+> dalam mana-mana fail repo — semuanya dalam Script Properties GAS atau
+> halaman Tetapan admin sahaja.
+
 1. Cipta repositori GitHub, contohnya `ksq-2026`.
 2. Muat naik **kandungan** folder `web/` ke akar repositori. Pastikan
    `index.html` berada di akar repo, bukan dalam subfolder `web/`.
@@ -141,6 +149,36 @@ https://<pengguna>.github.io/<repo>/
    - `SITE_URL` dalam `web/config.js`.
    - `og:image` dalam `web/index.html` kepada URL penuh
      `https://<pengguna>.github.io/<repo>/assets/og-ksq.jpg`.
+
+### 5a. Jika repo menyimpan frontend dalam `web/` (susunan repo ini)
+
+Repo ini **tidak** menyalin kandungan `web/` ke akar. Ia menyimpan kod
+backend, dokumen dan ujian di akar, dan frontend di subfolder `web/`. Jadi
+untuk menerbitkan hanya frontend, gunakan workflow GitHub Actions yang sudah
+ada di `.github/workflows/pages.yml`:
+
+1. Buka **Settings → Pages**.
+2. Di **Build and deployment → Source**, pilih **GitHub Actions**
+   (bukan *Deploy from a branch*).
+3. Buka tab **Actions → Terbit laman KSQ 2026 → Run workflow**, branch
+   `main`, kemudian tunggu sehingga tanda hijau.
+
+Workflow itu memuat naik **folder `web/` sahaja** sebagai artifak Pages, jadi
+URL utama terus membuka `index.html` awam. Kelebihannya berbanding
+*Deploy from a branch*:
+
+- `web/` dihidang pada akar URL, bukan `/web/`, jadi pautan WhatsApp pendek.
+- Hanya fail dalam `web/` diterbitkan. `backend/Code.gs`, ujian, dokumen dan
+  `mcp-ksq26/` **tidak** terdedah pada URL awam.
+- `.nojekyll` tidak diperlukan kerana tiada pemprosesan Jekyll.
+
+> **Elakkan “Deploy from a branch”.** Jika sumber Pages ditetapkan kepada
+> branch `main` dan folder `/ (root)`, GitHub membina akar repo dengan Jekyll.
+> Bila tiada `index.html` di akar, Jekyll memaparkan `README.md` sebagai
+> halaman utama — itulah sebab URL utama pernah menunjukkan README dan bukan
+> borang pendaftaran. `index.html` ringkas di akar (pengalihan ke `web/`)
+> hanya jaring keselamatan untuk keadaan itu; jangan simpan kedua-dua
+> kaedah serentak.
 
 Pautan yang disebar di WhatsApp ialah pautan awam sahaja. **Jangan sebar**
 pautan `admin.html` atau `fasilitator.html`.
