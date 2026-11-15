@@ -4,6 +4,7 @@
  */
 
 import { apiGet, apiPost, isApiConfigured } from './api.js';
+import { getLocale, statusLabel, t, unitLabel } from './i18n.js';
 import {
   countdownParts,
   countdownText,
@@ -49,6 +50,32 @@ const state = {
 
 const el = {};
 
+/** Countdown words follow the selected language. */
+function countdownUnits(parts) {
+  return {
+    days: unitLabel('days', parts.days),
+    hours: unitLabel('hours', parts.hours),
+    minutes: unitLabel('minutes', parts.minutes),
+    seconds: unitLabel('seconds', parts.seconds)
+  };
+}
+
+function countdownLabel(milliseconds, options = {}) {
+  return countdownText(milliseconds, {
+    ...options,
+    zeroLabel: t('time.ended'),
+    units: countdownUnits(countdownParts(milliseconds))
+  });
+}
+
+function klDateTime(value) {
+  return formatKlDateTime(value, getLocale());
+}
+
+function klTime(value) {
+  return formatKlTime(value, getLocale());
+}
+
 function cacheElements() {
   const ids = [
     'hero-baki', 'slot-remaining', 'slot-total', 'slot-progress', 'slot-progress-wrap',
@@ -83,6 +110,9 @@ function setCountdown(container, parts) {
     const node = qs(`[data-cd="${key}"]`, container);
     setText(node, value);
   });
+  qsa('[data-cd-unit]', container).forEach((node) => {
+    setText(node, unitLabel(node.dataset.cdUnit, parts[node.dataset.cdUnit]));
+  });
   qsa('.cd-unit', container).forEach((unit) => {
     unit.classList.toggle('is-muted', parts.total <= 0);
   });
@@ -104,32 +134,37 @@ function tick() {
   if (start && end && now.getTime() < start.getTime()) {
     const parts = countdownParts(start.getTime() - now.getTime());
     setCountdown(el['program-countdown'], parts);
-    setText(el['program-phase'], `Program bermula dalam ${countdownText(start.getTime() - now.getTime(), { alwaysDays: true })}.`);
+    setText(el['program-phase'], t('js.programStarts', {
+      time: countdownLabel(start.getTime() - now.getTime(), { alwaysDays: true })
+    }));
   } else if (start && end && now.getTime() <= end.getTime()) {
     const phase = programPhase(start, end, now);
     const parts = countdownParts(end.getTime() - now.getTime());
     setCountdown(el['program-countdown'], parts);
     setText(
       el['program-phase'],
-      `Hari ${phase.day} daripada 3 sedang berlangsung. Program berakhir dalam ${countdownText(end.getTime() - now.getTime())}.`
+      t('js.programDay', {
+        day: phase.day,
+        time: countdownLabel(end.getTime() - now.getTime())
+      })
     );
   } else if (end) {
     setCountdown(el['program-countdown'], countdownParts(0));
-    setText(el['program-phase'], `Program telah tamat pada ${formatKlDateTime(end)}.`);
+    setText(el['program-phase'], t('js.programEnded', { date: klDateTime(end) }));
   } else {
     setCountdown(el['program-countdown'], countdownParts(0));
-    setText(el['program-phase'], 'Tarikh program belum ditetapkan.');
+    setText(el['program-phase'], t('js.programNoDate'));
   }
 
   const manuallyClosed = Boolean(state.stats && state.stats.pendaftaranDibuka === false);
   if (close && !manuallyClosed && now.getTime() < close.getTime()) {
     setCountdown(el['close-countdown'], countdownParts(close.getTime() - now.getTime()));
-    setText(el['close-note'], `Pendaftaran ditutup pada ${formatKlDateTime(close)}.`);
+    setText(el['close-note'], t('js.closeAt', { date: klDateTime(close) }));
   } else {
     setCountdown(el['close-countdown'], countdownParts(0));
     setText(
       el['close-note'],
-      manuallyClosed ? 'Pendaftaran ditutup oleh urus setia.' : 'Pendaftaran telah ditutup.'
+      manuallyClosed ? t('js.closedByAdmin') : t('js.closed')
     );
     if (!state.closingRefreshDone && state.stats && manuallyClosed === false && now.getTime() >= (close?.getTime() || 0)) {
       state.closingRefreshDone = true;
@@ -159,11 +194,11 @@ function updateContact(stats) {
   const number = normalizeWhatsAppNumber(stats.whatsapp);
   const display = displayWhatsApp(number);
   if (display) {
-    setText(el['faq-contact'], `WhatsApp urus setia: ${display}.`);
-    setText(el['footer-contact'], `Urus setia KSQ 2026 · ${display}`);
+    setText(el['faq-contact'], t('js.contactWhatsapp', { phone: display }));
+    setText(el['footer-contact'], t('js.footerContact', { phone: display }));
   } else {
-    setText(el['faq-contact'], 'Sila hubungi urus setia masjid untuk pertanyaan lanjut.');
-    setText(el['footer-contact'], 'Urus setia KSQ 2026');
+    setText(el['faq-contact'], t('js.contactDefault'));
+    setText(el['footer-contact'], t('js.footerContactDefault'));
   }
 
   if (number) {
@@ -186,7 +221,7 @@ function setFormEnabled(enabled, buttonLabel = '') {
   if (el['submit-button']) {
     el['submit-button'].disabled = !enabled;
     if (buttonLabel) setText(el['submit-button'], buttonLabel);
-    else if (enabled) setText(el['submit-button'], 'Hantar pendaftaran');
+    else if (enabled) setText(el['submit-button'], t('form.submit'));
   }
 }
 
@@ -195,7 +230,7 @@ function showNotice(message, variant = 'warning') {
   if (!box) return;
   clear(box);
   box.className = `notice notice-${variant} mb-2`;
-  box.append(h('p', {}, h('strong', { text: 'Perhatian: ' }), message));
+  box.append(h('p', {}, h('strong', { text: t('js.noticeAttention') }), message));
   show(box, true);
 }
 
@@ -207,16 +242,16 @@ function renderRegistrationStatus(stats) {
   const box = el['registration-status'];
   if (!box) return;
   clear(box);
-  let label = 'Pendaftaran dibuka';
+  let label = t('js.statusOpen');
   let variant = 'success';
   if (stats.sumber === 'sheet_luar') {
-    label = 'Pendaftaran melalui pautan rasmi';
+    label = t('js.statusExternal');
     variant = 'info';
   } else if (!stats.pendaftaranDibuka) {
-    label = 'Pendaftaran ditutup';
+    label = t('js.statusClosed');
     variant = 'muted';
   } else if (stats.bakiSlot <= 0) {
-    label = 'Slot penuh · senarai tunggu dibuka';
+    label = t('js.statusFull');
     variant = 'info';
   }
   box.append(badge(label, variant));
@@ -224,19 +259,19 @@ function renderRegistrationStatus(stats) {
 
 function updateFormAvailability(stats) {
   if (stats.sumber === 'sheet_luar') {
-    showNotice('Pendaftaran untuk program ini dikendalikan melalui pautan rasmi urus setia. Sila hubungi urus setia untuk mendaftar.', 'info');
-    setFormEnabled(false, 'Pendaftaran melalui urus setia');
+    showNotice(t('js.sourceExternal'), 'info');
+    setFormEnabled(false, t('js.formExternal'));
     return;
   }
   if (!stats.pendaftaranDibuka) {
-    showNotice('Pendaftaran telah ditutup. Terima kasih atas minat anda.', 'warning');
-    setFormEnabled(false, 'Pendaftaran ditutup');
+    showNotice(t('js.closedThanks'), 'warning');
+    setFormEnabled(false, t('js.formClosed'));
     return;
   }
   hideNotice();
   setFormEnabled(true);
   if (stats.bakiSlot <= 0) {
-    showNotice('Slot telah penuh. Anda masih boleh mendaftar untuk senarai tunggu; urus setia akan menghubungi jika ada slot terbuka.', 'info');
+    showNotice(t('js.fullWaitlist'), 'info');
   }
 }
 
@@ -255,20 +290,21 @@ function applyStats(stats) {
   setProgress(el['slot-progress'], (used / capacity) * 100);
   setText(
     el['slot-note'],
-    `${disahkan} disahkan · ${menunggu} menunggu${waitlist ? ` · ${waitlist} senarai tunggu` : ''}`
+    t('js.slotNote', { ok: disahkan, wait: menunggu }) +
+      (waitlist ? t('js.slotNoteWaitlist', { n: waitlist }) : '')
   );
 
   if (el.heroQuotaLabel) {
-    if (stats.sumber === 'sheet_luar') setText(el.heroQuotaLabel, 'pendaftaran melalui pautan rasmi urus setia');
-    else if (!stats.pendaftaranDibuka) setText(el.heroQuotaLabel, 'pendaftaran telah ditutup');
-    else if (remaining <= 0) setText(el.heroQuotaLabel, 'slot penuh · senarai tunggu dibuka');
-    else setText(el.heroQuotaLabel, `daripada ${capacity} slot masih terbuka`);
+    if (stats.sumber === 'sheet_luar') setText(el.heroQuotaLabel, t('js.heroQuotaExternal'));
+    else if (!stats.pendaftaranDibuka) setText(el.heroQuotaLabel, t('js.heroQuotaClosed'));
+    else if (remaining <= 0) setText(el.heroQuotaLabel, t('js.heroQuotaFull'));
+    else setText(el.heroQuotaLabel, t('js.heroQuotaOpen', { n: capacity }));
   }
 
   const fee = stats.yuran || {};
   setText(el['yuran-asal'], formatRM(fee.asal, 0));
   setText(el['yuran-promo'], formatRM(fee.promo, 0));
-  setText(el['yuran-online'], `Daftar online: ${formatRM(fee.online, 0)}`);
+  setText(el['yuran-online'], t('js.onlineFee', { fee: formatRM(fee.online, 0) }));
 
   const ageMin = Number(stats.umurMin) || 10;
   const ageMax = Number(stats.umurMax) || 18;
@@ -277,12 +313,12 @@ function applyStats(stats) {
     ageInput.min = String(ageMin);
     ageInput.max = String(ageMax);
   }
-  setText(el['age-hint'], `Untuk remaja ${ageMin} hingga ${ageMax} tahun.`);
+  setText(el['age-hint'], t('js.ageHint', { min: ageMin, max: ageMax }));
 
   renderRegistrationStatus(stats);
   updateContact(stats);
   updateFormAvailability(stats);
-  setText(el['stats-updated'], `Dikemas kini ${formatKlTime(nowDate())}`);
+  setText(el['stats-updated'], t('js.updated', { time: klTime(nowDate()) }));
 }
 
 async function refreshStats({ silent = false } = {}) {
@@ -299,15 +335,15 @@ async function refreshStats({ silent = false } = {}) {
       if (state.lastRegistration.status === 'Senarai Tunggu' && remaining > 0) {
         setText(
           el['success-waitlist-note'],
-          `Senarai tunggu: kini terdapat ${remaining} slot terbuka. Urus setia akan menghubungi anda untuk pengesahan.`
+          t('js.waitlistOpen', { n: remaining })
         );
       }
     }
   } catch (err) {
     state.statsFailures += 1;
-    setText(el['stats-updated'], 'Gagal mengemas kini');
+    setText(el['stats-updated'], t('js.updateFailed'));
     if (!silent && (state.statsFailures === 1 || !state.stats)) {
-      showNotice('Maklumat slot tidak dapat dikemas kini. Sila muat semula halaman atau cuba sebentar lagi.', 'danger');
+      showNotice(t('js.statsUnavailable'), 'danger');
     }
   } finally {
     state.loadingStats = false;
@@ -378,30 +414,30 @@ function validatePayload(payload) {
   const guardian = payload.nama_penjaga;
 
   if (name.length < 2 || name.length > 80) {
-    errors.nama_peserta = 'Sila masukkan nama penuh peserta (2 hingga 80 aksara).';
+    errors.nama_peserta = t('val.name');
   }
   if (!Number.isInteger(payload.umur) || payload.umur < ageMin || payload.umur > ageMax) {
-    errors.umur = `Sila masukkan umur antara ${ageMin} dan ${ageMax} tahun.`;
+    errors.umur = t('val.age', { min: ageMin, max: ageMax });
   }
   if (payload.jantina !== 'Lelaki' && payload.jantina !== 'Perempuan') {
-    errors.jantina = 'Sila pilih jantina peserta.';
+    errors.jantina = t('val.gender');
   }
   if (!isValidPhone(payload.tel_penjaga)) {
-    errors.tel_penjaga = 'Sila masukkan no. telefon penjaga yang sah, contoh 012-3456789.';
+    errors.tel_penjaga = t('val.phone');
   }
   if (guardian.length < 2 || guardian.length > 80) {
-    errors.nama_penjaga = 'Sila masukkan nama penjaga (2 hingga 80 aksara).';
+    errors.nama_penjaga = t('val.guardian');
   }
   if (payload.lancar_quran === 'tidak') {
-    errors.lancar_quran = 'Program ini memerlukan peserta yang lancar membaca Al-Quran.';
+    errors.lancar_quran = t('val.quranNo');
   } else if (payload.lancar_quran !== 'ya') {
-    errors.lancar_quran = 'Sila sahkan bahawa peserta lancar membaca Al-Quran.';
+    errors.lancar_quran = t('val.quranConfirm');
   }
   if (payload.alahan_kesihatan.length > 300) {
-    errors.alahan_kesihatan = 'Catatan alahan terlalu panjang (maksimum 300 aksara).';
+    errors.alahan_kesihatan = t('val.allergy');
   }
   if (!payload.persetujuan_data) {
-    errors.persetujuan_data = 'Sila tandakan persetujuan penggunaan data untuk pengurusan program.';
+    errors.persetujuan_data = t('val.consent');
   }
   return errors;
 }
@@ -425,10 +461,11 @@ function showValidationErrors(errors) {
 function buildPaymentInstructions(response) {
   const text = String(response.mesejBayaran || '').trim();
   if (text) return text;
-  return 'Sila hubungi urus setia masjid untuk arahan bayaran. Jumlah yuran: ' + formatRM(response.yuran_rm, 0) + '.';
+  return t('js.payDefault', { fee: formatRM(response.yuran_rm, 0) });
 }
 
-function showSuccess(response, payload) {
+function showSuccess(response, payload, options = {}) {
+  const full = options.full !== false;
   state.lastRegistration = response;
   state.lastPayload = payload;
 
@@ -436,18 +473,15 @@ function showSuccess(response, payload) {
   setText(el['success-name'], payload.nama_peserta);
   setText(el['success-guardian'], payload.nama_penjaga);
   setText(el['success-fee'], formatRM(response.yuran_rm, 0));
-  setText(el['success-datetime'], formatKlDateTime(nowDate()));
+  setText(el['success-datetime'], klDateTime(nowDate()));
 
   const statusBox = el['success-status'];
   clear(statusBox);
-  statusBox.append(badge(response.status, statusVariant(response.status)));
+  statusBox.append(badge(statusLabel(response.status), statusVariant(response.status)));
 
   show(el['success-waitlist-note'], response.status === 'Senarai Tunggu');
   if (response.status === 'Senarai Tunggu') {
-    setText(
-      el['success-waitlist-note'],
-      'Senarai tunggu: kapasiti 40 peserta telah penuh. Pendaftaran anda direkodkan dalam senarai tunggu. Urus setia akan menghubungi jika ada slot terbuka.'
-    );
+    setText(el['success-waitlist-note'], t('success.waitlist'));
   }
 
   const paymentBox = el['success-payment'];
@@ -457,6 +491,7 @@ function showSuccess(response, payload) {
   const number = normalizeWhatsAppNumber(response.whatsapp);
   const link = el['success-whatsapp'];
   if (number) {
+    // The message stays in Bahasa Melayu so the mosque secretariat can read it.
     const message = [
       'Assalamualaikum, saya ingin menghantar bukti bayaran KSQ 2026.',
       `Nama peserta: ${payload.nama_peserta}`,
@@ -465,12 +500,14 @@ function showSuccess(response, payload) {
     ].join('\n');
     link.href = whatsappLink(number, message);
     show(link, true);
-    setText(el['success-whatsapp-note'], 'Butang di atas akan membuka WhatsApp urus setia dengan mesej siap. Sila lampirkan gambar bukti bayaran.');
+    setText(el['success-whatsapp-note'], t('js.waNote'));
   } else {
     link.removeAttribute('href');
     show(link, false);
-    setText(el['success-whatsapp-note'], 'Nombor WhatsApp urus setia belum ditetapkan. Sila hubungi urus setia masjid untuk menghantar bukti bayaran.');
+    setText(el['success-whatsapp-note'], t('js.waNoNumber'));
   }
+
+  if (!full) return;
 
   show(el['registration-form-wrap'], false);
   show(el['success-screen'], true);
@@ -525,30 +562,32 @@ function printReceipt() {
 
   receipt.append(
     h('div', { class: 'receipt-brand' },
-      h('img', { src: 'assets/logo.png', alt: 'Logo Masjid Kampung Sungai Lang Baru' }),
+      h('img', { src: 'assets/logo.png', alt: t('a11y.logo') }),
       h('div', {},
-        h('h1', { text: 'Kem Sahabat Quran 2026' }),
-        h('p', { text: 'Masjid Kampung Sungai Lang Baru, Banting, Selangor' }),
-        h('p', { text: '14–16 Disember 2026 · Program harian' })
+        h('h1', { text: t('footer.aboutTitle') }),
+        h('p', { text: t('rc.org') }),
+        h('p', { text: t('rc.period') })
       )
     ),
-    h('h2', { text: 'Rekod Pendaftaran Peserta' }),
+    h('h2', { text: t('rc.title') }),
     h('table', {},
       h('tbody', {},
-        receiptRow('No. rujukan', response.id),
-        receiptRow('Status', response.status),
-        receiptRow('Nama peserta', payload.nama_peserta),
-        receiptRow('Umur', String(payload.umur)),
-        receiptRow('Jantina', payload.jantina),
-        receiptRow('Penjaga', payload.nama_penjaga),
-        receiptRow('No. telefon penjaga', payload.tel_penjaga),
-        receiptRow('Yuran', formatRM(response.yuran_rm, 0)),
-        receiptRow('Masa pendaftaran', formatKlDateTime(nowDate()))
+        receiptRow(t('rc.ref'), response.id),
+        receiptRow(t('rc.status'), statusLabel(response.status)),
+        receiptRow(t('rc.name'), payload.nama_peserta),
+        receiptRow(t('rc.age'), String(payload.umur)),
+        receiptRow(t('rc.gender'), payload.jantina === 'Perempuan'
+          ? t('form.gender.female')
+          : t('form.gender.male')),
+        receiptRow(t('rc.guardian'), payload.nama_penjaga),
+        receiptRow(t('rc.phone'), payload.tel_penjaga),
+        receiptRow(t('rc.fee'), formatRM(response.yuran_rm, 0)),
+        receiptRow(t('rc.time'), klDateTime(nowDate()))
       )
     ),
-    h('h3', { text: 'Arahan bayaran' }),
+    h('h3', { text: t('success.paymentTitle') }),
     h('p', { class: 'receipt-note', text: buildPaymentInstructions(response) }),
-    h('p', { class: 'receipt-note', text: 'Simpan rekod ini. Dokumen ini ialah rekod pendaftaran yang dijana oleh sistem, bukan resit bayaran rasmi. Pengesahan slot dibuat selepas bayaran disemak oleh urus setia.' })
+    h('p', { class: 'receipt-note', text: t('rc.note') })
   );
 
   document.body.classList.add('receipt-mode');
@@ -570,7 +609,7 @@ async function handleSubmit(event) {
   event.preventDefault();
   if (state.submitting) return;
   if (!state.configReady) {
-    showNotice('Pendaftaran online belum dibuka. Sila hubungi urus setia masjid untuk mendaftar.', 'warning');
+    showNotice(t('js.notOpen'), 'warning');
     return;
   }
 
@@ -583,18 +622,18 @@ async function handleSubmit(event) {
   }
 
   state.submitting = true;
-  setBusy(el['submit-button'], true, 'Menghantar pendaftaran…');
+  setBusy(el['submit-button'], true, t('js.sending'));
   try {
     const response = await apiPost('register', payload);
     showSuccess(response, payload);
   } catch (err) {
-    const message = err && err.message ? err.message : 'Pendaftaran tidak berjaya. Sila cuba lagi.';
+    const message = err && err.message ? err.message : t('js.submitFailed');
     const box = el['form-error'];
     setText(box, message);
     show(box, true);
     if (err && (err.code === 'CLOSED' || err.code === 'EXTERNAL_SOURCE')) {
       showNotice(message, 'warning');
-      setFormEnabled(false, err.code === 'CLOSED' ? 'Pendaftaran ditutup' : 'Pendaftaran melalui urus setia');
+      setFormEnabled(false, err.code === 'CLOSED' ? t('js.formClosed') : t('js.formExternal'));
     }
     refreshStats({ silent: true });
     toast(message, 'error', 7000);
@@ -602,7 +641,9 @@ async function handleSubmit(event) {
     state.submitting = false;
     setBusy(el['submit-button'], false);
     if (state.stats && state.stats.pendaftaranDibuka === false) {
-      setFormEnabled(false, 'Pendaftaran ditutup');
+      setFormEnabled(false, t('js.formClosed'));
+    } else if (el['submit-button'] && !el['submit-button'].disabled) {
+      setText(el['submit-button'], t('form.submit'));
     }
   }
 }
@@ -626,9 +667,18 @@ function wireEvents() {
     refreshStats({ silent: true });
   });
 
+  document.addEventListener('ksq:langchange', () => {
+    tick();
+    if (state.stats && !state.submitting) applyStats(state.stats);
+    else if (!state.stats) {
+      setText(el['stats-updated'], state.statsFailures > 0 ? t('js.updateFailed') : t('js.waiting'));
+    }
+    if (state.lastRegistration) showSuccess(state.lastRegistration, state.lastPayload, { full: false });
+  });
+
   window.addEventListener('online', () => refreshStats({ silent: true }));
   window.addEventListener('offline', () => {
-    toast('Sambungan internet terputus. Data mungkin tidak terkini.', 'warning', 6000);
+    toast(t('js.offline'), 'warning', 6000);
   });
 }
 
@@ -642,9 +692,9 @@ function boot() {
   setInterval(tick, 1000);
 
   if (!state.configReady) {
-    showNotice('Pendaftaran online belum dibuka. Sila hubungi urus setia masjid untuk mendaftar.', 'warning');
-    setFormEnabled(false, 'Pendaftaran belum dibuka');
-    setText(el['stats-updated'], 'Menunggu sambungan sistem');
+    showNotice(t('js.notOpen'), 'warning');
+    setFormEnabled(false, t('js.notOpenShort'));
+    setText(el['stats-updated'], t('js.waiting'));
     console.warn('[KSQ] API_URL is not configured in web/config.js. Registration is disabled.');
     return;
   }

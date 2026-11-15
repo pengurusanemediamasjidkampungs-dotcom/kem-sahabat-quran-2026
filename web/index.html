@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -56,31 +56,36 @@
   </script>
 </head>
 <body class="public-page">
-  <a class="skip-link" href="#daftar">Lompat ke borang pendaftaran</a>
+  <a class="skip-link" href="#daftar" data-i18n="a11y.skip">Lompat ke borang pendaftaran</a>
 
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="#utama" aria-label="Kem Sahabat Quran 2026 — kembali ke atas">
-        <img src="assets/logo.png" alt="Logo Masjid Kampung Sungai Lang Baru" width="418" height="597">
+      <a class="brand" href="#utama" data-i18n-aria="a11y.brand" aria-label="Kem Sahabat Quran 2026 — kembali ke atas">
+        <img src="assets/logo.png" data-i18n-alt="a11y.logo" alt="Logo Masjid Kampung Sungai Lang Baru" width="418" height="597">
         <span class="brand-text">
-          <b>Kem Sahabat Quran</b>
-          <span>Masjid Kg. Sungai Lang Baru · Banting</span>
+          <b data-i18n="brand.name">Kem Sahabat Quran</b>
+          <span data-i18n="brand.sub">Masjid Kg. Sungai Lang Baru · Banting</span>
         </span>
       </a>
-      <nav class="header-actions" aria-label="Navigasi utama">
+      <nav class="header-actions" data-i18n-aria="a11y.nav" aria-label="Navigasi utama">
         <details class="nav-dropdown" id="nav-dropdown">
           <summary class="btn btn-outline-light btn-sm nav-toggle">
-            <span>Menu</span>
+            <span data-i18n="nav.menu">Menu</span>
             <span class="nav-caret" aria-hidden="true"></span>
           </summary>
-          <ul class="nav-menu" aria-label="Menu halaman">
-            <li><a class="nav-menu-item" href="#program">Program</a></li>
-            <li><a class="nav-menu-item" href="#jadual">Jadual</a></li>
-            <li><a class="nav-menu-item" href="#soalan">Soalan</a></li>
-            <li><a class="nav-menu-item" href="#daftar">Daftar</a></li>
+          <ul class="nav-menu" data-i18n-aria="a11y.menu" aria-label="Menu halaman">
+            <li><a class="nav-menu-item" href="#program" data-i18n="nav.program">Program</a></li>
+            <li><a class="nav-menu-item" href="#jadual" data-i18n="nav.schedule">Jadual</a></li>
+            <li><a class="nav-menu-item" href="#soalan" data-i18n="nav.faq">Soalan</a></li>
+            <li><a class="nav-menu-item" href="#daftar" data-i18n="nav.register">Daftar</a></li>
           </ul>
         </details>
-        <a class="btn btn-gold btn-sm" href="#daftar">Daftar</a>
+        <div class="lang-switch" role="group" data-i18n-aria="a11y.lang" aria-label="Pilih bahasa">
+          <button type="button" class="lang-btn" data-lang="ms" aria-pressed="true" data-i18n-title="lang.ms" title="Bahasa Melayu">BM</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" data-i18n-title="lang.en" title="English">ENG</button>
+          <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false" data-i18n-title="lang.ar" title="العربية">AR</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="#daftar" data-i18n="nav.register">Daftar</a>
       </nav>
     </div>
   </header>
@@ -90,33 +95,33 @@
       <div class="container">
         <div class="hero-grid">
           <div>
-            <p class="hero-eyebrow">Masjid Kampung Sungai Lang Baru, Banting</p>
-            <h1>Kem Sahabat<br>Quran <span>2026</span></h1>
-            <p class="hero-slogan">“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”</p>
+            <p class="hero-eyebrow" data-i18n="hero.eyebrow">Masjid Kampung Sungai Lang Baru, Banting</p>
+            <h1 data-i18n-html="hero.titleHtml">Kem Sahabat<br>Quran <span>2026</span></h1>
+            <p class="hero-slogan" data-i18n="hero.slogan">“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”</p>
 
             <div class="hero-meta">
-              <span class="chip"><b>14–16 Dis 2026</b> · Isnin–Rabu</span>
-              <span class="chip">8:00 pagi – 5:00 petang</span>
-              <span class="chip">Hari 1–2: Masjid · Hari 3: Shah Alam</span>
-              <span class="chip"><b>40 peserta</b> sahaja</span>
+              <span class="chip" data-i18n-html="hero.chipDate"><b>14–16 Dis 2026</b> · Isnin–Rabu</span>
+              <span class="chip" data-i18n="hero.chipTime">8:00 pagi – 5:00 petang</span>
+              <span class="chip" data-i18n="hero.chipPlace">Hari 1–2: Masjid · Hari 3: Shah Alam</span>
+              <span class="chip" data-i18n-html="hero.chipQuota"><b>40 peserta</b> sahaja</span>
             </div>
 
             <div class="hero-actions">
-              <a class="btn btn-gold" href="#daftar">Daftar sekarang</a>
-              <a class="btn btn-outline-light" href="#program">Kenali program</a>
+              <a class="btn btn-gold" href="#daftar" data-i18n="hero.cta1">Daftar sekarang</a>
+              <a class="btn btn-outline-light" href="#program" data-i18n="hero.cta2">Kenali program</a>
             </div>
 
-            <p class="hero-note">Program harian, tidak bermalam. Untuk remaja 10 tahun ke atas yang lancar membaca Al-Quran.</p>
+            <p class="hero-note" data-i18n="hero.note">Program harian, tidak bermalam. Untuk remaja 10 tahun ke atas yang lancar membaca Al-Quran.</p>
           </div>
 
           <div class="hero-media">
             <div class="quota-badge" aria-live="polite">
               <b id="hero-baki">—</b>
-              <span>daripada 40 slot masih terbuka</span>
+              <span data-i18n="hero.quotaLabel">daripada 40 slot masih terbuka</span>
             </div>
             <div class="hero-photo">
-              <img src="assets/masjid-udara.jpg" alt="Pandangan udara Masjid Kampung Sungai Lang Baru" width="1080" height="400" fetchpriority="high">
-              <span class="hero-photo-label">Masjid Kampung Sungai Lang Baru</span>
+              <img src="assets/masjid-udara.jpg" data-i18n-alt="a11y.photo" alt="Pandangan udara Masjid Kampung Sungai Lang Baru" width="1080" height="400" fetchpriority="high">
+              <span class="hero-photo-label" data-i18n="hero.photoLabel">Masjid Kampung Sungai Lang Baru</span>
             </div>
           </div>
         </div>
@@ -125,43 +130,47 @@
 
     <div class="live-panel">
       <div class="container">
-        <div class="panel" aria-label="Maklumat pendaftaran langsung">
+        <div class="panel" data-i18n-aria="a11y.quota" aria-label="Maklumat pendaftaran langsung">
           <div class="live-grid">
             <div>
-              <p class="panel-label">Kiraan detik program</p>
+              <p class="panel-label" data-i18n="live.program">Kiraan detik program</p>
               <div class="countdown" id="program-countdown">
-                <div class="cd-unit"><span data-cd="days">--</span><small>hari</small></div>
-                <div class="cd-unit"><span data-cd="hours">--</span><small>jam</small></div>
-                <div class="cd-unit"><span data-cd="minutes">--</span><small>minit</small></div>
-                <div class="cd-unit"><span data-cd="seconds">--</span><small>saat</small></div>
+                <div class="cd-unit"><span data-cd="days">--</span><small data-cd-unit="days">hari</small></div>
+                <div class="cd-unit"><span data-cd="hours">--</span><small data-cd-unit="hours">jam</small></div>
+                <div class="cd-unit"><span data-cd="minutes">--</span><small data-cd-unit="minutes">minit</small></div>
+                <div class="cd-unit"><span data-cd="seconds">--</span><small data-cd-unit="seconds">saat</small></div>
               </div>
-              <p class="live-note" id="program-phase">Menunggu tarikh program…</p>
+              <p class="live-note" id="program-phase" data-i18n="live.programPhase">Menunggu tarikh program…</p>
             </div>
 
             <div>
-              <p class="panel-label">Pendaftaran ditutup</p>
+              <p class="panel-label" data-i18n="live.close">Pendaftaran ditutup</p>
               <div class="countdown" id="close-countdown">
-                <div class="cd-unit"><span data-cd="days">--</span><small>hari</small></div>
-                <div class="cd-unit"><span data-cd="hours">--</span><small>jam</small></div>
-                <div class="cd-unit"><span data-cd="minutes">--</span><small>minit</small></div>
-                <div class="cd-unit"><span data-cd="seconds">--</span><small>saat</small></div>
+                <div class="cd-unit"><span data-cd="days">--</span><small data-cd-unit="days">hari</small></div>
+                <div class="cd-unit"><span data-cd="hours">--</span><small data-cd-unit="hours">jam</small></div>
+                <div class="cd-unit"><span data-cd="minutes">--</span><small data-cd-unit="minutes">minit</small></div>
+                <div class="cd-unit"><span data-cd="seconds">--</span><small data-cd-unit="seconds">saat</small></div>
               </div>
-              <p class="live-note" id="close-note">Tarikh tutup akan dipaparkan.</p>
+              <p class="live-note" id="close-note" data-i18n="live.closeNote">Tarikh tutup akan dipaparkan.</p>
               <div id="registration-status" class="mt-1"></div>
             </div>
 
             <div>
-              <p class="panel-label">Baki slot</p>
+              <p class="panel-label" data-i18n="live.slot">Baki slot</p>
               <div class="slot-number">
                 <strong id="slot-remaining">—</strong>
-                <span>daripada <b id="slot-total">40</b> slot</span>
+                <span>
+                  <span data-i18n="live.slotOfPrefix">daripada</span>
+                  <b id="slot-total">40</b>
+                  <span data-i18n="live.slotOfSuffix">slot</span>
+                </span>
               </div>
               <div class="progress" id="slot-progress-wrap">
                 <span id="slot-progress"></span>
               </div>
               <div class="progress-meta">
-                <span id="slot-note">Mengemas kini…</span>
-                <span id="stats-updated"></span>
+                <span id="slot-note" data-i18n="live.slotNote">Mengemas kini…</span>
+                <span id="stats-updated" data-i18n="js.waiting">Menunggu sambungan sistem</span>
               </div>
 
               <div class="mt-2">
@@ -169,7 +178,7 @@
                   <span class="price-old" id="yuran-asal">RM180</span>
                   <span class="price-main" id="yuran-promo">RM120</span>
                 </div>
-                <span class="price-online" id="yuran-online">Daftar online: RM110</span>
+                <span class="price-online" id="yuran-online" data-i18n="live.priceOnline">Daftar online: RM110</span>
               </div>
             </div>
           </div>
@@ -180,79 +189,79 @@
     <section class="section" id="program">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Tiga hari yang bermakna</span>
-          <h2>Satu kem, tiga hari, satu perjalanan</h2>
-          <p class="lead">Peserta menghafaz surah pilihan, membina adab dan kepimpinan, kemudian menyempurnakan tasmik dalam lawatan sambil belajar ke Shah Alam.</p>
+          <span class="eyebrow" data-i18n="program.eyebrow">Tiga hari yang bermakna</span>
+          <h2 data-i18n="program.title">Satu kem, tiga hari, satu perjalanan</h2>
+          <p class="lead" data-i18n="program.lead">Peserta menghafaz surah pilihan, membina adab dan kepimpinan, kemudian menyempurnakan tasmik dalam lawatan sambil belajar ke Shah Alam.</p>
         </div>
 
         <div class="grid grid-3">
           <article class="card day-card card-gold">
             <span class="day-number">1</span>
-            <p class="card-kicker">Isnin · 14 Disember 2026</p>
-            <h3>Hafazan dan pembinaan jiwa</h3>
-            <p class="muted">Masjid Kampung Sungai Lang Baru, Banting.</p>
-            <p>Pendaftaran, taklimat, teknik hafazan pantas, mula Surah Al-Mulk, slot akhlak, muraja’ah dan tasmik kumpulan kecil.</p>
+            <p class="card-kicker" data-i18n="day1.kicker">Isnin · 14 Disember 2026</p>
+            <h3 data-i18n="day1.title">Hafazan dan pembinaan jiwa</h3>
+            <p class="muted" data-i18n="day1.place">Masjid Kampung Sungai Lang Baru, Banting.</p>
+            <p data-i18n="day1.body">Pendaftaran, taklimat, teknik hafazan pantas, mula Surah Al-Mulk, slot akhlak, muraja’ah dan tasmik kumpulan kecil.</p>
           </article>
 
           <article class="card day-card card-gold">
             <span class="day-number">2</span>
-            <p class="card-kicker">Selasa · 15 Disember 2026</p>
-            <h3>Hafazan lanjutan dan kepimpinan</h3>
-            <p class="muted">Masjid Kampung Sungai Lang Baru, Banting.</p>
-            <p>Hafazan Surah As-Sajdah, Al-Insan dan permulaan Al-Kahfi mengikut kemampuan, slot kepimpinan remaja, tasmik percubaan dan taklimat Hari 3.</p>
+            <p class="card-kicker" data-i18n="day2.kicker">Selasa · 15 Disember 2026</p>
+            <h3 data-i18n="day2.title">Hafazan lanjutan dan kepimpinan</h3>
+            <p class="muted" data-i18n="day2.place">Masjid Kampung Sungai Lang Baru, Banting.</p>
+            <p data-i18n="day2.body">Hafazan Surah As-Sajdah, Al-Insan dan permulaan Al-Kahfi mengikut kemampuan, slot kepimpinan remaja, tasmik percubaan dan taklimat Hari 3.</p>
           </article>
 
           <article class="card day-card card-gold">
             <span class="day-number">3</span>
-            <p class="card-kicker">Rabu · 16 Disember 2026</p>
-            <h3>Jaulah ke Shah Alam</h3>
-            <p class="muted">Yayasan Restu, Muzium Sultan Alam Shah, Masjid Negeri Shah Alam.</p>
-            <p>Lawatan sambil belajar, solat Zohor berjemaah, makan tengah hari dan <b>tasmik kemuncak</b> di sekitar masjid dan tasik.</p>
+            <p class="card-kicker" data-i18n="day3.kicker">Rabu · 16 Disember 2026</p>
+            <h3 data-i18n="day3.title">Jaulah ke Shah Alam</h3>
+            <p class="muted" data-i18n="day3.place">Yayasan Restu, Muzium Sultan Alam Shah, Masjid Negeri Shah Alam.</p>
+            <p data-i18n-html="day3.bodyHtml">Lawatan sambil belajar, solat Zohor berjemaah, makan tengah hari dan <b>tasmik kemuncak</b> di sekitar masjid dan tasik.</p>
           </article>
         </div>
 
         <div class="grid grid-2 mt-3">
           <div class="card">
-            <p class="card-kicker">Sasaran hafazan</p>
-            <h3>Empat surah pilihan</h3>
+            <p class="card-kicker" data-i18n="hafazan.kicker">Sasaran hafazan</p>
+            <h3 data-i18n="hafazan.title">Empat surah pilihan</h3>
             <ul class="list-clean">
-              <li><b>Surah Al-Mulk</b> — 30 ayat</li>
-              <li><b>Surah Al-Kahfi</b> — pembahagian ayat ditentukan ustaz mengikut kemampuan peserta</li>
-              <li><b>Surah As-Sajdah</b></li>
-              <li><b>Surah Al-Insan</b></li>
+              <li data-i18n-html="hafazan.i1"><b>Surah Al-Mulk</b> — 30 ayat</li>
+              <li data-i18n-html="hafazan.i2"><b>Surah Al-Kahfi</b> — pembahagian ayat ditentukan ustaz mengikut kemampuan peserta</li>
+              <li data-i18n-html="hafazan.i3"><b>Surah As-Sajdah</b></li>
+              <li data-i18n-html="hafazan.i4"><b>Surah Al-Insan</b></li>
             </ul>
-            <p class="hint mt-1">Pembahagian surah ialah cadangan dan boleh diubah oleh ustaz mengikut kemampuan peserta.</p>
+            <p class="hint mt-1" data-i18n="hafazan.hint">Pembahagian surah ialah cadangan dan boleh diubah oleh ustaz mengikut kemampuan peserta.</p>
           </div>
 
           <div class="card card-forest">
-            <p class="card-kicker" style="color: var(--gold);">Pengisian utama</p>
-            <h3>Belajar, bina jiwa, berbakti</h3>
+            <p class="card-kicker" style="color: var(--gold);" data-i18n="isi.kicker">Pengisian utama</p>
+            <h3 data-i18n="isi.title">Belajar, bina jiwa, berbakti</h3>
             <ul class="list-clean">
-              <li>Teknik Hafazan Pantas dan sesi tasmik</li>
-              <li>Slot Motivasi Pembinaan Jiwa: adab dan akhlak</li>
-              <li>Slot Kepimpinan Remaja</li>
-              <li>Jaulah Sahabat Quran ke Shah Alam</li>
-              <li>Tasmik kemuncak di sekitar Masjid Negeri dan tasik</li>
+              <li data-i18n="isi.i1">Teknik Hafazan Pantas dan sesi tasmik</li>
+              <li data-i18n="isi.i2">Slot Motivasi Pembinaan Jiwa: adab dan akhlak</li>
+              <li data-i18n="isi.i3">Slot Kepimpinan Remaja</li>
+              <li data-i18n="isi.i4">Jaulah Sahabat Quran ke Shah Alam</li>
+              <li data-i18n="isi.i5">Tasmik kemuncak di sekitar Masjid Negeri dan tasik</li>
             </ul>
           </div>
         </div>
 
         <div class="fact-strip mt-3">
           <div class="fact">
-            <b>Kapasiti</b>
-            <span>40 peserta sahaja</span>
+            <b data-i18n="fact.capacity.label">Kapasiti</b>
+            <span data-i18n="fact.capacity.value">40 peserta sahaja</span>
           </div>
           <div class="fact">
-            <b>Syarat</b>
-            <span>10 tahun ke atas · lancar Al-Quran</span>
+            <b data-i18n="fact.require.label">Syarat</b>
+            <span data-i18n="fact.require.value">10 tahun ke atas · lancar Al-Quran</span>
           </div>
           <div class="fact">
-            <b>Konsep</b>
-            <span>Program harian, tidak bermalam</span>
+            <b data-i18n="fact.concept.label">Konsep</b>
+            <span data-i18n="fact.concept.value">Program harian, tidak bermalam</span>
           </div>
           <div class="fact">
-            <b>Yuran</b>
-            <span>RM120 · online RM110</span>
+            <b data-i18n="fact.fee.label">Yuran</b>
+            <span data-i18n="fact.fee.value">RM120 · online RM110</span>
           </div>
         </div>
       </div>
@@ -261,85 +270,85 @@
     <section class="section section-alt" id="jadual">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Aturcara penuh</span>
-          <h2>Jadual Hari 1 hingga Hari 3</h2>
-          <p class="lead">Jadual ini berdasarkan Modul Program. Waktu solat ialah anggaran untuk Selangor dan perlu disemak dengan jadual rasmi JAKIM/JAIS.</p>
+          <span class="eyebrow" data-i18n="jadual.eyebrow">Aturcara penuh</span>
+          <h2 data-i18n="jadual.title">Jadual Hari 1 hingga Hari 3</h2>
+          <p class="lead" data-i18n="jadual.lead">Jadual ini berdasarkan Modul Program. Waktu solat ialah anggaran untuk Selangor dan perlu disemak dengan jadual rasmi JAKIM/JAIS.</p>
         </div>
 
         <details class="info-details" open>
-          <summary>Hari 1 — Isnin, 14 Disember 2026 · Masjid Kg. Sungai Lang Baru</summary>
+          <summary data-i18n="s1.summary">Hari 1 — Isnin, 14 Disember 2026 · Masjid Kg. Sungai Lang Baru</summary>
           <table class="schedule-table">
-            <thead><tr><th>Masa</th><th>Aktiviti</th></tr></thead>
+            <thead><tr><th data-i18n="table.time">Masa</th><th data-i18n="table.activity">Aktiviti</th></tr></thead>
             <tbody>
-              <tr><td>8:00–8:30 pg</td><td>Pendaftaran peserta, pengagihan tag dan modul</td></tr>
-              <tr><td>8:30–9:00 pg</td><td>Perasmian, taklimat program, bacaan doa dan ta’aruf</td></tr>
-              <tr><td>9:00–10:30 pg</td><td>Teknik Hafazan Pantas (sesi 1): pengenalan teknik; mula Surah Al-Mulk</td></tr>
-              <tr><td>10:30–11:00 pg</td><td>Minum pagi dan rehat</td></tr>
-              <tr><td>11:00 pg–12:30 tgh</td><td>Hafazan Surah Al-Mulk (sesi 2) secara berkumpulan</td></tr>
-              <tr><td>12:30–2:00 ptg</td><td>Solat Zohor, makan tengah hari dan rehat</td></tr>
-              <tr><td>2:00–3:30 ptg</td><td>Slot Motivasi Pembinaan Jiwa: Adab dan Akhlak</td></tr>
-              <tr><td>3:30–4:00 ptg</td><td>Minum petang</td></tr>
-              <tr><td>4:00–4:30 ptg</td><td>Muraja’ah dan tasmik kumpulan kecil</td></tr>
-              <tr><td>4:30–5:00 ptg</td><td>Solat Asar, refleksi hari pertama, doa dan bersurai</td></tr>
+              <tr><td data-i18n-time>8:00–8:30 pg</td><td data-i18n="s1.r1">Pendaftaran peserta, pengagihan tag dan modul</td></tr>
+              <tr><td data-i18n-time>8:30–9:00 pg</td><td data-i18n="s1.r2">Perasmian, taklimat program, bacaan doa dan ta’aruf</td></tr>
+              <tr><td data-i18n-time>9:00–10:30 pg</td><td data-i18n="s1.r3">Teknik Hafazan Pantas (sesi 1): pengenalan teknik; mula Surah Al-Mulk</td></tr>
+              <tr><td data-i18n-time>10:30–11:00 pg</td><td data-i18n="s1.r4">Minum pagi dan rehat</td></tr>
+              <tr><td data-i18n-time>11:00 pg–12:30 tgh</td><td data-i18n="s1.r5">Hafazan Surah Al-Mulk (sesi 2) secara berkumpulan</td></tr>
+              <tr><td data-i18n-time>12:30–2:00 ptg</td><td data-i18n="s1.r6">Solat Zohor, makan tengah hari dan rehat</td></tr>
+              <tr><td data-i18n-time>2:00–3:30 ptg</td><td data-i18n="s1.r7">Slot Motivasi Pembinaan Jiwa: Adab dan Akhlak</td></tr>
+              <tr><td data-i18n-time>3:30–4:00 ptg</td><td data-i18n="s1.r8">Minum petang</td></tr>
+              <tr><td data-i18n-time>4:00–4:30 ptg</td><td data-i18n="s1.r9">Muraja’ah dan tasmik kumpulan kecil</td></tr>
+              <tr><td data-i18n-time>4:30–5:00 ptg</td><td data-i18n="s1.r10">Solat Asar, refleksi hari pertama, doa dan bersurai</td></tr>
             </tbody>
           </table>
         </details>
 
         <details class="info-details">
-          <summary>Hari 2 — Selasa, 15 Disember 2026 · Masjid Kg. Sungai Lang Baru</summary>
+          <summary data-i18n="s2.summary">Hari 2 — Selasa, 15 Disember 2026 · Masjid Kg. Sungai Lang Baru</summary>
           <table class="schedule-table">
-            <thead><tr><th>Masa</th><th>Aktiviti</th></tr></thead>
+            <thead><tr><th data-i18n="table.time">Masa</th><th data-i18n="table.activity">Aktiviti</th></tr></thead>
             <tbody>
-              <tr><td>8:00–8:30 pg</td><td>Kehadiran, bacaan doa dan muraja’ah Surah Al-Mulk</td></tr>
-              <tr><td>8:30–10:00 pg</td><td>Teknik Hafazan Pantas (sesi 3): Surah As-Sajdah</td></tr>
-              <tr><td>10:00–10:30 pg</td><td>Minum pagi dan rehat</td></tr>
-              <tr><td>10:30 pg–12:30 tgh</td><td>Hafazan Surah Al-Insan dan permulaan Surah Al-Kahfi (mengikut kemampuan)</td></tr>
-              <tr><td>12:30–2:00 ptg</td><td>Solat Zohor, makan tengah hari dan rehat</td></tr>
-              <tr><td>2:00–3:30 ptg</td><td>Slot Motivasi Pembinaan Jiwa: Kepimpinan Remaja</td></tr>
-              <tr><td>3:30–4:00 ptg</td><td>Minum petang</td></tr>
-              <tr><td>4:00–4:30 ptg</td><td>Tasmik percubaan dan muraja’ah untuk persediaan kemuncak</td></tr>
-              <tr><td>4:30–5:00 ptg</td><td>Solat Asar, taklimat Hari 3 (pakaian, bekalan, peraturan bas), doa dan bersurai</td></tr>
+              <tr><td data-i18n-time>8:00–8:30 pg</td><td data-i18n="s2.r1">Kehadiran, bacaan doa dan muraja’ah Surah Al-Mulk</td></tr>
+              <tr><td data-i18n-time>8:30–10:00 pg</td><td data-i18n="s2.r2">Teknik Hafazan Pantas (sesi 3): Surah As-Sajdah</td></tr>
+              <tr><td data-i18n-time>10:00–10:30 pg</td><td data-i18n="s2.r3">Minum pagi dan rehat</td></tr>
+              <tr><td data-i18n-time>10:30 pg–12:30 tgh</td><td data-i18n="s2.r4">Hafazan Surah Al-Insan dan permulaan Surah Al-Kahfi (mengikut kemampuan)</td></tr>
+              <tr><td data-i18n-time>12:30–2:00 ptg</td><td data-i18n="s2.r5">Solat Zohor, makan tengah hari dan rehat</td></tr>
+              <tr><td data-i18n-time>2:00–3:30 ptg</td><td data-i18n="s2.r6">Slot Motivasi Pembinaan Jiwa: Kepimpinan Remaja</td></tr>
+              <tr><td data-i18n-time>3:30–4:00 ptg</td><td data-i18n="s2.r7">Minum petang</td></tr>
+              <tr><td data-i18n-time>4:00–4:30 ptg</td><td data-i18n="s2.r8">Tasmik percubaan dan muraja’ah untuk persediaan kemuncak</td></tr>
+              <tr><td data-i18n-time>4:30–5:00 ptg</td><td data-i18n="s2.r9">Solat Asar, taklimat Hari 3 (pakaian, bekalan, peraturan bas), doa dan bersurai</td></tr>
             </tbody>
           </table>
         </details>
 
         <details class="info-details">
-          <summary>Hari 3 — Rabu, 16 Disember 2026 · Shah Alam (bas)</summary>
+          <summary data-i18n="s3.summary">Hari 3 — Rabu, 16 Disember 2026 · Shah Alam (bas)</summary>
           <table class="schedule-table">
-            <thead><tr><th>Masa</th><th>Aktiviti</th></tr></thead>
+            <thead><tr><th data-i18n="table.time">Masa</th><th data-i18n="table.activity">Aktiviti</th></tr></thead>
             <tbody>
-              <tr><td>7:30–8:00 pg</td><td>Berkumpul di masjid, kehadiran dan doa permusafiran</td></tr>
-              <tr><td>8:00 pg</td><td>Bertolak ke Shah Alam (zikir dan muraja’ah dalam bas)</td></tr>
-              <tr><td>9:30–11:00 pg</td><td>Tiba terus ke Yayasan Restu: lawatan galeri dan penerangan</td></tr>
-              <tr><td>11:15 pg–12:30 tgh</td><td>Muzium Sultan Alam Shah (tiket RM2–RM5 seorang; sila sahkan)</td></tr>
-              <tr><td>12:30–1:00 tgh</td><td>Masjid Negeri Shah Alam: tiba, bersiap dan berwuduk</td></tr>
-              <tr><td>1:00–2:00 ptg</td><td>Solat Zohor berjemaah</td></tr>
-              <tr><td>2:00–2:45 ptg</td><td>Makan tengah hari</td></tr>
-              <tr><td>2:45–4:00 ptg</td><td><b>KEMUNCAK:</b> tasmik hafazan / bacaan surah yang dihafaz sejak Hari 1 dan 2 di sekitar tasik dan Masjid Negeri</td></tr>
-              <tr><td>4:00–4:15 ptg</td><td>Refleksi, penyampaian sijil dan doa penutup</td></tr>
-              <tr><td>4:15 ptg</td><td>Bertolak pulang ke Banting; dijangka tiba kira-kira 5:30 petang</td></tr>
+              <tr><td data-i18n-time>7:30–8:00 pg</td><td data-i18n="s3.r1">Berkumpul di masjid, kehadiran dan doa permusafiran</td></tr>
+              <tr><td data-i18n-time>8:00 pg</td><td data-i18n="s3.r2">Bertolak ke Shah Alam (zikir dan muraja’ah dalam bas)</td></tr>
+              <tr><td data-i18n-time>9:30–11:00 pg</td><td data-i18n="s3.r3">Tiba terus ke Yayasan Restu: lawatan galeri dan penerangan</td></tr>
+              <tr><td data-i18n-time>11:15 pg–12:30 tgh</td><td data-i18n="s3.r4">Muzium Sultan Alam Shah (tiket RM2–RM5 seorang; sila sahkan)</td></tr>
+              <tr><td data-i18n-time>12:30–1:00 tgh</td><td data-i18n="s3.r5">Masjid Negeri Shah Alam: tiba, bersiap dan berwuduk</td></tr>
+              <tr><td data-i18n-time>1:00–2:00 ptg</td><td data-i18n="s3.r6">Solat Zohor berjemaah</td></tr>
+              <tr><td data-i18n-time>2:00–2:45 ptg</td><td data-i18n="s3.r7">Makan tengah hari</td></tr>
+              <tr><td data-i18n-time>2:45–4:00 ptg</td><td data-i18n-html="s3.r8Html"><b>KEMUNCAK:</b> tasmik hafazan / bacaan surah yang dihafaz sejak Hari 1 dan 2 di sekitar tasik dan Masjid Negeri</td></tr>
+              <tr><td data-i18n-time>4:00–4:15 ptg</td><td data-i18n="s3.r9">Refleksi, penyampaian sijil dan doa penutup</td></tr>
+              <tr><td data-i18n-time>4:15 ptg</td><td data-i18n="s3.r10">Bertolak pulang ke Banting; dijangka tiba kira-kira 5:30 petang</td></tr>
             </tbody>
           </table>
         </details>
 
         <div class="grid grid-3 mt-3">
           <div class="card">
-            <p class="card-kicker">Destinasi 1</p>
-            <h3>Yayasan Restu</h3>
-            <p class="hint">Kompleks Taman Seni Islam Antarabangsa, No. 2A Pesiaran Damai, Seksyen 10, 40100 Shah Alam. Bersebelahan Masjid Negeri dan Taman Tasik Shah Alam.</p>
-            <p class="small muted">Pusat seni Islam yang dikaitkan dengan penyalinan, pencetakan dan penghiasan mashaf Al-Quran. Yuran kumpulan akan disahkan dengan pihak Yayasan.</p>
+            <p class="card-kicker" data-i18n="dest1.kicker">Destinasi 1</p>
+            <h3 data-i18n="dest1.name">Yayasan Restu</h3>
+            <p class="hint" data-i18n="dest1.addr">Kompleks Taman Seni Islam Antarabangsa, No. 2A Pesiaran Damai, Seksyen 10, 40100 Shah Alam. Bersebelahan Masjid Negeri dan Taman Tasik Shah Alam.</p>
+            <p class="small muted" data-i18n="dest1.desc">Pusat seni Islam yang dikaitkan dengan penyalinan, pencetakan dan penghiasan mashaf Al-Quran. Yuran kumpulan akan disahkan dengan pihak Yayasan.</p>
           </div>
           <div class="card">
-            <p class="card-kicker">Destinasi 2</p>
-            <h3>Muzium Sultan Alam Shah</h3>
-            <p class="hint">Persiaran Bandaraya, Seksyen 14, 40000 Shah Alam · +60 3-5519 0050 · Selasa–Ahad, 9:30 pagi–5:30 petang (tutup Isnin).</p>
-            <p class="small muted">Galeri Sejarah, Adat &amp; Kebudayaan, dan Alam Semula Jadi. Kadar tiket kumpulan akan disahkan dengan muzium.</p>
+            <p class="card-kicker" data-i18n="dest2.kicker">Destinasi 2</p>
+            <h3 data-i18n="dest2.name">Muzium Sultan Alam Shah</h3>
+            <p class="hint" data-i18n="dest2.addr">Persiaran Bandaraya, Seksyen 14, 40000 Shah Alam · +60 3-5519 0050 · Selasa–Ahad, 9:30 pagi–5:30 petang (tutup Isnin).</p>
+            <p class="small muted" data-i18n="dest2.desc">Galeri Sejarah, Adat &amp; Kebudayaan, dan Alam Semula Jadi. Kadar tiket kumpulan akan disahkan dengan muzium.</p>
           </div>
           <div class="card">
-            <p class="card-kicker">Destinasi 3</p>
-            <h3>Masjid Negeri Shah Alam</h3>
-            <p class="hint">Masjid Sultan Salahuddin Abdul Aziz Shah. Solat Zohor, makan tengah hari dan tasmik kemuncak di sekitar masjid dan tasik.</p>
-            <p class="small muted">Kebenaran penggunaan kawasan akan dimaklumkan kepada pejabat masjid lebih awal.</p>
+            <p class="card-kicker" data-i18n="dest3.kicker">Destinasi 3</p>
+            <h3 data-i18n="dest3.name">Masjid Negeri Shah Alam</h3>
+            <p class="hint" data-i18n="dest3.addr">Masjid Sultan Salahuddin Abdul Aziz Shah. Solat Zohor, makan tengah hari dan tasmik kemuncak di sekitar masjid dan tasik.</p>
+            <p class="small muted" data-i18n="dest3.desc">Kebenaran penggunaan kawasan akan dimaklumkan kepada pejabat masjid lebih awal.</p>
           </div>
         </div>
       </div>
@@ -348,9 +357,9 @@
     <section class="section" id="daftar">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Pendaftaran online</span>
-          <h2>Daftar peserta KSQ 2026</h2>
-          <p class="lead">Isi maklumat di bawah. Selepas hantar, anda akan menerima nombor rujukan, jumlah yuran dan arahan bayaran. Slot terhad kepada 40 peserta.</p>
+          <span class="eyebrow" data-i18n="daftar.eyebrow">Pendaftaran online</span>
+          <h2 data-i18n="daftar.title">Daftar peserta KSQ 2026</h2>
+          <p class="lead" data-i18n="daftar.lead">Isi maklumat di bawah. Selepas hantar, anda akan menerima nombor rujukan, jumlah yuran dan arahan bayaran. Slot terhad kepada 40 peserta.</p>
         </div>
 
         <div id="registration-notice" class="notice notice-warning mb-2 hidden" role="status"></div>
@@ -359,62 +368,62 @@
           <form id="registration-form" novalidate>
             <div class="form-grid">
               <div class="field">
-                <label class="field-label" for="nama_peserta">Nama penuh peserta</label>
-                <input class="input" id="nama_peserta" name="nama_peserta" type="text" autocomplete="name" maxlength="80" required placeholder="Contoh: Ahmad Danish">
+                <label class="field-label" for="nama_peserta" data-i18n="form.name.label">Nama penuh peserta</label>
+                <input class="input" id="nama_peserta" name="nama_peserta" type="text" autocomplete="name" maxlength="80" required data-i18n-placeholder="form.name.ph" placeholder="Contoh: Ahmad Danish">
                 <p class="error-text" data-error-for="nama_peserta"></p>
               </div>
 
               <div class="field">
-                <label class="field-label" for="umur">Umur</label>
-                <input class="input" id="umur" name="umur" type="number" inputmode="numeric" min="10" max="18" step="1" required placeholder="Contoh: 12">
-                <p class="hint" id="age-hint">Untuk remaja 10 hingga 18 tahun.</p>
+                <label class="field-label" for="umur" data-i18n="form.age.label">Umur</label>
+                <input class="input" id="umur" name="umur" type="number" inputmode="numeric" min="10" max="18" step="1" required data-i18n-placeholder="form.age.ph" placeholder="Contoh: 12">
+                <p class="hint" id="age-hint" data-i18n="form.age.hint">Untuk remaja 10 hingga 18 tahun.</p>
                 <p class="error-text" data-error-for="umur"></p>
               </div>
 
               <div class="field">
-                <label class="field-label" for="jantina">Jantina</label>
+                <label class="field-label" for="jantina" data-i18n="form.gender.label">Jantina</label>
                 <select class="input" id="jantina" name="jantina" required>
-                  <option value="">Pilih…</option>
-                  <option value="Lelaki">Lelaki</option>
-                  <option value="Perempuan">Perempuan</option>
+                  <option value="" data-i18n="form.gender.ph">Pilih…</option>
+                  <option value="Lelaki" data-i18n="form.gender.male">Lelaki</option>
+                  <option value="Perempuan" data-i18n="form.gender.female">Perempuan</option>
                 </select>
                 <p class="error-text" data-error-for="jantina"></p>
               </div>
 
               <div class="field">
-                <label class="field-label" for="tel_penjaga">No. telefon penjaga</label>
-                <input class="input" id="tel_penjaga" name="tel_penjaga" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Contoh: 012-3456789">
-                <p class="hint">Gunakan nombor WhatsApp yang aktif. Format: 01x-xxxxxxx.</p>
+                <label class="field-label" for="tel_penjaga" data-i18n="form.phone.label">No. telefon penjaga</label>
+                <input class="input" id="tel_penjaga" name="tel_penjaga" type="tel" inputmode="tel" autocomplete="tel" required data-i18n-placeholder="form.phone.ph" placeholder="Contoh: 012-3456789">
+                <p class="hint" data-i18n="form.phone.hint">Gunakan nombor WhatsApp yang aktif. Format: 01x-xxxxxxx.</p>
                 <p class="error-text" data-error-for="tel_penjaga"></p>
               </div>
 
               <div class="field field-full">
-                <label class="field-label" for="nama_penjaga">Nama penjaga</label>
-                <input class="input" id="nama_penjaga" name="nama_penjaga" type="text" autocomplete="name" maxlength="80" required placeholder="Nama ibu, bapa atau penjaga">
+                <label class="field-label" for="nama_penjaga" data-i18n="form.guardian.label">Nama penjaga</label>
+                <input class="input" id="nama_penjaga" name="nama_penjaga" type="text" autocomplete="name" maxlength="80" required data-i18n-placeholder="form.guardian.ph" placeholder="Nama ibu, bapa atau penjaga">
                 <p class="error-text" data-error-for="nama_penjaga"></p>
               </div>
 
               <div class="field field-full">
-                <span class="field-label">Adakah peserta lancar membaca Al-Quran?</span>
-                <div class="radio-row" role="radiogroup" aria-label="Kelancaran membaca Al-Quran">
-                  <label><input type="radio" name="lancar_quran" value="ya" required> Ya</label>
-                  <label><input type="radio" name="lancar_quran" value="tidak"> Tidak</label>
+                <span class="field-label" data-i18n="form.quran.label">Adakah peserta lancar membaca Al-Quran?</span>
+                <div class="radio-row" role="radiogroup" data-i18n-aria="a11y.radioQuran" aria-label="Kelancaran membaca Al-Quran">
+                  <label><input type="radio" name="lancar_quran" value="ya" required> <span data-i18n="form.quran.yes">Ya</span></label>
+                  <label><input type="radio" name="lancar_quran" value="tidak"> <span data-i18n="form.quran.no">Tidak</span></label>
                 </div>
-                <p class="hint">Syarat penyertaan: peserta mesti lancar membaca Al-Quran.</p>
+                <p class="hint" data-i18n="form.quran.hint">Syarat penyertaan: peserta mesti lancar membaca Al-Quran.</p>
                 <p class="error-text" data-error-for="lancar_quran"></p>
               </div>
 
               <div class="field field-full">
-                <label class="field-label" for="alahan_kesihatan">Alahan atau keadaan kesihatan</label>
-                <textarea class="input" id="alahan_kesihatan" name="alahan_kesihatan" maxlength="300" rows="3" placeholder="Contoh: alah kepada kacang, asma, atau tulis “Tiada”."></textarea>
-                <p class="hint">Maklumat ini digunakan untuk keselamatan dan penyediaan makanan. Tulis “Tiada” jika tiada.</p>
+                <label class="field-label" for="alahan_kesihatan" data-i18n="form.allergy.label">Alahan atau keadaan kesihatan</label>
+                <textarea class="input" id="alahan_kesihatan" name="alahan_kesihatan" maxlength="300" rows="3" data-i18n-placeholder="form.allergy.ph" placeholder="Contoh: alah kepada kacang, asma, atau tulis “Tiada”."></textarea>
+                <p class="hint" data-i18n="form.allergy.hint">Maklumat ini digunakan untuk keselamatan dan penyediaan makanan. Tulis “Tiada” jika tiada.</p>
                 <p class="error-text" data-error-for="alahan_kesihatan"></p>
               </div>
 
               <div class="field field-full">
                 <label class="check-label">
                   <input type="checkbox" id="persetujuan_data" name="persetujuan_data" required>
-                  <span>Saya bersetuju data peribadi peserta digunakan untuk pengurusan KSQ 2026 sahaja, dan saya mengesahkan peserta lancar membaca Al-Quran.</span>
+                  <span data-i18n="form.consent">Saya bersetuju data peribadi peserta digunakan untuk pengurusan KSQ 2026 sahaja, dan saya mengesahkan peserta lancar membaca Al-Quran.</span>
                 </label>
                 <p class="error-text" data-error-for="persetujuan_data"></p>
               </div>
@@ -425,48 +434,48 @@
               </div>
             </div>
 
-            <div class="privacy-box mt-2">
+            <div class="privacy-box mt-2" data-i18n-html="form.privacyHtml">
               <b>Notis privasi:</b> Kami mengumpul nama, umur, jantina, nama dan nombor telefon penjaga, serta maklumat alahan untuk pengurusan program, keselamatan dan komunikasi. Data tidak digunakan untuk pengiklanan dan tidak dikongsi secara terbuka. Hubungi urus setia jika anda ingin membetulkan atau memadam maklumat.
             </div>
 
             <p class="form-error hidden" id="form-error" role="alert"></p>
 
             <div class="spread mt-3">
-              <p class="hint">Dengan menghantar borang, anda akan menerima rujukan pendaftaran. Bayaran dibuat selepas itu mengikut arahan yang dipaparkan.</p>
-              <button class="btn btn-gold" type="submit" id="submit-button">Hantar pendaftaran</button>
+              <p class="hint" data-i18n="form.footHint">Dengan menghantar borang, anda akan menerima rujukan pendaftaran. Bayaran dibuat selepas itu mengikut arahan yang dipaparkan.</p>
+              <button class="btn btn-gold" type="submit" id="submit-button" data-i18n="form.submit">Hantar pendaftaran</button>
             </div>
           </form>
         </div>
 
         <div class="success-card hidden" id="success-screen" tabindex="-1" aria-live="polite">
           <div class="success-icon" aria-hidden="true">✓</div>
-          <h2>Pendaftaran diterima</h2>
-          <p class="muted">Simpan nombor rujukan ini. Sila jelaskan bayaran dan hantar bukti melalui WhatsApp.</p>
+          <h2 data-i18n="success.title">Pendaftaran diterima</h2>
+          <p class="muted" data-i18n="success.lead">Simpan nombor rujukan ini. Sila jelaskan bayaran dan hantar bukti melalui WhatsApp.</p>
 
           <div class="reference" id="success-id">KSQ26-0000</div>
           <div class="row">
             <span id="success-status"></span>
-            <span class="badge badge-neutral" id="success-method">Online</span>
+            <span class="badge badge-neutral" id="success-method" data-i18n="success.methodOnline">Online</span>
           </div>
 
           <div class="detail-grid">
-            <div class="detail"><b>Peserta</b><span id="success-name">—</span></div>
-            <div class="detail"><b>Penjaga</b><span id="success-guardian">—</span></div>
-            <div class="detail"><b>Yuran</b><span id="success-fee">—</span></div>
-            <div class="detail"><b>Masa daftar</b><span id="success-datetime">—</span></div>
+            <div class="detail"><b data-i18n="success.participant">Peserta</b><span id="success-name">—</span></div>
+            <div class="detail"><b data-i18n="success.guardian">Penjaga</b><span id="success-guardian">—</span></div>
+            <div class="detail"><b data-i18n="success.fee">Yuran</b><span id="success-fee">—</span></div>
+            <div class="detail"><b data-i18n="success.time">Masa daftar</b><span id="success-datetime">—</span></div>
           </div>
 
           <div id="success-waitlist-note" class="notice notice-warning hidden">
             <b>Senarai tunggu:</b> Kapasiti 40 peserta telah penuh. Pendaftaran anda direkodkan dalam senarai tunggu. Urus setia akan menghubungi jika ada slot terbuka.
           </div>
 
-          <h3 class="mt-2">Arahan bayaran</h3>
-          <div class="payment-box" id="success-payment">Sila hubungi urus setia untuk arahan bayaran.</div>
+          <h3 class="mt-2" data-i18n="success.paymentTitle">Arahan bayaran</h3>
+          <div class="payment-box" id="success-payment" data-i18n="success.paymentDefault">Sila hubungi urus setia untuk arahan bayaran.</div>
 
           <div class="btn-row">
-            <a class="btn btn-emerald hidden" id="success-whatsapp" href="#" target="_blank" rel="noopener">Hantar bukti bayaran melalui WhatsApp</a>
-            <button class="btn btn-outline" type="button" id="print-receipt">Cetak / simpan rekod</button>
-            <button class="btn btn-ghost" type="button" id="register-another">Daftar peserta lain</button>
+            <a class="btn btn-emerald hidden" id="success-whatsapp" href="#" target="_blank" rel="noopener" data-i18n="success.whatsapp">Hantar bukti bayaran melalui WhatsApp</a>
+            <button class="btn btn-outline" type="button" id="print-receipt" data-i18n="success.print">Cetak / simpan rekod</button>
+            <button class="btn btn-ghost" type="button" id="register-another" data-i18n="success.another">Daftar peserta lain</button>
           </div>
 
           <p class="hint mt-2" id="success-whatsapp-note"></p>
@@ -477,37 +486,37 @@
     <section class="section section-alt" id="soalan">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Soalan lazim</span>
-          <h2>Sebelum anda mendaftar</h2>
+          <span class="eyebrow" data-i18n="faq.eyebrow">Soalan lazim</span>
+          <h2 data-i18n="faq.title">Sebelum anda mendaftar</h2>
         </div>
 
         <div class="grid grid-2">
           <div>
             <details class="info-details">
-              <summary>Adakah program ini bermalam?</summary>
-              <p>Tidak. KSQ 2026 ialah program harian, 8:00 pagi hingga 5:00 petang. Peserta pulang ke rumah setiap hari kecuali perjalanan Hari 3 yang dijangka tiba kira-kira 5:30 petang.</p>
+              <summary data-i18n="faq.q1">Adakah program ini bermalam?</summary>
+              <p data-i18n="faq.a1">Tidak. KSQ 2026 ialah program harian, 8:00 pagi hingga 5:00 petang. Peserta pulang ke rumah setiap hari kecuali perjalanan Hari 3 yang dijangka tiba kira-kira 5:30 petang.</p>
             </details>
             <details class="info-details">
-              <summary>Siapa yang layak menyertai?</summary>
-              <p>Remaja berumur 10 tahun ke atas dan lancar membaca Al-Quran. Kapasiti terhad kepada 40 peserta. Umur minimum/maksimum boleh disemak dengan urus setia.</p>
+              <summary data-i18n="faq.q2">Siapa yang layak menyertai?</summary>
+              <p data-i18n="faq.a2">Remaja berumur 10 tahun ke atas dan lancar membaca Al-Quran. Kapasiti terhad kepada 40 peserta. Umur minimum/maksimum boleh disemak dengan urus setia.</p>
             </details>
             <details class="info-details">
-              <summary>Apakah yang perlu dibawa peserta?</summary>
-              <p>Al-Quran, alat tulis, botol air, pakaian sopan dan kasut yang selesa. Bawa kad kebenaran ibu bapa (Hari 3) dan ubat peribadi jika perlu.</p>
+              <summary data-i18n="faq.q3">Apakah yang perlu dibawa peserta?</summary>
+              <p data-i18n="faq.a3">Al-Quran, alat tulis, botol air, pakaian sopan dan kasut yang selesa. Bawa kad kebenaran ibu bapa (Hari 3) dan ubat peribadi jika perlu.</p>
             </details>
           </div>
           <div>
             <details class="info-details">
-              <summary>Bagaimana bayaran dibuat?</summary>
-              <p>Selepas borang dihantar, skrin kejayaan akan memaparkan arahan bayaran terkini. Hantar bukti melalui WhatsApp urus setia. Slot disahkan selepas bayaran disemak.</p>
+              <summary data-i18n="faq.q4">Bagaimana bayaran dibuat?</summary>
+              <p data-i18n="faq.a4">Selepas borang dihantar, skrin kejayaan akan memaparkan arahan bayaran terkini. Hantar bukti melalui WhatsApp urus setia. Slot disahkan selepas bayaran disemak.</p>
             </details>
             <details class="info-details">
-              <summary>Bagaimana Hari 3 pada hari Rabu?</summary>
-              <p>Semua peserta menunaikan solat Zohor berjemaah di Masjid Negeri Shah Alam. Jadual waktu ialah anggaran dan bergantung kepada keadaan trafik.</p>
+              <summary data-i18n="faq.q5">Bagaimana Hari 3 pada hari Rabu?</summary>
+              <p data-i18n="faq.a5">Semua peserta menunaikan solat Zohor berjemaah di Masjid Negeri Shah Alam. Jadual waktu ialah anggaran dan bergantung kepada keadaan trafik.</p>
             </details>
             <details class="info-details">
-              <summary>Siapa boleh saya hubungi?</summary>
-              <p id="faq-contact">Sila hubungi urus setia masjid untuk pertanyaan lanjut.</p>
+              <summary data-i18n="faq.q6">Siapa boleh saya hubungi?</summary>
+              <p id="faq-contact" data-i18n="js.contactDefault">Sila hubungi urus setia masjid untuk pertanyaan lanjut.</p>
             </details>
           </div>
         </div>
@@ -519,28 +528,29 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3>Kem Sahabat Quran 2026</h3>
-          <p class="small">“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”</p>
-          <p class="small">Anjuran Masjid Kampung Sungai Lang Baru, Banting, Selangor.</p>
+          <h3 data-i18n="footer.aboutTitle">Kem Sahabat Quran 2026</h3>
+          <p class="small" data-i18n="footer.slogan">“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”</p>
+          <p class="small" data-i18n="footer.organiser">Anjuran Masjid Kampung Sungai Lang Baru, Banting, Selangor.</p>
         </div>
         <div>
-          <h3>Program</h3>
-          <p class="small">14–16 Disember 2026<br>Isnin–Rabu · 8:00 pagi–5:00 petang<br>Hari 1–2: Masjid Kg. Sungai Lang Baru<br>Hari 3: Shah Alam (bas)</p>
+          <h3 data-i18n="footer.programTitle">Program</h3>
+          <p class="small" data-i18n-html="footer.programHtml">14–16 Disember 2026<br>Isnin–Rabu · 8:00 pagi–5:00 petang<br>Hari 1–2: Masjid Kg. Sungai Lang Baru<br>Hari 3: Shah Alam (bas)</p>
         </div>
         <div>
-          <h3>Hubungi</h3>
-          <p class="small" id="footer-contact">Urus setia KSQ 2026</p>
-          <p class="small"><a id="footer-whatsapp" class="hidden" href="#" target="_blank" rel="noopener">WhatsApp urus setia</a></p>
-          <p class="small"><a href="#daftar">Daftar peserta</a></p>
+          <h3 data-i18n="footer.contactTitle">Hubungi</h3>
+          <p class="small" id="footer-contact" data-i18n="js.footerContactDefault">Urus setia KSQ 2026</p>
+          <p class="small"><a id="footer-whatsapp" class="hidden" href="#" target="_blank" rel="noopener" data-i18n="footer.whatsapp">WhatsApp urus setia</a></p>
+          <p class="small"><a href="#daftar" data-i18n="footer.register">Daftar peserta</a></p>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Masjid Kampung Sungai Lang Baru. Data peserta digunakan untuk pengurusan program sahaja.</span>
-        <span>Dikemas kini mengikut masa Asia/Kuala_Lumpur.</span>
+        <span data-i18n="footer.copyright">© 2026 Masjid Kampung Sungai Lang Baru. Data peserta digunakan untuk pengurusan program sahaja.</span>
+        <span data-i18n="footer.timezone">Dikemas kini mengikut masa Asia/Kuala_Lumpur.</span>
       </div>
     </div>
   </footer>
 
+  <script type="module" src="js/i18n.js"></script>
   <script type="module" src="js/register.js"></script>
   <script type="module" src="js/nav.js"></script>
 </body>

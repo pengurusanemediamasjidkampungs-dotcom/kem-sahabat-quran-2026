@@ -24,6 +24,7 @@
   --font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
   --font-sub: 'Montserrat', Arial, sans-serif;
   --font-body: 'Inter', Arial, sans-serif;
+  --font-arabic: 'Noto Kufi Arabic', 'Segoe UI', Tahoma, sans-serif;
   --header-h: 68px;
 }
 
@@ -284,6 +285,65 @@ ul, ol {
   color: var(--gold);
 }
 
+/* ---------- Language switcher ---------- */
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(214, 173, 82, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 253, 246, 0.08);
+}
+
+.lang-btn {
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ivory);
+  font-family: var(--font-sub);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-btn:hover {
+  color: var(--gold);
+}
+
+.lang-btn.is-active {
+  background: var(--gold);
+  color: #2b2108;
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  .site-header .container {
+    flex-wrap: wrap;
+    padding-block: 8px;
+    row-gap: 8px;
+  }
+
+  .brand {
+    flex: 1 1 100%;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
 /* ---------- Navbar dropdown ---------- */
 
 .nav-dropdown {
@@ -326,7 +386,8 @@ ul, ol {
 .nav-menu {
   position: absolute;
   top: calc(100% + 10px);
-  right: 0;
+  left: 0;
+  right: auto;
   z-index: 70;
   min-width: 190px;
   max-width: calc(100vw - 32px);
@@ -642,7 +703,7 @@ ul, ol {
 .quota-badge {
   position: absolute;
   z-index: 3;
-  right: -10px;
+  inset-inline-end: -10px;
   top: -18px;
   background: var(--crimson);
   color: #fff;
@@ -1266,10 +1327,13 @@ select.input {
 
 .honeypot {
   position: absolute !important;
-  left: -9999px !important;
   width: 1px;
   height: 1px;
   overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .privacy-box {
@@ -2794,6 +2858,60 @@ pre.code-block {
   .cd-unit span {
     font-size: 1.2rem;
   }
+}
+
+/* ---------- Arabic (right to left) ---------- */
+
+html[dir="rtl"] body,
+html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea {
+  font-family: var(--font-arabic);
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] .brand-text b,
+html[dir="rtl"] .reference,
+html[dir="rtl"] .price-main {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .hero-slogan {
+  padding-left: 0;
+  padding-right: 16px;
+  border-left: 0;
+  border-right: 4px solid var(--gold);
+}
+
+html[dir="rtl"] .nav-menu {
+  right: 0;
+  left: auto;
+}
+
+html[dir="rtl"] .schedule-table th,
+html[dir="rtl"] .schedule-table td {
+  text-align: right;
+}
+
+/* Time ranges are two LTR numbers; without isolation Arabic bidi reverses them. */
+html[dir="rtl"] .schedule-table td[data-i18n-time] {
+  direction: ltr;
+  text-align: right;
+}
+
+html[dir="rtl"] .success-icon {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .reference {
+  letter-spacing: 0;
+  direction: ltr;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: reduce) {

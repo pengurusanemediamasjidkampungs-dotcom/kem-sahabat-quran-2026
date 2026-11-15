@@ -125,6 +125,46 @@ November 2026.
 - `web/js/nav.js`: tutup menu apabila klik di luar, tekan Escape, pilih pautan
   atau menatal. Menu tetap berfungsi tanpa JavaScript kerana guna `<details>`.
 
+## 2026-11-15 — Pemilih bahasa BM / ENG / AR pada halaman awam
+- `web/js/i18n-data.js`: kamus tiga bahasa (BM, English, العربية) untuk semua
+  teks halaman awam, ditulis sebagai tiga nilai `[ms, en, ar]` supaya
+  terjemahan yang tertinggal mudah dikesan. Masa jadual diterjemah melalui peta
+  `TIMES`.
+- `web/js/i18n.js`: keadaan bahasa, `t()`, `setLang()`, aplikasi teks statik
+  melalui atribut `data-i18n*`, dan acara `ksq:langchange`.
+- `web/index.html`: butang bersegmen **BM / ENG / AR** dalam navbar (bahasa
+  lalai BM), semua teks ditanda dengan `data-i18n`, `data-i18n-html`,
+  `data-i18n-placeholder`, `data-i18n-aria`, `data-i18n-alt`,
+  `data-i18n-title` atau `data-i18n-time`; tajuk dan meta description turut
+  diterjemah.
+- `web/js/register.js`: teks dinamik (countdown, status pendaftaran, ralat,
+  arahan bayaran, resit cetak) kini melalui `t()` dan dirender semula apabila
+  bahasa bertukar. Nilai yang dihantar ke server (`Lelaki`, `Perempuan`, `ya`,
+  `tidak`) tidak diterjemah.
+- `web/js/time.js`: pembantu tarikh menerima locale pilihan (lalai `ms-MY`);
+  `countdownText` menerima label unit. Arab guna `ar-MY-u-nu-latn` supaya digit
+  kekal 0–9.
+- Unit countdown Arab mengikut bilangan: `يوم`, `يومان`, `أيام`, `يومًا`
+  (juga jam, minit, saat).
+- `web/css/style.css`: gaya `.lang-switch` / `.lang-btn`, susun atur header
+  mudah alih dua baris, blok RTL (`html[dir="rtl"]`), fon Noto Kufi Arabic,
+  dan sel masa `direction: ltr` dalam jadual RTL supaya julat seperti
+  "10:30–11:00" tidak diterbalikkan.
+- Pembetulan RTL: `.honeypot` tidak lagi menggunakan `left: -9999px` (yang
+  menyebabkan `scrollWidth` 10,374 px dalam RTL); kini `clip-path`.
+  `.quota-badge` guna `inset-inline-end`.
+- Pembetulan susun atur: panel Menu dibuka sejajar tepi di mana butang Menu
+  berada, jadi ia tidak terkeluar skrin pada 390 px selepas butang bahasa
+  ditambah.
+- Pilihan bahasa disimpan dalam `localStorage` (`ksq_lang`); halaman admin dan
+  fasilitator kekal dalam Bahasa Melayu kerana ia alat urus setia.
+- `tests/i18n.test.js`: 10 ujian baharu — kelengkapan tiga bahasa, placeholder
+  seragam, tiada kunci berganda, semua kunci HTML/JS wujud, 29 sel masa
+  diterjemah, butang bahasa, bentuk unit Arab dan lapan label unit countdown.
+- Ujian projek kini **51 lulus** (dahulu 41). Audit pelayar: BM, EN dan AR pada
+  1100 px dan 390 px tanpa limpahan mendatar; kontras tiada kegagalan bukan
+  gradien.
+
 ## 2026-11-15 — Pembetulan kad fakta halaman awam
 - `web/css/style.css`: `.fact` direka untuk latar gelap (teks ivory
   `#fffdf6` atas latar krim) menyebabkan teks "Kapasiti / Syarat / Konsep /
@@ -171,7 +211,7 @@ November 2026.
 
 ## Status ujian
 
-- Ujian projek: **41 lulus**.
+- Ujian projek: **51 lulus**.
 - Ujian MCP: **38 lulus**.
 - Ujian pelayar (Chrome headless + CDP, API palsu): **36/36 lulus** —
   log masuk admin dan token salah, nilai dashboard dan kewangan, label masa,

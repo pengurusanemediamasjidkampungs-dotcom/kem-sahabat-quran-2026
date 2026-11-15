@@ -111,6 +111,8 @@ ksq-sistem/
       api.js                    fetch POST + ralat
       time.js                   masa KL, countdown, RM, CSV
       ui.js                     helper DOM selamat
+      i18n-data.js              terjemahan BM / EN / AR
+      i18n.js                   pemilih bahasa, t(), RTL
       register.js               halaman awam
       admin.js                  dashboard
       facilitator.js            kehadiran
@@ -131,6 +133,7 @@ ksq-sistem/
   tests/
     time.test.js
     seed.test.js
+    i18n.test.js
     backend.test.js
     api-smoke.js
   mcp-ksq26/
@@ -379,6 +382,25 @@ Bahagian:
 - Menghantar POST dan mengendalikan ralat BM.
 - Menyembunyikan borang jika pendaftaran ditutup.
 - Menggunakan `textContent` untuk semua teks pengguna.
+
+**Bahasa (BM / ENG / AR):**
+
+- Butang bahasa dalam navbar menulis pilihan ke `localStorage` (`ksq_lang`);
+  bahasa lalai ialah Bahasa Melayu.
+- `i18n-data.js` menyimpan setiap teks sebagai tiga nilai `[ms, en, ar]`.
+  `index.html` menanda elemen dengan `data-i18n`, `data-i18n-html`,
+  `data-i18n-placeholder`, `data-i18n-aria`, `data-i18n-alt`, `data-i18n-title`
+  atau `data-i18n-time`; `i18n.js` mengisi teks dan mengemas kini `<html lang>`
+  serta `dir="rtl"` untuk Arab.
+- Teks dinamik dalam `register.js` (countdown, status, ralat, resit cetak) juga
+  melalui `t()` dan dirender semula apabila bahasa bertukar.
+- Nilai yang dihantar ke server (`Lelaki`, `Perempuan`, `ya`, `tidak`) tidak
+  diterjemah; hanya label yang dilihat pengguna.
+- Mesej WhatsApp yang siap ditulis kekal dalam Bahasa Melayu supaya urus setia
+  masjid dapat membacanya.
+- Unit countdown Arab memilih bentuk yang betul mengikut bilangan
+  (`يوم`, `يومان`, `أيام`, `يومًا`).
+- Halaman admin dan fasilitator kekal dalam Bahasa Melayu (alat urus setia).
 
 ### 7.2 Dashboard `web/admin.html`
 

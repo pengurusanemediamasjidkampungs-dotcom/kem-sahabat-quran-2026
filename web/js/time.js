@@ -142,26 +142,26 @@ export function isSameKlDay(a, b) {
   return klDateKey(a) === klDateKey(b);
 }
 
-function formatIntl(value, options) {
+function formatIntl(value, options, locale = 'ms-MY') {
   const date = parseDate(value);
   if (!date) return '';
   try {
-    return new Intl.DateTimeFormat('ms-MY', { timeZone: KL_TIME_ZONE, ...options }).format(date);
+    return new Intl.DateTimeFormat(locale, { timeZone: KL_TIME_ZONE, ...options }).format(date);
   } catch (err) {
     return new Intl.DateTimeFormat('en-GB', { timeZone: KL_TIME_ZONE, ...options }).format(date);
   }
 }
 
-export function formatKl(value, options = {}) {
+export function formatKl(value, options = {}, locale = 'ms-MY') {
   return formatIntl(value, {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
     ...options
-  });
+  }, locale);
 }
 
-export function formatKlDateTime(value) {
+export function formatKlDateTime(value, locale = 'ms-MY') {
   return formatIntl(value, {
     day: 'numeric',
     month: 'long',
@@ -169,19 +169,19 @@ export function formatKlDateTime(value) {
     hour: '2-digit',
     minute: '2-digit',
     hour12: false
-  });
+  }, locale);
 }
 
-export function formatKlTime(value) {
-  return formatIntl(value, { hour: '2-digit', minute: '2-digit', hour12: false });
+export function formatKlTime(value, locale = 'ms-MY') {
+  return formatIntl(value, { hour: '2-digit', minute: '2-digit', hour12: false }, locale);
 }
 
-export function formatKlDateShort(value) {
-  return formatIntl(value, { day: 'numeric', month: 'short' });
+export function formatKlDateShort(value, locale = 'ms-MY') {
+  return formatIntl(value, { day: 'numeric', month: 'short' }, locale);
 }
 
-export function formatKlWeekday(value) {
-  return formatIntl(value, { weekday: 'long' });
+export function formatKlWeekday(value, locale = 'ms-MY') {
+  return formatIntl(value, { weekday: 'long' }, locale);
 }
 
 export function toKlInputValue(value) {
@@ -220,11 +220,12 @@ export function countdownParts(milliseconds) {
 export function countdownText(milliseconds, options = {}) {
   const parts = countdownParts(milliseconds);
   if (parts.total <= 0) return options.zeroLabel || 'Tamat';
+  const units = options.units || { days: 'hari', hours: 'jam', minutes: 'minit', seconds: 'saat' };
   const segments = [];
-  if (parts.days > 0 || options.alwaysDays) segments.push(`${parts.days} hari`);
-  segments.push(`${parts.hours} jam`);
-  segments.push(`${parts.minutes} minit`);
-  if (options.withSeconds) segments.push(`${parts.seconds} saat`);
+  if (parts.days > 0 || options.alwaysDays) segments.push(`${parts.days} ${units.days}`);
+  segments.push(`${parts.hours} ${units.hours}`);
+  segments.push(`${parts.minutes} ${units.minutes}`);
+  if (options.withSeconds) segments.push(`${parts.seconds} ${units.seconds}`);
   return segments.join(' ');
 }
 

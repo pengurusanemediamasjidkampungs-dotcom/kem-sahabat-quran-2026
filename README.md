@@ -4,7 +4,8 @@ Sistem untuk mengurus pendaftaran, checklist, milestone, bajet, kehadiran dan
 tetapan program **Kem Sahabat Quran 2026** anjuran Masjid Kampung Sungai Lang
 Baru, Banting.
 
-- Halaman awam untuk ibu bapa: maklumat program, baki slot, borang pendaftaran.
+- Halaman awam untuk ibu bapa: maklumat program, baki slot, borang pendaftaran,
+  dengan pilihan bahasa **BM / ENG / AR**.
 - Dashboard pentadbir: semua modul pengurusan.
 - Halaman fasilitator: senarai peserta dan kehadiran sahaja.
 - Backend Google Apps Script + Google Sheets.
@@ -291,12 +292,12 @@ ksq-sistem\
     fasilitator.html            kehadiran sahaja
     config.js                   API_URL awam
     css\style.css
-    js\api.js  time.js  ui.js  register.js  admin.js  facilitator.js
+    js\api.js  time.js  ui.js  i18n.js  i18n-data.js  register.js  admin.js  facilitator.js
     data\                       seed JSON dan templat import
     templates\                  sijil.html, tag-nama.html (untuk Fasa 9)
     assets\                     logo, masjid, og-ksq.jpg
   tests\
-    time.test.js  seed.test.js  backend.test.js  api-smoke.js
+    time.test.js  seed.test.js  i18n.test.js  backend.test.js  api-smoke.js
   mcp-ksq26\
     server.js  lib\  resources\  test\  README.md
 ```
@@ -335,6 +336,7 @@ salin mesej ralat.
 | 5 | Pengurusan pendaftaran | Siap |
 | 6 | Bajet, kehadiran, tetapan, dokumen | Siap |
 | — | Halaman fasilitator | Siap (sambungan pengguna) |
+| — | Tiga bahasa halaman awam (BM / ENG / AR) | Siap |
 | — | MCP `mcp-ksq26/` | Siap (13 alat) |
 | 7 | Organisasi, fasilitator, pembekal, viewer | Belum — pelan sahaja |
 | 8 | Kewangan penuh, dana, merchandise | Belum — pelan sahaja |
