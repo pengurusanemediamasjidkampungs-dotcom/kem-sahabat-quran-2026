@@ -209,9 +209,33 @@ November 2026.
   peserta memaparkan "Pendaftaran online belum dibuka" sehingga deployment GAS
   dibuat oleh pemilik.
 
+## 2026-11-15 — Animasi menaip hero dan punca README.md dipaparkan
+- `web/js/hero-typing.js` (baru): baris `KSQ 2026` di hero ditaip satu aksara,
+  ditahan, dipadam dan diulang selama-lamanya. Tiada timer bila pelawat
+  memilih `prefers-reduced-motion`; gelung berhenti bila tab di latar
+  belakang dan bermula semula bila tab aktif. Salinan tersembunyi
+  `.term-ghost` mengekalkan lebar kotak terminal supaya susun atur tidak
+  melompat.
+- `web/css/style.css`: `.term-text`, `.term-ghost`, `.term-live`,
+  `.term-typed` ditambah; `.term-cursor` dipindahkan ke kelas sendiri.
+- `web/index.html`: baris terminal hero guna `.sr-only` untuk pembaca skrin
+  dan `aria-hidden` pada salinan beranimasi.
+- `index.html` di akar repo (baru): pengalihan ringan ke `web/` supaya URL
+  laman utama terus berfungsi jika halaman diterbitkan dari branch `main`
+  (sumber "Deploy from a branch"). Ini menyebabkan GitHub Pages membina akar
+  repo dengan Jekyll dan memaparkan `README.md` sebagai halaman utama — URL
+  utama kembali kepada laman sebenar selepas pengalihan ini.
+- `.nojekyll` (baru) di akar repo: berhenti Jekyll memproses fail yang bermula
+  dengan garis bawah seperti `_includes`, dan memastikan `web/assets/` dihidang
+  seperti fail biasa.
+- Belum diubah oleh agent: tetapan **Settings > Pages > Source**. Jika
+  pemilik menukarnya kepada **GitHub Actions**, `.github/workflows/pages.yml`
+  akan menerbitkan kandungan `web/` terus ke URL utama dan `index.html` akar
+  tidak lagi digunakan.
+
 ## Status ujian
 
-- Ujian projek: **51 lulus**.
+- Ujian projek: **53 lulus**.
 - Ujian MCP: **38 lulus**.
 - Ujian pelayar (Chrome headless + CDP, API palsu): **36/36 lulus** —
   log masuk admin dan token salah, nilai dashboard dan kewangan, label masa,
