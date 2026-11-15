@@ -67,6 +67,7 @@ export const STRINGS = {
   'nav.menu': ['Menu', 'Menu', 'القائمة'],
   'nav.program': ['Program', 'Programme', 'البرنامج'],
   'nav.schedule': ['Jadual', 'Schedule', 'الجدول'],
+  'nav.poster': ['Poster', 'Poster', 'الملصق'],
   'nav.faq': ['Soalan', 'FAQ', 'الأسئلة'],
   'nav.register': ['Daftar', 'Register', 'التسجيل'],
 
@@ -77,9 +78,9 @@ export const STRINGS = {
     'مسجد كامبونغ سوغاي لانغ بارو، بنتنغ'
   ],
   'hero.titleHtml': [
-    'Kem Sahabat<br>Quran <span>2026</span>',
-    'Kem Sahabat<br>Quran <span>2026</span>',
-    'مخيم صاحب<br>القرآن <span>2026</span>'
+    'Kem <span>Sahabat</span><br>Quran 2026',
+    'Kem <span>Sahabat</span><br>Quran 2026',
+    'مخيم <span>صاحب</span><br>القرآن 2026'
   ],
   'hero.slogan': [
     '“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”',
@@ -135,6 +136,8 @@ export const STRINGS = {
     'Online registration: RM110',
     'التسجيل الإلكتروني: RM110'
   ],
+  'price.original': ['Harga asal', 'Original price', 'السعر الأصلي'],
+  'price.promo': ['Yuran promosi', 'Promotional fee', 'الرسوم الترويجية'],
   'live.slotNote': ['Mengemas kini…', 'Updating…', 'جارٍ التحديث…'],
   'live.closeNote': [
     'Tarikh tutup akan dipaparkan.',
@@ -209,18 +212,59 @@ export const STRINGS = {
   ],
   'hafazan.kicker': ['Sasaran hafazan', 'Memorisation target', 'هدف الحفظ'],
   'hafazan.title': ['Empat surah pilihan', 'Four selected surahs', 'أربع سور مختارة'],
-  'hafazan.i1': ['<b>Surah Al-Mulk</b> — 30 ayat', '<b>Surah Al-Mulk</b> — 30 verses', '<b>سورة الملك</b> — 30 آية'],
-  'hafazan.i2': [
-    '<b>Surah Al-Kahfi</b> — pembahagian ayat ditentukan ustaz mengikut kemampuan peserta',
-    '<b>Surah Al-Kahfi</b> — the verses are divided by the ustaz according to each participant’s ability',
-    '<b>سورة الكهف</b> — يحدد الأستاذ مقدار الآيات حسب قدرة المشارك'
+  'hafazan.more': ['Penjelasan lanjut', 'More details', 'شرح أوفى'],
+  'hafazan.mulk.name': ['Surah Al-Mulk', 'Surah Al-Mulk', 'سورة الملك'],
+  'hafazan.mulk.verses': ['30 ayat', '30 verses', '30 آية'],
+  'hafazan.mulk.theme': [
+    'Tema: Kedaulatan Allah dan ujian hidup.',
+    'Theme: Allah’s sovereignty and the tests of life.',
+    'الموضوع: سيادة الله وابتلاءات الحياة.'
   ],
-  'hafazan.i3': ['<b>Surah As-Sajdah</b>', '<b>Surah As-Sajdah</b>', '<b>سورة السجدة</b>'],
-  'hafazan.i4': ['<b>Surah Al-Insan</b>', '<b>Surah Al-Insan</b>', '<b>سورة الإنسان</b>'],
-  'hafazan.hint': [
-    'Pembahagian surah ialah cadangan dan boleh diubah oleh ustaz mengikut kemampuan peserta.',
-    'The surah distribution is a suggestion and may be adjusted by the ustaz according to the participants’ ability.',
-    'توزيع السور اقتراح ويمكن للأستاذ تعديله حسب قدرة المشاركين.'
+  'hafazan.mulk.detail': [
+    'Surah ini membuka dengan penegasan bahawa seluruh kerajaan dan kekuasaan mutlak hanya milik Allah (Al-Malik al-Mulk). Kehidupan dan kematian dicipta sebagai ujian untuk melihat siapa yang terbaik amalannya, bukan sekadar banyak amalannya. Ia juga mengingatkan tentang azab kubur dan pentingnya ketakwaan serta amal soleh sebagai persiapan menghadap kedaulatan Allah. Justeru, Al-Mulk meletakkan asas kesedaran bahawa hidup ini bukan milik kita, tetapi amanah di bawah pemerintahan Allah.',
+    'The surah opens by affirming that all dominion and absolute authority belong to Allah alone (Al-Malik al-Mulk). Life and death are created as a test to see who is best in deeds, not merely who does the most. It also reminds us of the punishment of the grave and the importance of taqwa (God-consciousness) and righteous deeds as preparation to meet Allah’s sovereignty. Al-Mulk therefore establishes the awareness that our lives are not our own, but a trust under Allah’s rule.',
+    'تبدأ السورة بتأكيد أن الملك والسلطان المطلق لله وحده (الملك المالك). وقد خُلق الموت والحياة ابتلاءً لينظر أيُّكم أحسن عملًا، لا أكثرهم عملًا. وتذكّر بعذاب القبر وبأهمية التقوى والعمل الصالح استعدادًا للقاء سيادة الله. ومن هنا تضع سورة الملك أساس الوعي بأن حياتنا ليست ملكًا لنا، بل أمانة تحت حكم الله.'
+  ],
+  'hafazan.kahfi.name': ['Surah Al-Kahfi', 'Surah Al-Kahfi', 'سورة الكهف'],
+  'hafazan.kahfi.verses': ['110 ayat', '110 verses', '110 آية'],
+  'hafazan.kahfi.theme': [
+    'Tema: Ujian iman, harta, ilmu, dan kuasa.',
+    'Theme: Tests of faith, wealth, knowledge and power.',
+    'الموضوع: ابتلاءات الإيمان والمال والعلم والسلطة.'
+  ],
+  'hafazan.kahfi.note': [
+    'Nota: Pembahagian ayat ditentukan ustaz mengikut kemampuan peserta.',
+    'Note: The division of verses is decided by the ustaz according to each participant’s ability.',
+    'ملاحظة: يحدّد الأستاذ تقسيم الآيات حسب قدرة كل مشارك.'
+  ],
+  'hafazan.kahfi.detail': [
+    'Al-Kahfi memaparkan empat kisah utama yang masing-masing mewakili ujian kehidupan: Ashabul Kahfi (ujian mempertahankan iman dalam masyarakat yang menindas), Pemilik Dua Kebun (ujian kekayaan dan kesombongan, serta pentingnya syukur dan tawadhu’), Nabi Musa dan Khidir (ujian ilmu dan kesabaran dalam menerima hikmah Allah yang tidak terjangkau akal), dan Zulkarnain (ujian kekuasaan dan keadilan dalam kepimpinan). Kisah-kisah ini mengajar bahawa setiap ujian—sama ada iman, harta, ilmu, atau kuasa—menuntut kesabaran, ketundukan, dan pergantungan kepada Allah, selari dengan tema kedaulatan-Nya.',
+    'Al-Kahfi presents four main stories, each representing a test of life: the People of the Cave (standing firm in faith in an oppressive society), the Owner of Two Gardens (the test of wealth and arrogance, and the importance of gratitude and humility), Prophet Musa and Khidir (the test of knowledge and patience in accepting Allah’s wisdom beyond human reasoning), and Zulkarnain (the test of power and justice in leadership). These stories teach that every test — whether of faith, wealth, knowledge or power — requires patience, submission and reliance on Allah, in line with the theme of His sovereignty.',
+    'تعرض سورة الكهف أربع قصص رئيسية، تمثّل كل منها ابتلاءً من ابتلاءات الحياة: أصحاب الكهف (الثبات على الإيمان في مجتمع قاهر)، وصاحب الجنتين (ابتلاء المال والغرور، وأهمية الشكر والتواضع)، وموسى والخضر (ابتلاء العلم والصبر على قبول حكمة الله التي لا تدركها العقول)، وذو القرنين (ابتلاء السلطة والعدل في القيادة). وتعلّم هذه القصص أن كل ابتلاء — سواء في الإيمان أو المال أو العلم أو السلطة — يستدعي الصبر والخضوع والتوكل على الله، بما يوافق موضوع سيادته.'
+  ],
+  'hafazan.sajdah.name': ['Surah As-Sajdah', 'Surah As-Sajdah', 'سورة السجدة'],
+  'hafazan.sajdah.verses': ['30 ayat', '30 verses', '30 آية'],
+  'hafazan.sajdah.theme': [
+    'Tema: Ketundukan kepada Allah dan keyakinan Hari Akhirat.',
+    'Theme: Submission to Allah and certainty in the Hereafter.',
+    'الموضوع: الخضوع لله واليقين بالآخرة.'
+  ],
+  'hafazan.sajdah.detail': [
+    'Surah ini dinamakan sempena sujud (ketundukan) dalam ayat 15. Tema utamanya ialah menghapuskan keraguan tentang Tauhid, Hari Akhirat, dan Kenabian, serta mengajak manusia tunduk kepada Allah Yang Maha Esa sebagai Pencipta dan Pengatur alam. Ia menggambarkan penyesalan orang kafir yang baru mahu sujud di akhirat, tetapi sujud mereka sudah tidak berguna. Justeru, As-Sajdah menuntut respons praktikal terhadap kedaulatan Allah, iaitu ketundukan jiwa dan pengharapan sepenuhnya kepada-Nya dalam kehidupan dunia.',
+    'The surah is named after the prostration (submission) in verse 15. Its main theme is to remove doubt about the Oneness of Allah, the Hereafter and prophethood, and to call people to submit to Allah, the One who creates and governs the universe. It depicts the regret of the disbelievers who only wish to prostrate in the Hereafter, when their prostration is no longer of any use. As-Sajdah therefore demands a practical response to Allah’s sovereignty: a soul that submits and places complete hope in Him in this worldly life.',
+    'سُمّيت السورة بالسجدة (الخضوع) في الآية 15. وموضوعها الرئيسي إزالة الشك في التوحيد والآخرة والنبوة، ودعوة الناس إلى الخضوع لله الواحد الأحد، الخالق والمدبّر للكون. وتصوّر ندم الكافرين الذين يتمنّون السجود في الآخرة، وقد صار سجودهم لا ينفع. لذا تطالب السجدة باستجابة عملية لسيادة الله، وهي خضوع النفس والتوكل الكامل عليه في الحياة الدنيا.'
+  ],
+  'hafazan.insan.name': ['Surah Al-Insan', 'Surah Al-Insan', 'سورة الإنسان'],
+  'hafazan.insan.verses': ['31 ayat', '31 verses', '31 آية'],
+  'hafazan.insan.theme': [
+    'Tema: Syukur, pengorbanan, dan tanggungjawab hamba.',
+    'Theme: Gratitude, sacrifice and the servant’s responsibility.',
+    'الموضوع: الشكر والتضحية ومسؤولية العبد.'
+  ],
+  'hafazan.insan.detail': [
+    'Surah ini bermula dengan penciptaan manusia dan petunjuk yang diberikan Allah, serta pilihan antara syukur atau kufur (mengingkari). Ia kemudian memuji golongan abrar (orang-orang soleh) yang menunaikan nazar, memberi makan kepada fakir miskin, anak yatim, dan tawanan semata-mata kerana Allah, tanpa mengharapkan balasan, serta takut kepada Hari Kiamat. Al-Insan menegaskan bahawa tanggungjawab hamba ialah menggunakan nikmat dan kebebasan memilih untuk berkorban dan bersyukur, bukan tenggelam dalam cinta dunia.',
+    'The surah begins with the creation of man and the guidance Allah has given, and the choice between gratitude or denial. It then praises the abrar (the righteous), who fulfil their vows, feed the poor, the orphan and the captive solely for Allah’s sake, without expecting any reward, and who fear the Day of Judgement. Al-Insan affirms that the servant’s responsibility is to use blessings and the freedom of choice to sacrifice and give thanks, rather than drown in love of the world.',
+    'تبدأ السورة بخلق الإنسان والهداية التي منحها الله، وبالاختيار بين الشكر أو الكفر. ثم تثني على الأبرار الذين يوفون بالنذر، ويطعمون الفقير واليتيم والأسير لوجه الله وحده، دون انتظار جزاء، ويخشون يوم القيامة. وتؤكد سورة الإنسان أن مسؤولية العبد هي استخدام النعم وحرية الاختيار في التضحية والشكر، لا في الغرق في حب الدنيا.'
   ],
   'isi.kicker': ['Pengisian utama', 'Main activities', 'البرامج الرئيسية'],
   'isi.title': [
@@ -461,6 +505,66 @@ export const STRINGS = {
     'Kebenaran penggunaan kawasan akan dimaklumkan kepada pejabat masjid lebih awal.',
     'Permission to use the grounds will be notified to the mosque office in advance.',
     'سيُبلَّغ مكتب المسجد مسبقًا بطلب إذن استخدام الساحة.'
+  ],
+
+  /* ---------- Poster ---------- */
+  'poster.eyebrow': ['Poster rasmi', 'Official poster', 'الملصق الرسمي'],
+  'poster.title': [
+    'Kongsi poster KSQ 2026',
+    'Share the KSQ 2026 poster',
+    'شارك ملصق KSQ 2026'
+  ],
+  'poster.lead': [
+    'Muat turun poster untuk dicetak atau kongsikan melalui WhatsApp. Maklumat program, yuran dan kod QR pendaftaran semuanya ada pada poster.',
+    'Download the poster to print or share it on WhatsApp. The programme details, fees and registration QR code are all on the poster.',
+    'نزّل الملصق لطباعته أو شاركه عبر واتساب. تفاصيل البرنامج والرسوم ورمز QR للتسجيل موجودة كلها في الملصق.'
+  ],
+  'poster.downloadPdf': [
+    'Muat turun poster (PDF)',
+    'Download poster (PDF)',
+    'تنزيل الملصق (PDF)'
+  ],
+  'poster.downloadImage': [
+    'Muat turun gambar (JPG)',
+    'Download image (JPG)',
+    'تنزيل الصورة (JPG)'
+  ],
+  'poster.pdfNote': [
+    'PDF sesuai untuk cetak.',
+    'The PDF is best for printing.',
+    'ملف PDF مناسب للطباعة.'
+  ],
+  'poster.share': ['Kongsi poster', 'Share poster', 'شارك الملصق'],
+  'poster.open': ['Lihat poster penuh', 'View the full poster', 'عرض الملصق كاملًا'],
+  'poster.openAria': [
+    'Buka poster penuh dalam tab baharu',
+    'Open the full poster in a new tab',
+    'افتح الملصق كاملًا في تبويب جديد'
+  ],
+  'poster.alt': [
+    'Poster rasmi Kem Sahabat Quran 2026',
+    'Official Kem Sahabat Quran 2026 poster',
+    'الملصق الرسمي لمخيم صاحب القرآن 2026'
+  ],
+  'poster.shareTitle': [
+    'Poster Kem Sahabat Quran 2026',
+    'Kem Sahabat Quran 2026 poster',
+    'ملصق مخيم صاحب القرآن 2026'
+  ],
+  'poster.shareText': [
+    'Poster rasmi Kem Sahabat Quran 2026 — 14–16 Disember 2026, Masjid Kampung Sungai Lang Baru, Banting. 40 peserta sahaja, daftar online RM110.',
+    'Official Kem Sahabat Quran 2026 poster — 14–16 December 2026, Kampung Sungai Lang Baru Mosque, Banting. Only 40 places, online registration RM110.',
+    'الملصق الرسمي لمخيم صاحب القرآن 2026 — 14–16 ديسمبر 2026، مسجد كامبونغ سوغاي لانغ بارو، بنتنغ. 40 مشاركًا فقط، والتسجيل الإلكتروني RM110.'
+  ],
+  'poster.shareDone': [
+    'Terima kasih kerana berkongsi poster.',
+    'Thank you for sharing the poster.',
+    'شكرًا لمشاركتك الملصق.'
+  ],
+  'poster.shareFailed': [
+    'Kongsi tidak tersedia. Sila muat turun poster dan kongsikan secara manual.',
+    'Sharing is not available. Please download the poster and share it manually.',
+    'المشاركة غير متاحة. يرجى تنزيل الملصق ومشاركته يدويًا.'
   ],
 
   /* ---------- Registration form ---------- */

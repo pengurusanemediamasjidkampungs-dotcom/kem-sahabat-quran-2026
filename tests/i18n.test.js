@@ -131,3 +131,44 @@ test('label unit countdown diuruskan oleh JavaScript', () => {
     assert.equal(cells.filter((value) => value === unit).length, 2, `${unit} mesti ada 2 label`);
   }
 });
+
+test('hero memakai gaya poster: SAHABAT emas dan lencana terminal KSQ 2026', () => {
+  assert.equal(
+    [...indexHtml.matchAll(/class="hero-terminal"/g)].length,
+    1,
+    'mesti ada satu lencana terminal hero'
+  );
+  assert.match(indexHtml, /class="hero-terminal"[^>]*>[\s\S]*?KSQ 2026/, 'lencana mesti memaparkan KSQ 2026');
+  assert.match(STRINGS['hero.titleHtml'][0], /<span>Sahabat<\/span>/, 'BM: SAHABAT mesti dalam span emas');
+  assert.match(STRINGS['hero.titleHtml'][1], /<span>Sahabat<\/span>/, 'EN: SAHABAT mesti dalam span emas');
+  assert.match(STRINGS['hero.titleHtml'][2], /<span>صاحب<\/span>/, 'AR: صاحب mesti dalam span emas');
+  assert.ok(STRINGS['price.original'], 'label harga asal tiada');
+  assert.ok(STRINGS['price.promo'], 'label yuran promosi tiada');
+});
+
+test('kad sasaran hafazan menyenaraikan empat surah dengan tema dan penjelasan', () => {
+  const items = [...indexHtml.matchAll(/<li class="surah-item">/g)];
+  assert.equal(items.length, 4, `jangkaan 4 surah, dijumpai ${items.length}`);
+  const expected = [
+    ['mulk', '30 ayat'],
+    ['kahfi', '110 ayat'],
+    ['sajdah', '30 ayat'],
+    ['insan', '31 ayat']
+  ];
+  for (const [surah, verses] of expected) {
+    for (const field of ['name', 'verses', 'theme', 'detail']) {
+      assert.ok(STRINGS[`hafazan.${surah}.${field}`], `kunci hafazan.${surah}.${field} tiada`);
+    }
+    assert.match(
+      indexHtml,
+      new RegExp(`hafazan\\.${surah}\\.verses">${verses}<`),
+      `${surah} mesti memaparkan ${verses}`
+    );
+  }
+  assert.ok(STRINGS['hafazan.kahfi.note'], 'nota pembahagian ayat Al-Kahfi tiada');
+  assert.equal(
+    [...indexHtml.matchAll(/data-i18n="hafazan\.more"/g)].length,
+    4,
+    'mesti ada empat butang penjelasan lanjut'
+  );
+});

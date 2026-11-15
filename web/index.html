@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -61,7 +61,7 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="#utama" data-i18n-aria="a11y.brand" aria-label="Kem Sahabat Quran 2026 — kembali ke atas">
-        <img src="assets/logo.png" data-i18n-alt="a11y.logo" alt="Logo Masjid Kampung Sungai Lang Baru" width="418" height="597">
+        <img src="assets/logo.png" data-i18n-alt="a11y.logo" alt="Logo Masjid Kampung Sungai Lang Baru" width="149" height="160">
         <span class="brand-text">
           <b data-i18n="brand.name">Kem Sahabat Quran</b>
           <span data-i18n="brand.sub">Masjid Kg. Sungai Lang Baru · Banting</span>
@@ -76,6 +76,7 @@
           <ul class="nav-menu" data-i18n-aria="a11y.menu" aria-label="Menu halaman">
             <li><a class="nav-menu-item" href="#program" data-i18n="nav.program">Program</a></li>
             <li><a class="nav-menu-item" href="#jadual" data-i18n="nav.schedule">Jadual</a></li>
+            <li><a class="nav-menu-item" href="#poster" data-i18n="nav.poster">Poster</a></li>
             <li><a class="nav-menu-item" href="#soalan" data-i18n="nav.faq">Soalan</a></li>
             <li><a class="nav-menu-item" href="#daftar" data-i18n="nav.register">Daftar</a></li>
           </ul>
@@ -96,7 +97,8 @@
         <div class="hero-grid">
           <div>
             <p class="hero-eyebrow" data-i18n="hero.eyebrow">Masjid Kampung Sungai Lang Baru, Banting</p>
-            <h1 data-i18n-html="hero.titleHtml">Kem Sahabat<br>Quran <span>2026</span></h1>
+            <h1 data-i18n-html="hero.titleHtml">Kem <span>Sahabat</span><br>Quran 2026</h1>
+            <p class="hero-terminal" dir="ltr" aria-label="KSQ 2026"><span class="term-prompt" aria-hidden="true">&gt;</span> KSQ 2026<span class="term-cursor" aria-hidden="true"></span></p>
             <p class="hero-slogan" data-i18n="hero.slogan">“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”</p>
 
             <div class="hero-meta">
@@ -120,7 +122,7 @@
               <span data-i18n="hero.quotaLabel">daripada 40 slot masih terbuka</span>
             </div>
             <div class="hero-photo">
-              <img src="assets/masjid-udara.jpg" data-i18n-alt="a11y.photo" alt="Pandangan udara Masjid Kampung Sungai Lang Baru" width="1080" height="400" fetchpriority="high">
+              <img src="assets/masjid-udara.jpg" srcset="assets/masjid-udara-800.jpg 800w, assets/masjid-udara.jpg 1365w" sizes="(max-width: 720px) 92vw, (max-width: 1000px) 60vw, 560px" data-i18n-alt="a11y.photo" alt="Pandangan udara Masjid Kampung Sungai Lang Baru" width="1365" height="767" fetchpriority="high">
               <span class="hero-photo-label" data-i18n="hero.photoLabel">Masjid Kampung Sungai Lang Baru</span>
             </div>
           </div>
@@ -174,9 +176,15 @@
               </div>
 
               <div class="mt-2">
-                <div class="price-line">
-                  <span class="price-old" id="yuran-asal">RM180</span>
-                  <span class="price-main" id="yuran-promo">RM120</span>
+                <div class="price-box">
+                  <div class="price-was">
+                    <span class="price-label" data-i18n="price.original">Harga asal</span>
+                    <span class="price-old" id="yuran-asal">RM180</span>
+                  </div>
+                  <div class="price-now">
+                    <span class="price-label" data-i18n="price.promo">Yuran promosi</span>
+                    <span class="price-main" id="yuran-promo">RM120</span>
+                  </div>
                 </div>
                 <span class="price-online" id="yuran-online" data-i18n="live.priceOnline">Daftar online: RM110</span>
               </div>
@@ -224,13 +232,56 @@
           <div class="card">
             <p class="card-kicker" data-i18n="hafazan.kicker">Sasaran hafazan</p>
             <h3 data-i18n="hafazan.title">Empat surah pilihan</h3>
-            <ul class="list-clean">
-              <li data-i18n-html="hafazan.i1"><b>Surah Al-Mulk</b> — 30 ayat</li>
-              <li data-i18n-html="hafazan.i2"><b>Surah Al-Kahfi</b> — pembahagian ayat ditentukan ustaz mengikut kemampuan peserta</li>
-              <li data-i18n-html="hafazan.i3"><b>Surah As-Sajdah</b></li>
-              <li data-i18n-html="hafazan.i4"><b>Surah Al-Insan</b></li>
-            </ul>
-            <p class="hint mt-1" data-i18n="hafazan.hint">Pembahagian surah ialah cadangan dan boleh diubah oleh ustaz mengikut kemampuan peserta.</p>
+            <ol class="surah-list">
+              <li class="surah-item">
+                <p class="surah-head">
+                  <b data-i18n="hafazan.mulk.name">Surah Al-Mulk</b>
+                  <span class="surah-verses" data-i18n="hafazan.mulk.verses">30 ayat</span>
+                </p>
+                <p class="surah-theme" data-i18n="hafazan.mulk.theme">Tema: Kedaulatan Allah dan ujian hidup.</p>
+                <details class="surah-details">
+                  <summary data-i18n="hafazan.more">Penjelasan lanjut</summary>
+                  <p data-i18n="hafazan.mulk.detail">Surah ini membuka dengan penegasan bahawa seluruh kerajaan dan kekuasaan mutlak hanya milik Allah (Al-Malik al-Mulk). Kehidupan dan kematian dicipta sebagai ujian untuk melihat siapa yang terbaik amalannya, bukan sekadar banyak amalannya. Ia juga mengingatkan tentang azab kubur dan pentingnya ketakwaan serta amal soleh sebagai persiapan menghadap kedaulatan Allah. Justeru, Al-Mulk meletakkan asas kesedaran bahawa hidup ini bukan milik kita, tetapi amanah di bawah pemerintahan Allah.</p>
+                </details>
+              </li>
+
+              <li class="surah-item">
+                <p class="surah-head">
+                  <b data-i18n="hafazan.kahfi.name">Surah Al-Kahfi</b>
+                  <span class="surah-verses" data-i18n="hafazan.kahfi.verses">110 ayat</span>
+                </p>
+                <p class="surah-theme" data-i18n="hafazan.kahfi.theme">Tema: Ujian iman, harta, ilmu, dan kuasa.</p>
+                <p class="surah-note" data-i18n="hafazan.kahfi.note">Nota: Pembahagian ayat ditentukan ustaz mengikut kemampuan peserta.</p>
+                <details class="surah-details">
+                  <summary data-i18n="hafazan.more">Penjelasan lanjut</summary>
+                  <p data-i18n="hafazan.kahfi.detail">Al-Kahfi memaparkan empat kisah utama yang masing-masing mewakili ujian kehidupan: Ashabul Kahfi (ujian mempertahankan iman dalam masyarakat yang menindas), Pemilik Dua Kebun (ujian kekayaan dan kesombongan, serta pentingnya syukur dan tawadhu’), Nabi Musa dan Khidir (ujian ilmu dan kesabaran dalam menerima hikmah Allah yang tidak terjangkau akal), dan Zulkarnain (ujian kekuasaan dan keadilan dalam kepimpinan). Kisah-kisah ini mengajar bahawa setiap ujian—sama ada iman, harta, ilmu, atau kuasa—menuntut kesabaran, ketundukan, dan pergantungan kepada Allah, selari dengan tema kedaulatan-Nya.</p>
+                </details>
+              </li>
+
+              <li class="surah-item">
+                <p class="surah-head">
+                  <b data-i18n="hafazan.sajdah.name">Surah As-Sajdah</b>
+                  <span class="surah-verses" data-i18n="hafazan.sajdah.verses">30 ayat</span>
+                </p>
+                <p class="surah-theme" data-i18n="hafazan.sajdah.theme">Tema: Ketundukan kepada Allah dan keyakinan Hari Akhirat.</p>
+                <details class="surah-details">
+                  <summary data-i18n="hafazan.more">Penjelasan lanjut</summary>
+                  <p data-i18n="hafazan.sajdah.detail">Surah ini dinamakan sempena sujud (ketundukan) dalam ayat 15. Tema utamanya ialah menghapuskan keraguan tentang Tauhid, Hari Akhirat, dan Kenabian, serta mengajak manusia tunduk kepada Allah Yang Maha Esa sebagai Pencipta dan Pengatur alam. Ia menggambarkan penyesalan orang kafir yang baru mahu sujud di akhirat, tetapi sujud mereka sudah tidak berguna. Justeru, As-Sajdah menuntut respons praktikal terhadap kedaulatan Allah, iaitu ketundukan jiwa dan pengharapan sepenuhnya kepada-Nya dalam kehidupan dunia.</p>
+                </details>
+              </li>
+
+              <li class="surah-item">
+                <p class="surah-head">
+                  <b data-i18n="hafazan.insan.name">Surah Al-Insan</b>
+                  <span class="surah-verses" data-i18n="hafazan.insan.verses">31 ayat</span>
+                </p>
+                <p class="surah-theme" data-i18n="hafazan.insan.theme">Tema: Syukur, pengorbanan, dan tanggungjawab hamba.</p>
+                <details class="surah-details">
+                  <summary data-i18n="hafazan.more">Penjelasan lanjut</summary>
+                  <p data-i18n="hafazan.insan.detail">Surah ini bermula dengan penciptaan manusia dan petunjuk yang diberikan Allah, serta pilihan antara syukur atau kufur (mengingkari). Ia kemudian memuji golongan abrar (orang-orang soleh) yang menunaikan nazar, memberi makan kepada fakir miskin, anak yatim, dan tawanan semata-mata kerana Allah, tanpa mengharapkan balasan, serta takut kepada Hari Kiamat. Al-Insan menegaskan bahawa tanggungjawab hamba ialah menggunakan nikmat dan kebebasan memilih untuk berkorban dan bersyukur, bukan tenggelam dalam cinta dunia.</p>
+                </details>
+              </li>
+            </ol>
           </div>
 
           <div class="card card-forest">
@@ -350,6 +401,30 @@
             <p class="hint" data-i18n="dest3.addr">Masjid Sultan Salahuddin Abdul Aziz Shah. Solat Zohor, makan tengah hari dan tasmik kemuncak di sekitar masjid dan tasik.</p>
             <p class="small muted" data-i18n="dest3.desc">Kebenaran penggunaan kawasan akan dimaklumkan kepada pejabat masjid lebih awal.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section poster-section" id="poster">
+      <div class="container">
+        <div class="poster-layout">
+          <div class="poster-copy">
+            <span class="eyebrow" data-i18n="poster.eyebrow">Poster rasmi</span>
+            <h2 data-i18n="poster.title">Kongsi poster KSQ 2026</h2>
+            <p data-i18n="poster.lead">Muat turun poster untuk dicetak atau kongsikan melalui WhatsApp. Maklumat program, yuran dan kod QR pendaftaran semuanya ada pada poster.</p>
+            <div class="poster-actions">
+              <a class="btn btn-gold" href="assets/KSQ-2026-poster.pdf" download="KSQ-2026-poster.pdf" data-i18n="poster.downloadPdf">Muat turun poster (PDF)</a>
+              <button class="btn btn-outline-light" id="poster-share" type="button" data-i18n="poster.share">Kongsi poster</button>
+            </div>
+            <p class="poster-note">
+              <span data-i18n="poster.pdfNote">PDF sesuai untuk cetak.</span>
+              <a href="assets/KSQ-2026-poster.jpg" download="KSQ-2026-poster.jpg" data-i18n="poster.downloadImage">Muat turun gambar (JPG)</a>
+            </p>
+          </div>
+          <a class="poster-preview" href="KSQ-2026-poster.html" target="_blank" rel="noopener" data-i18n-aria="poster.openAria" aria-label="Buka poster penuh dalam tab baharu">
+            <img src="assets/poster-preview.jpg" alt="Poster rasmi Kem Sahabat Quran 2026" width="1200" height="675" loading="lazy" data-i18n-alt="poster.alt">
+            <span class="poster-open"><span data-i18n="poster.open">Lihat poster penuh</span> <span aria-hidden="true">↗</span></span>
+          </a>
         </div>
       </div>
     </section>
@@ -552,6 +627,7 @@
 
   <script type="module" src="js/i18n.js"></script>
   <script type="module" src="js/register.js"></script>
+  <script type="module" src="js/poster.js"></script>
   <script type="module" src="js/nav.js"></script>
 </body>
 </html>

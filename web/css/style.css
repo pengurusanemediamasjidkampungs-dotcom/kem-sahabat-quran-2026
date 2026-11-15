@@ -22,9 +22,11 @@
   --radius: 16px;
   --radius-sm: 10px;
   --font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-poster: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sub: 'Montserrat', Arial, sans-serif;
   --font-body: 'Inter', Arial, sans-serif;
   --font-arabic: 'Noto Kufi Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', 'Consolas', 'Courier New', monospace;
   --header-h: 68px;
 }
 
@@ -603,12 +605,14 @@ ul, ol {
 }
 
 .hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.55rem, 6.2vw, 4.9rem);
+  font-family: var(--font-poster);
+  font-weight: 800;
+  font-size: clamp(2.35rem, 5.4vw, 4.15rem);
   line-height: 0.98;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
   margin: 14px 0 0;
   color: var(--ivory);
+  text-transform: uppercase;
   text-wrap: balance;
 }
 
@@ -616,15 +620,50 @@ ul, ol {
   color: var(--gold);
 }
 
+.hero-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 18px 0 0;
+  padding: 7px 16px;
+  border: 2px solid rgba(214, 173, 82, 0.7);
+  border-radius: 9px;
+  background: var(--cream);
+  color: var(--forest);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+  font-family: var(--font-mono);
+  font-size: clamp(0.92rem, 1.7vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.35;
+}
+
+.hero-terminal .term-prompt {
+  color: var(--gold-dark);
+}
+
+.term-cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 1.05em;
+  background: var(--forest);
+  vertical-align: -0.12em;
+  animation: term-blink 1.05s steps(1, end) infinite;
+}
+
+@keyframes term-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
 .hero-slogan {
-  margin: 22px 0 0;
-  padding-left: 16px;
-  border-left: 4px solid var(--gold);
-  color: var(--sage);
-  font-family: var(--font-sub);
-  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  margin: 20px 0 0;
+  color: var(--cream);
+  font-family: var(--font-poster);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.9vw, 1.3rem);
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.4;
   max-width: 34rem;
 }
 
@@ -638,19 +677,29 @@ ul, ol {
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 13px;
-  border: 1px solid rgba(245, 240, 227, 0.32);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--ivory);
+  gap: 9px;
+  padding: 9px 13px;
+  border: 1.5px solid rgba(214, 173, 82, 0.72);
+  border-radius: 10px;
+  background: var(--cream);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--forest);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.chip::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
 }
 
 .chip b {
-  color: var(--gold);
-  font-weight: 700;
+  color: var(--forest);
+  font-weight: 800;
 }
 
 .hero-actions {
@@ -874,17 +923,67 @@ ul, ol {
   color: var(--muted);
 }
 
-.price-line {
+.price-box {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: flex-end;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.price-old {
+.price-was {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding-bottom: 4px;
+}
+
+.price-label {
+  font-family: var(--font-sub);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
   color: var(--muted);
-  text-decoration: line-through;
-  font-size: 0.95rem;
+}
+
+.price-old {
+  position: relative;
+  display: inline-block;
+  color: var(--muted);
+  font-family: var(--font-poster);
+  font-size: 1.32rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.price-old::after {
+  content: "";
+  position: absolute;
+  left: -7%;
+  right: -7%;
+  top: 52%;
+  height: 1.5px;
+  background: var(--crimson);
+  transform: rotate(7deg);
+  transform-origin: center;
+}
+
+.price-now {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 7px 15px 9px;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  background: var(--crimson);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(169, 30, 36, 0.24);
+}
+
+.price-now .price-label {
+  color: var(--gold);
 }
 
 .price-main {
@@ -892,12 +991,13 @@ ul, ol {
   font-size: 2.15rem;
   font-weight: 800;
   line-height: 1;
-  color: var(--crimson);
+  color: #fff;
+  font-variant-numeric: tabular-nums;
 }
 
 .price-online {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
   padding: 6px 10px;
   border-radius: 8px;
   background: rgba(8, 116, 67, 0.1);
@@ -950,6 +1050,103 @@ ul, ol {
   color: var(--muted);
   font-size: clamp(0.96rem, 1.3vw, 1.08rem);
   max-width: 68ch;
+}
+
+/* ---------- Poster ---------- */
+
+.poster-section {
+  background:
+    radial-gradient(900px 520px at 12% 18%, rgba(8, 116, 67, 0.55), rgba(8, 116, 67, 0) 70%),
+    linear-gradient(160deg, var(--forest), var(--forest-deep));
+  color: var(--cream);
+}
+
+.poster-section .eyebrow {
+  color: var(--gold);
+}
+
+.poster-section h2 {
+  color: var(--ivory);
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  margin-bottom: 10px;
+  text-wrap: balance;
+}
+
+.poster-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+
+.poster-copy p {
+  color: var(--sage);
+  font-size: clamp(0.96rem, 1.3vw, 1.06rem);
+  max-width: 52ch;
+}
+
+.poster-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.poster-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--sage);
+}
+
+.poster-note a {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.poster-preview {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  border-radius: 18px;
+  box-shadow: 0 26px 54px rgba(0, 0, 0, 0.38);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poster-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.poster-preview:hover,
+.poster-preview:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 32px 62px rgba(0, 0, 0, 0.45);
+}
+
+.poster-open {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 26px 16px 11px;
+  background: linear-gradient(0deg, rgba(5, 40, 29, 0.92), rgba(5, 40, 29, 0));
+  color: var(--ivory);
+  font-family: var(--font-sub);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: start;
+}
+
+.poster-preview:hover .poster-open {
+  color: var(--gold);
 }
 
 .grid {
@@ -1040,7 +1237,7 @@ ul, ol {
 
 .list-clean li {
   position: relative;
-  padding-left: 20px;
+  padding-inline-start: 20px;
   margin-bottom: 7px;
   font-size: 0.92rem;
 }
@@ -1048,12 +1245,122 @@ ul, ol {
 .list-clean li::before {
   content: "";
   position: absolute;
-  left: 2px;
+  inset-inline-start: 2px;
   top: 0.58em;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: var(--gold);
+}
+
+/* ---------- Memorisation target (four surahs) ---------- */
+
+.surah-list {
+  list-style: none;
+  counter-reset: surah;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.surah-item {
+  counter-increment: surah;
+  position: relative;
+  padding-inline-start: 36px;
+}
+
+.surah-item::before {
+  content: counter(surah);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--ivory);
+  font-family: var(--font-sub);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 25px;
+  text-align: center;
+}
+
+.surah-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  margin: 0;
+}
+
+.surah-head b {
+  font-family: var(--font-sub);
+  font-size: 0.95rem;
+  color: var(--forest);
+}
+
+.surah-verses {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: rgba(8, 116, 67, 0.1);
+  color: var(--emerald);
+  font-family: var(--font-sub);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.surah-theme {
+  margin: 5px 0 0;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.surah-note {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.surah-details {
+  margin-top: 6px;
+}
+
+.surah-details summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  font-family: var(--font-sub);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--emerald);
+}
+
+.surah-details summary:hover,
+.surah-details[open] summary {
+  color: var(--forest);
+}
+
+.surah-details summary::marker {
+  color: var(--gold);
+}
+
+.surah-details p {
+  margin: 2px 0 4px;
+  padding: 10px 12px;
+  border-inline-start: 3px solid var(--gold);
+  border-radius: 8px;
+  background: rgba(7, 59, 42, 0.04);
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .fact-strip {
@@ -2881,10 +3188,14 @@ html[dir="rtl"] .price-main {
 }
 
 html[dir="rtl"] .hero-slogan {
-  padding-left: 0;
-  padding-right: 16px;
-  border-left: 0;
-  border-right: 4px solid var(--gold);
+  font-family: var(--font-arabic);
+  font-style: normal;
+}
+
+html[dir="rtl"] .price-main,
+html[dir="rtl"] .price-old,
+html[dir="rtl"] .price-label {
+  letter-spacing: 0;
 }
 
 html[dir="rtl"] .nav-menu {
