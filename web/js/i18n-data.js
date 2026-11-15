@@ -50,6 +50,11 @@ export const STRINGS = {
     'Aerial view of Kampung Sungai Lang Baru Mosque',
     'منظر جوي لمسجد كامبونغ سوغاي لانغ بارو'
   ],
+  'a11y.locations': [
+    'Lokasi program',
+    'Programme locations',
+    'مواقع البرنامج'
+  ],
   'a11y.radioQuran': [
     'Kelancaran membaca Al-Quran',
     'Quran reading fluency',
@@ -506,6 +511,22 @@ export const STRINGS = {
     'Permission to use the grounds will be notified to the mosque office in advance.',
     'سيُبلَّغ مكتب المسجد مسبقًا بطلب إذن استخدام الساحة.'
   ],
+
+  /* ---------- Location cards (Program section) ---------- */
+  'loc1.kicker': ['Hari 1 & 2', 'Days 1 & 2', 'اليوم 1 و 2'],
+  'loc1.title': ['Masjid Kampung Sungai Lang Baru', 'Kampung Sungai Lang Baru Mosque', 'مسجد كامبونغ سوغاي لانغ بارو'],
+  'loc1.addr': ['Kampung Sungai Lang Baru, Banting, Selangor', 'Kampung Sungai Lang Baru, Banting, Selangor', 'كامبونغ سوغاي لانغ بارو، بنتنغ، سيلانجور'],
+  'loc1.desc': ['Hafazan, pembinaan jiwa, slot akhlak & kepimpinan, tasmik kumpulan kecil.', 'Hafazan, character building, akhlak & leadership slots, small-group tasmik.', 'الحفظ، بناء الشخصية، فتحات الأخلاق والقيادة، والتسميع في مجموعات صغيرة.'],
+
+  'loc2.kicker': ['Hari 3 — Lawatan 1', 'Day 3 — Visit 1', 'اليوم 3 — الزيارة 1'],
+  'loc2.title': ['Yayasan Restu', 'Yayasan Restu', 'مؤسسة رستو'],
+  'loc2.addr': ['Kompleks Taman Seni Islam Antarabangsa, Seksyen 10, Shah Alam', 'Kompleks Taman Seni Islam Antarabangsa, Section 10, Shah Alam', 'مجمع حديقة الفن الإسلامي الدولي، القسم 10، شاه علم'],
+  'loc2.desc': ['Lawatan galeri seni Islam, penyalinan & penghiasan mashaf Al-Quran.', 'Visit Islamic arts gallery, Quran manuscript copying & decoration.', 'زيارة معرض الفنون الإسلامية، نسخ وتزيين مصاحف القرآن.'],
+
+  'loc3.kicker': ['Hari 3 — Lawatan 2', 'Day 3 — Visit 2', 'اليوم 3 — الزيارة 2'],
+  'loc3.title': ['Muzium Sultan Alam Shah', 'Sultan Alam Shah Museum', 'متحف السلطان عالم شاه'],
+  'loc3.addr': ['Persiaran Bandaraya, Seksyen 14, Shah Alam', 'Persiaran Bandaraya, Section 14, Shah Alam', 'بيسياران بندرايا، القسم 14، شاه علم'],
+  'loc3.desc': ['Galeri Sejarah, Adat & Kebudayaan, Alam Semula Jadi.', 'History, Customs & Culture, Natural History galleries.', 'معارض التاريخ والعادات والثقافة والتاريخ الطبيعي.'],
 
   /* ---------- Poster ---------- */
   'poster.eyebrow': ['Poster rasmi', 'Official poster', 'الملصق الرسمي'],
