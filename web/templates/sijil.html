@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ms"><head><meta charset="utf-8"><title>Sijil Penyertaan KSQ 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CARA GUNA: sijil.html?senarai=Nama Satu|Nama Dua&mula=1   (mula = nombor siri pertama, lalai 1)
+     Boleh juga: ?nama=Nama Satu&no=KSQ/2026/001   Letak logo di ../assets/logo.png (laluan relatif dari folder templates). -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#073B2A;--emerald:#087443;--gold:#D6AD52;--cream:#F5F0E3;--ivory:#FFFDF6;--crimson:#A91E24}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4 landscape;margin:0}
+body{background:#888;font-family:'Montserrat',Arial,sans-serif;color:var(--forest)}
+.s{width:297mm;height:210mm;background:var(--ivory);position:relative;margin:8mm auto;page-break-after:always;break-after:page;overflow:hidden}
+.b1{position:absolute;inset:8mm;border:2.2mm solid var(--forest)}
+.b2{position:absolute;inset:13mm;border:.7mm solid var(--gold)}
+.in{position:absolute;inset:13mm;padding:9mm 22mm 8mm;text-align:center;display:flex;flex-direction:column;align-items:center}
+.logo{height:26mm}
+.org{font-weight:600;font-size:3.6mm;letter-spacing:.9mm;margin-top:2mm}
+h1{font-family:'Cinzel',Georgia,serif;font-size:13mm;letter-spacing:1.2mm;margin-top:4mm;color:var(--forest)}
+.sub{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:6.2mm;margin-top:3mm;color:#35574a}
+.nama{font-family:'Cinzel',Georgia,serif;font-size:12mm;margin-top:5mm;color:var(--crimson);border-bottom:.6mm solid var(--gold);padding:0 8mm 1.5mm;max-width:100%;line-height:1.15}
+.isi{font-family:'Cormorant Garamond',Georgia,serif;font-size:6.4mm;line-height:1.35;margin-top:5mm;max-width:215mm}
+.isi b{font-family:'Cinzel',Georgia,serif;color:var(--forest)}
+.sl{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:5.4mm;margin-top:3mm;color:var(--emerald)}
+.sig{display:flex;justify-content:space-between;width:100%;max-width:215mm;margin-top:auto}
+.sig div{width:70mm;font-size:3.4mm;font-weight:600}
+.sig i{display:block;border-top:.4mm solid var(--forest);margin-bottom:1.5mm}
+.sig span{display:block;font-weight:400;color:#555}
+.no{position:absolute;left:22mm;bottom:15mm;font-size:3mm;color:#666}
+@media print{body{background:none}.s{margin:0}}
+</style></head><body>
+<div id="out"></div>
+<script>
+const q=new URLSearchParams(location.search);
+let list=(q.get('senarai')||q.get('nama')||'[NAMA PESERTA]').split('|').map(s=>s.trim()).filter(Boolean);
+const mula=parseInt(q.get('mula')||'1',10)||1;
+const out=document.getElementById('out');
+const T=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
+list.forEach((n,i)=>{
+ const no=(list.length===1&&q.get('no'))?q.get('no'):'KSQ/2026/'+String(mula+i).padStart(3,'0');
+ const s=T('section','s');s.append(T('div','b1'),T('div','b2'));
+ const in_=T('div','in');
+ const lg=T('img','logo');lg.src='../assets/logo.png';lg.alt='Logo Masjid Kampung Sungai Lang Baru';lg.onerror=()=>lg.remove();
+ in_.append(lg,T('div','org','MASJID KAMPUNG SUNGAI LANG BARU, BANTING'),T('h1','','SIJIL PENYERTAAN'),T('div','sub','Dengan ini disahkan bahawa'));
+ const nm=T('div','nama',n.toUpperCase());nm.style.fontSize=n.length>34?'7.5mm':n.length>24?'9.5mm':'12mm';in_.append(nm);
+ const isi=T('div','isi');
+ isi.append('telah menyertai ',T('b','','KEM SAHABAT QURAN (KSQ) 2026'),', program hafazan Al‑Quran, pembinaan jiwa dan kepimpinan remaja yang diadakan pada 14 hingga 16 Disember 2026 di Masjid Kampung Sungai Lang Baru, Banting, Selangor.');
+ in_.append(isi,T('div','sl','“Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.”'));
+ const sig=T('div','sig');
+ [['[NAMA PENGERUSI]','Pengerusi Masjid Kampung Sungai Lang Baru'],['[NAMA PENGARAH]','Pengarah Program KSQ 2026']].forEach(([a,b])=>{const d=T('div');d.append(T('i'),a,T('span','',b));sig.append(d)});
+ in_.append(sig);s.append(in_,T('div','no','No. Siri: '+no));out.append(s);
+});
+</script></body></html>

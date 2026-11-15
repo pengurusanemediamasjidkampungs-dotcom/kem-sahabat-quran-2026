@@ -1,0 +1,17 @@
+{
+  "name": "ksq26-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pelayan MCP stdio tanpa kebergantungan untuk sistem KSQ 2026",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "ksq26-mcp": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test \"test/*.test.js\""
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "nisbah_semasa": "1 fasilitator : 8 peserta (5 fasilitator, 40 peserta). Sahkan.",
+  "sesi_hari": {
+    "hari1": "Slot Motivasi: Adab dan Akhlak (2:00-3:30 ptg)",
+    "hari2": "Slot Motivasi: Kepimpinan Remaja (2:00-3:30 ptg)",
+    "hari3": "Lawatan Shah Alam dan tasmik kemuncak"
+  },
+  "orang": [
+    {
+      "id": "F01",
+      "nama": "Ust Shahril",
+      "peranan": "Penceramah Slot Akhlak",
+      "sesi": "Hari 1",
+      "tel": "[ISI]",
+      "elaun_rm": 240,
+      "status_pengesahan": "Belum",
+      "catatan": "Nama dibaca daripada tulisan tangan; sahkan ejaan."
+    },
+    {
+      "id": "F02",
+      "nama": "Khairul Anuar",
+      "peranan": "Penceramah Slot Kepimpinan Remaja",
+      "sesi": "Hari 2",
+      "tel": "[ISI]",
+      "elaun_rm": 240,
+      "status_pengesahan": "Belum",
+      "catatan": "Nama dibaca daripada tulisan tangan; sahkan ejaan."
+    },
+    {
+      "id": "F03",
+      "nama": "[ISI NAMA]",
+      "peranan": "Fasilitator Kumpulan 1",
+      "sesi": "Hari 1-3",
+      "tel": "[ISI]",
+      "elaun_rm": 240,
+      "status_pengesahan": "Belum",
+      "catatan": ""
+    },
+    {
+      "id": "F04",
+      "nama": "[ISI NAMA]",
+      "peranan": "Fasilitator Kumpulan 2",
+      "sesi": "Hari 1-3",
+      "tel": "[ISI]",
+      "elaun_rm": 240,
+      "status_pengesahan": "Belum",
+      "catatan": ""
+    },
+    {
+      "id": "F05",
+      "nama": "[ISI NAMA]",
+      "peranan": "Fasilitator Kumpulan 3",
+      "sesi": "Hari 1-3",
+      "tel": "[ISI]",
+      "elaun_rm": 240,
+      "status_pengesahan": "Belum",
+      "catatan": ""
+    },
+    {
+      "id": "F06",
+      "nama": "[ISI NAMA]",
+      "peranan": "Fasilitator Kumpulan 4",
+      "sesi": "Hari 1-3",
+      "tel": "[ISI]",
+      "elaun_rm": 240,
+      "status_pengesahan": "Belum",
+      "catatan": ""
+    },
+    {
+      "id": "F07",
+      "nama": "[ISI NAMA]",
+      "peranan": "Fasilitator Kumpulan 5",
+      "sesi": "Hari 1-3",
+      "tel": "[ISI]",
+      "elaun_rm": 240,
+      "status_pengesahan": "Belum",
+      "catatan": ""
+    }
+  ],
+  "nota": "Draf elaun ialah 5 orang. Jika Ust Shahril dan Khairul Anuar ialah penceramah (RM300 setiap slot) dan bukan fasilitator berelaun, bilangan fasilitator berelaun perlu disahkan semula."
+}

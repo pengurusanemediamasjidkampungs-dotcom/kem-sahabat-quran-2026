@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fasilitator — Kem Sahabat Quran 2026</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#073B2A">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page facilitator-page">
+
+  <!-- ================= LOGIN ================= -->
+  <section class="login-screen" id="login-screen">
+    <div class="login-card">
+      <img class="login-logo" src="assets/logo.png" alt="Logo Masjid Kampung Sungai Lang Baru" width="418" height="597">
+      <h1>Fasilitator KSQ 2026</h1>
+      <p class="muted">Masukkan token fasilitator untuk membuka senarai peserta dan merekod kehadiran.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label class="field-label" for="token-input">Token fasilitator</label>
+          <div class="row">
+            <input class="input grow" id="token-input" name="token" type="password" autocomplete="current-password" spellcheck="false" required placeholder="Token dari Script Properties GAS">
+            <button class="btn btn-ghost btn-sm" type="button" id="toggle-token">Tunjuk</button>
+          </div>
+          <p class="hint">Token disimpan dalam Script Properties GAS sebagai <code>FASILITATOR_TOKEN</code>. Akses ini terhad kepada peserta dan kehadiran sahaja.</p>
+        </div>
+        <p class="form-error hidden" id="login-error" role="alert"></p>
+        <button class="btn btn-gold btn-block" type="submit" id="login-submit">Masuk</button>
+      </form>
+
+      <p class="login-help">Sesi tamat apabila tab ditutup. Jika token tidak diterima, hubungi pentadbir program.</p>
+      <p class="login-help"><a href="index.html">← Kembali ke halaman awam</a></p>
+    </div>
+  </section>
+
+  <!-- ================= APP ================= -->
+  <div id="app" class="hidden">
+    <header class="app-header">
+      <div class="container-wide">
+        <div class="app-top">
+          <a class="app-brand" href="index.html" aria-label="Kem Sahabat Quran 2026">
+            <img src="assets/logo.png" alt="" width="418" height="597">
+            <span>
+              <b>KSQ 2026 · Fasilitator</b>
+              <span>Masjid Kg. Sungai Lang Baru</span>
+            </span>
+          </a>
+          <div class="app-user">
+            <span class="badge" id="role-badge">Fasilitator</span>
+            <button class="btn btn-outline-light btn-sm" type="button" id="logout-button">Log keluar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="container-wide">
+        <section class="view" id="view-attendance" data-view="attendance">
+          <div class="view-head">
+            <div>
+              <h1>Kehadiran peserta</h1>
+              <p id="fac-count">Memuatkan senarai peserta…</p>
+            </div>
+            <div class="view-actions">
+              <span class="hint" id="fac-updated"></span>
+              <button class="btn btn-ghost btn-sm" type="button" id="fac-refresh">Muat semula</button>
+            </div>
+          </div>
+
+          <div class="alert alert-info mb-2" role="status">
+            <span class="alert-icon">i</span>
+            <div>
+              <b>Hanya peserta Disahkan dipaparkan.</b>
+              <span class="small"> Tandakan kotak apabila peserta hadir. Perubahan disimpan terus ke Google Sheets. Hubungi pentadbir untuk membetulkan status pendaftaran.</span>
+            </div>
+          </div>
+
+          <div class="attendance-grid">
+            <div class="attendance-count"><b id="fac-day1">0</b><span>Hadir Hari 1</span></div>
+            <div class="attendance-count"><b id="fac-day2">0</b><span>Hadir Hari 2</span></div>
+            <div class="attendance-count"><b id="fac-day3">0</b><span>Hadir Hari 3</span></div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="field grow">
+              <label class="field-label" for="fac-search">Cari peserta</label>
+              <input class="input" id="fac-search" type="search" placeholder="Nama, ID atau nama penjaga">
+            </div>
+            <div class="field">
+              <label class="field-label" for="fac-day">Hari dipaparkan</label>
+              <select class="input" id="fac-day">
+                <option value="1">Hari 1</option>
+                <option value="2">Hari 2</option>
+                <option value="3">Hari 3</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="fac-filter">Status hari ini</label>
+              <select class="input" id="fac-filter">
+                <option value="">Semua peserta</option>
+                <option value="belum">Belum ditanda</option>
+                <option value="hadir">Sudah hadir</option>
+                <option value="tidak">Tidak hadir</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table attendance-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Peserta</th>
+                  <th>Penjaga</th>
+                  <th>Alahan / kesihatan</th>
+                  <th id="fac-day-heading">Hari 1</th>
+                </tr>
+              </thead>
+              <tbody id="fac-table-body"></tbody>
+            </table>
+          </div>
+          <p class="table-scroll-hint">Tatal ke kanan pada telefon untuk melihat semua lajur. Senarai ini tidak memaparkan maklumat bayaran.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/facilitator.js"></script>
+</body>
+</html>

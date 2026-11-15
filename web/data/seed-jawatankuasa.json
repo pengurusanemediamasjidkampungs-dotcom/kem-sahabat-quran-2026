@@ -1,0 +1,119 @@
+[
+  {
+    "id": "J01",
+    "unit": "Pimpinan",
+    "jawatan": "Penaung (Pengerusi Masjid)",
+    "tugas": "Meluluskan program, bajet dan dana masjid.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J02",
+    "unit": "Pimpinan",
+    "jawatan": "Pengarah Program",
+    "tugas": "Mengetuai pelaksanaan, memantau milestone, mempengerusikan mesyuarat.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J03",
+    "unit": "Pimpinan",
+    "jawatan": "Timbalan Pengarah",
+    "tugas": "Menggantikan pengarah; menyelaras unit.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J04",
+    "unit": "Sekretariat",
+    "jawatan": "Setiausaha",
+    "tugas": "Kertas kerja, surat, minit mesyuarat, laporan akhir.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J05",
+    "unit": "Kewangan",
+    "jawatan": "Bendahari",
+    "tugas": "Bajet, kutipan yuran, bayaran pembekal, baucar, laporan kewangan.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J06",
+    "unit": "Pendaftaran",
+    "jawatan": "Ketua Unit Pendaftaran",
+    "tugas": "Pautan WhatsApp, semakan bayaran, senarai tunggu, hubungan ibu bapa.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J07",
+    "unit": "Akademik",
+    "jawatan": "Ketua Unit Hafazan",
+    "tugas": "Modul hafazan, jadual tasmik, penyelaras fasilitator dan penceramah.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J08",
+    "unit": "Akademik",
+    "jawatan": "Penyelaras Modul dan Sijil",
+    "tugas": "Modul, fail, sijil, kriteria kelayakan sijil.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J09",
+    "unit": "Logistik",
+    "jawatan": "Ketua Unit Logistik dan Lawatan",
+    "tugas": "Bas, destinasi Shah Alam, surat lawatan, masa perjalanan.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J10",
+    "unit": "Logistik",
+    "jawatan": "Ketua Unit Makanan",
+    "tugas": "Katering, jadual makan, alahan makanan.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J11",
+    "unit": "Kebajikan",
+    "jawatan": "Ketua Unit Kebajikan dan Keselamatan",
+    "tugas": "Pertolongan cemas, kebenaran ibu bapa, rekod kesihatan, kecemasan.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J12",
+    "unit": "Media",
+    "jawatan": "Ketua Unit Media dan Promosi",
+    "tugas": "Poster, WhatsApp, gambar, laporan visual.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  },
+  {
+    "id": "J13",
+    "unit": "Merchandise",
+    "jawatan": "Ketua Unit Baju, Lencana dan Peralatan",
+    "tugas": "Sebut harga, tempahan, agihan baju/lencana/fail/tag.",
+    "nama": "[ISI NAMA]",
+    "tel": "[ISI]",
+    "status": "Belum dilantik"
+  }
+]

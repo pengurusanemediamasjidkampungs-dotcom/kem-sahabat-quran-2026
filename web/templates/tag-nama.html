@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ms"><head><meta charset="utf-8"><title>Tag Nama KSQ 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CARA GUNA: tag-nama.html?senarai=Nama;Kumpulan;peranan|Nama;Kumpulan;peranan
+     peranan: peserta | fasilitator | ajk. Logo di ../assets/logo.png. Cetak A4 potret, skala 100%: 10 tag (90mm x 55mm) satu halaman. -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#073B2A;--emerald:#087443;--gold:#D6AD52;--ivory:#FFFDF6;--crimson:#A91E24}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4 portrait;margin:0}
+body{background:#888;font-family:'Montserrat',Arial,sans-serif}
+.pg{width:210mm;height:297mm;background:#fff;margin:6mm auto;padding:11mm 15mm;display:grid;grid-template-columns:90mm 90mm;grid-template-rows:repeat(5,55mm);page-break-after:always;break-after:page}
+.t{width:90mm;height:55mm;border:.25mm dashed #999;position:relative;background:var(--ivory);overflow:hidden;display:flex;flex-direction:column}
+.band{height:11mm;background:var(--emerald);color:#fff;display:flex;align-items:center;gap:2.5mm;padding:0 3mm}
+.band img{height:8mm;background:#fff;border-radius:1mm;padding:.5mm}
+.band b{font-family:'Cinzel',Georgia,serif;font-size:4.4mm;letter-spacing:.4mm;line-height:1.1}
+.band small{display:block;font-size:2.2mm;letter-spacing:.3mm;font-weight:600;font-family:'Montserrat',Arial,sans-serif}
+.nm{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 3mm;font-weight:800;color:var(--forest);line-height:1.15}
+.kp{text-align:center;font-size:3.2mm;font-weight:600;color:#35574a;padding-bottom:1.5mm;min-height:5mm}
+.pr{height:7mm;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:3.6mm;letter-spacing:1.2mm;background:var(--emerald)}
+.t.fasilitator .band,.t.fasilitator .pr{background:#B8892B}
+.t.ajk .band,.t.ajk .pr{background:var(--crimson)}
+@media print{body{background:none}.pg{margin:0}.t{border-color:#ddd}}
+</style></head><body><div id="out"></div>
+<script>
+const q=new URLSearchParams(location.search);
+const raw=(q.get('senarai')||'[NAMA PESERTA];Kumpulan 1;peserta').split('|').map(s=>s.split(';').map(x=>x.trim())).filter(r=>r[0]);
+const out=document.getElementById('out');
+const T=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
+for(let i=0;i<raw.length;i+=10){
+ const pg=T('div','pg');
+ raw.slice(i,i+10).forEach(([n,k,p])=>{
+  p=(['peserta','fasilitator','ajk'].includes((p||'').toLowerCase()))?p.toLowerCase():'peserta';
+  const t=T('div','t '+p);
+  const band=T('div','band');const lg=T('img');lg.src='../assets/logo.png';lg.alt='';lg.onerror=()=>lg.remove();
+  const bt=T('div');bt.append(T('b','','KSQ 2026'),T('small','','KEM SAHABAT QURAN'));band.append(lg,bt);
+  const nm=T('div','nm',n.toUpperCase());nm.style.fontSize=n.length>30?'4.6mm':n.length>20?'5.6mm':'6.8mm';
+  t.append(band,nm,T('div','kp',k||''),T('div','pr',p.toUpperCase()));pg.append(t);
+ });
+ out.append(pg);
+}
+</script></body></html>

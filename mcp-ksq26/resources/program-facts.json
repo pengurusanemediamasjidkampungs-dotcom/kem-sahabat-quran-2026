@@ -1,0 +1,32 @@
+{
+  "nama": "Kem Sahabat Quran (KSQ) 2026",
+  "penganjur": "Masjid Kampung Sungai Lang Baru, Banting, Selangor",
+  "slogan": "Membina Jiwa, Mengungguli Akhlak dengan Kalamullah.",
+  "tarikh": {
+    "mula": "2026-12-14T08:00:00+08:00",
+    "tamat": "2026-12-16T17:00:00+08:00",
+    "hari": "Isnin - Rabu",
+    "nota": "Harian, tidak bermalam. Waktu pulang Hari 3 dijangka 5:30 petang dan boleh lewat."
+  },
+  "lokasi": {
+    "hari_1_2": "Masjid Kampung Sungai Lang Baru, Banting",
+    "hari_3": "Shah Alam: Yayasan Restu, Muzium Sultan Alam Shah, Masjid Negeri Shah Alam"
+  },
+  "kapasiti": 40,
+  "syarat": {
+    "umur_minimum": 10,
+    "umur_maksimum_sistem": 18,
+    "nota_umur": "Poster hanya menyebut 10 tahun ke atas. Had maksimum 18 ialah lalai sistem dan perlu disahkan pemilik.",
+    "lancar_quran": true
+  },
+  "yuran_rm": {
+    "asal": 180,
+    "promosi": 120,
+    "online": 110,
+    "diskaun_online": 10
+  },
+  "hafazan": ["Al-Mulk", "Al-Kahfi", "As-Sajdah", "Al-Insan"],
+  "zon_masa": "Asia/Kuala_Lumpur (UTC+8)",
+  "pelancaran": "2026-11-18",
+  "status_data": "Tarikh dan angka tertentu ialah cadangan. Semak TODO-PEMILIK.md."
+}

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "L01",
+    "kategori": "Kelulusan",
+    "tugasan": "Bentang kertas kerja kepada jawatankuasa masjid",
+    "pic_jawatan": "Pengarah Program",
+    "deadline": "2026-11-17T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L02",
+    "kategori": "Kelulusan",
+    "tugasan": "Lulus bajet dan siling RM5,500",
+    "pic_jawatan": "Penaung",
+    "deadline": "2026-11-17T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L03",
+    "kategori": "Kewangan",
+    "tugasan": "Mohon dana masjid (anggaran RM1,100 jika semua daftar online RM110)",
+    "pic_jawatan": "Bendahari",
+    "deadline": "2026-11-18T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan. Lihat pembiayaan dalam seed-bajet.json."
+  },
+  {
+    "id": "L04",
+    "kategori": "Kewangan",
+    "tugasan": "Sediakan butiran bayaran untuk borang dan rekod kutipan yuran",
+    "pic_jawatan": "Bendahari",
+    "deadline": "2026-11-18T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L05",
+    "kategori": "Jawatankuasa",
+    "tugasan": "Lantik semua AJK dan isi nama dalam sistem",
+    "pic_jawatan": "Pengarah Program",
+    "deadline": "2026-11-19T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L06",
+    "kategori": "Jawatankuasa",
+    "tugasan": "Mesyuarat AJK pertama",
+    "pic_jawatan": "Setiausaha",
+    "deadline": "2026-11-20T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L07",
+    "kategori": "Fasilitator",
+    "tugasan": "Sahkan Ust Shahril dan Khairul Anuar (tarikh, slot, bayaran RM300)",
+    "pic_jawatan": "Ketua Unit Hafazan",
+    "deadline": "2026-11-25T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L08",
+    "kategori": "Fasilitator",
+    "tugasan": "Dapatkan fasilitator lain dan sahkan elaun",
+    "pic_jawatan": "Ketua Unit Hafazan",
+    "deadline": "2026-11-30T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L09",
+    "kategori": "Fasilitator",
+    "tugasan": "Taklimat fasilitator dan agihan kumpulan (8 peserta setiap kumpulan)",
+    "pic_jawatan": "Ketua Unit Hafazan",
+    "deadline": "2026-12-12T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L10",
+    "kategori": "Modul",
+    "tugasan": "Muktamad modul program (Hari 1-3)",
+    "pic_jawatan": "Penyelaras Modul",
+    "deadline": "2026-12-02T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L11",
+    "kategori": "Modul",
+    "tugasan": "Reka bentuk kulit modul dan fail",
+    "pic_jawatan": "Penyelaras Modul",
+    "deadline": "2026-12-02T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan. Ikut warna jenama."
+  },
+  {
+    "id": "L12",
+    "kategori": "Modul",
+    "tugasan": "Cetak modul untuk peserta dan fasilitator",
+    "pic_jawatan": "Penyelaras Modul",
+    "deadline": "2026-12-09T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L13",
+    "kategori": "Sijil",
+    "tugasan": "Tetapkan kriteria kelayakan sijil (kehadiran minimum)",
+    "pic_jawatan": "Penyelaras Modul",
+    "deadline": "2026-12-02T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan. Lalai sistem: hadir sekurang-kurangnya 2 daripada 3 hari; boleh ubah dalam Tetapan."
+  },
+  {
+    "id": "L14",
+    "kategori": "Sijil",
+    "tugasan": "Dapatkan nama dan jawatan penandatangan sijil",
+    "pic_jawatan": "Setiausaha",
+    "deadline": "2026-12-05T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L15",
+    "kategori": "Sijil",
+    "tugasan": "Cetak ujian 1 sijil, semak ejaan dan jajaran",
+    "pic_jawatan": "Penyelaras Modul",
+    "deadline": "2026-12-09T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L16",
+    "kategori": "Sijil",
+    "tugasan": "Cetak sijil batch selepas kehadiran disahkan",
+    "pic_jawatan": "Penyelaras Modul",
+    "deadline": "2026-12-15T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan. Boleh cetak malam 15 Disember untuk diserah di Shah Alam; semak nama yang berubah."
+  },
+  {
+    "id": "L17",
+    "kategori": "Merchandise",
+    "tugasan": "Putuskan item pilihan (baju, lencana, fail, beg/botol)",
+    "pic_jawatan": "Pengarah Program",
+    "deadline": "2026-11-22T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan. Bergantung dana."
+  },
+  {
+    "id": "L18",
+    "kategori": "Merchandise",
+    "tugasan": "Dapatkan sekurang-kurangnya 3 sebut harga baju-T",
+    "pic_jawatan": "Ketua Unit Merchandise",
+    "deadline": "2026-11-25T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan. RISIKO MASA: pendaftaran tutup 7 Dis."
+  },
+  {
+    "id": "L19",
+    "kategori": "Merchandise",
+    "tugasan": "Lulus reka bentuk baju dan lencana",
+    "pic_jawatan": "Pengarah Program",
+    "deadline": "2026-11-28T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L20",
+    "kategori": "Merchandise",
+    "tugasan": "Tempah baju (tambah 10% stok saiz)",
+    "pic_jawatan": "Ketua Unit Merchandise",
+    "deadline": "2026-12-01T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L21",
+    "kategori": "Merchandise",
+    "tugasan": "Bukti cetak (proof) baju dan lencana diluluskan",
+    "pic_jawatan": "Ketua Unit Merchandise",
+    "deadline": "2026-12-03T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L22",
+    "kategori": "Merchandise",
+    "tugasan": "Terima dan semak baju, lencana, fail",
+    "pic_jawatan": "Ketua Unit Merchandise",
+    "deadline": "2026-12-12T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L23",
+    "kategori": "Peralatan",
+    "tugasan": "Cetak tag nama (templates/tag-nama.html)",
+    "pic_jawatan": "Ketua Unit Merchandise",
+    "deadline": "2026-12-11T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan. Selepas senarai peserta muktamad."
+  },
+  {
+    "id": "L24",
+    "kategori": "Surat",
+    "tugasan": "Hantar surat lawatan kepada Yayasan Restu",
+    "pic_jawatan": "Setiausaha",
+    "deadline": "2026-11-22T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L25",
+    "kategori": "Surat",
+    "tugasan": "Hantar surat lawatan kepada Muzium Sultan Alam Shah",
+    "pic_jawatan": "Setiausaha",
+    "deadline": "2026-11-22T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L26",
+    "kategori": "Surat",
+    "tugasan": "Hantar surat makluman kepada Masjid Negeri Shah Alam",
+    "pic_jawatan": "Setiausaha",
+    "deadline": "2026-11-22T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L27",
+    "kategori": "Surat",
+    "tugasan": "Hantar surat jemputan penceramah",
+    "pic_jawatan": "Setiausaha",
+    "deadline": "2026-11-25T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L28",
+    "kategori": "Logistik",
+    "tugasan": "Dapatkan sebut harga bas mini dan tempah",
+    "pic_jawatan": "Ketua Unit Logistik",
+    "deadline": "2026-11-25T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L29",
+    "kategori": "Logistik",
+    "tugasan": "Uji masa perjalanan Banting-Shah Alam dan kemas kini jadual Hari 3",
+    "pic_jawatan": "Ketua Unit Logistik",
+    "deadline": "2026-12-05T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L30",
+    "kategori": "Makanan",
+    "tugasan": "Sahkan katering dan harga",
+    "pic_jawatan": "Ketua Unit Makanan",
+    "deadline": "2026-12-01T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L31",
+    "kategori": "Makanan",
+    "tugasan": "Kumpul maklumat alahan makanan peserta",
+    "pic_jawatan": "Ketua Unit Makanan",
+    "deadline": "2026-12-11T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L32",
+    "kategori": "Kebajikan",
+    "tugasan": "Edar dan kumpul borang kebenaran ibu bapa dan indemniti",
+    "pic_jawatan": "Ketua Unit Kebajikan",
+    "deadline": "2026-12-11T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L33",
+    "kategori": "Kebajikan",
+    "tugasan": "Sediakan kit pertolongan cemas dan senarai nombor kecemasan",
+    "pic_jawatan": "Ketua Unit Kebajikan",
+    "deadline": "2026-12-12T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L34",
+    "kategori": "Media",
+    "tugasan": "Muktamad poster dengan nombor telefon dan QR",
+    "pic_jawatan": "Ketua Unit Media",
+    "deadline": "2026-11-17T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L35",
+    "kategori": "Media",
+    "tugasan": "Sebar poster dan pautan pendaftaran di WhatsApp (pelancaran)",
+    "pic_jawatan": "Ketua Unit Media",
+    "deadline": "2026-11-18T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L36",
+    "kategori": "Pendaftaran",
+    "tugasan": "Taklimat ibu bapa melalui kumpulan WhatsApp",
+    "pic_jawatan": "Ketua Unit Pendaftaran",
+    "deadline": "2026-12-12T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L37",
+    "kategori": "Hari Program",
+    "tugasan": "Semakan akhir semua barang",
+    "pic_jawatan": "Pengarah Program",
+    "deadline": "2026-12-13T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L38",
+    "kategori": "Selepas Program",
+    "tugasan": "Laporan akhir dan kewangan ke jawatankuasa masjid",
+    "pic_jawatan": "Setiausaha",
+    "deadline": "2026-12-27T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L39",
+    "kategori": "Selepas Program",
+    "tugasan": "Maklum balas peserta dan ibu bapa",
+    "pic_jawatan": "Ketua Unit Pendaftaran",
+    "deadline": "2026-12-23T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  },
+  {
+    "id": "L40",
+    "kategori": "Selepas Program",
+    "tugasan": "Selesaikan baki dana dengan masjid",
+    "pic_jawatan": "Bendahari",
+    "deadline": "2026-12-27T23:59:00+08:00",
+    "status": "Belum",
+    "catatan": "Cadangan, sila sahkan."
+  }
+]

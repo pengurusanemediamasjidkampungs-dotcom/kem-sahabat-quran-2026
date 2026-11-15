@@ -1,0 +1,16 @@
+{
+  "name": "ksq-2026-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sistem Pengurusan Kem Sahabat Quran 2026 — ujian Node sahaja, tiada kebergantungan runtime",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node serve.js",
+    "preview": "node serve.js --no-open",
+    "test": "node --test \"tests/*.test.js\"",
+    "test:mcp": "node --test \"mcp-ksq26/test/*.test.js\""
+  }
+}

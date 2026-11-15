@@ -1,0 +1,40 @@
+# Menerbitkan folder web/ ke GitHub Pages.
+# Laman diterbitkan sebagai artifak, jadi kod sumber penuh (backend, ujian,
+# dokumen) boleh disimpan di akar repo tanpa mengganggu laman.
+name: Terbit laman KSQ 2026
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Ambil kod
+        uses: actions/checkout@v4
+
+      - name: Sediakan Pages
+        uses: actions/configure-pages@v5
+
+      - name: Muat naik folder web
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Terbit
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pentadbir — Kem Sahabat Quran 2026</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#073B2A">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+  <!-- ================= LOGIN ================= -->
+  <section class="login-screen" id="login-screen">
+    <div class="login-card">
+      <img class="login-logo" src="assets/logo.png" alt="Logo Masjid Kampung Sungai Lang Baru" width="418" height="597">
+      <h1>Pentadbir KSQ 2026</h1>
+      <p class="muted">Masukkan token pentadbir untuk membuka dashboard pengurusan.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label class="field-label" for="token-input">Token pentadbir</label>
+          <div class="row">
+            <input class="input grow" id="token-input" name="token" type="password" autocomplete="current-password" spellcheck="false" required placeholder="Token dari Script Properties GAS">
+            <button class="btn btn-ghost btn-sm" type="button" id="toggle-token">Tunjuk</button>
+          </div>
+          <p class="hint">Token disimpan dalam Script Properties GAS sebagai <code>ADMIN_TOKEN</code>. Jangan kongsi token ini.</p>
+        </div>
+        <p class="form-error hidden" id="login-error" role="alert"></p>
+        <button class="btn btn-gold btn-block" type="submit" id="login-submit">Masuk ke dashboard</button>
+      </form>
+
+      <p class="login-help">Sesi tamat apabila tab ditutup. Jika token tidak diterima, semak semula Script Properties dan deployment GAS yang terbaharu.</p>
+      <p class="login-help"><a href="index.html">← Kembali ke halaman awam</a></p>
+    </div>
+  </section>
+
+  <!-- ================= APP ================= -->
+  <div id="app" class="hidden">
+    <header class="app-header">
+      <div class="container-wide">
+        <div class="app-top">
+          <a class="app-brand" href="index.html" aria-label="Kem Sahabat Quran 2026">
+            <img src="assets/logo.png" alt="" width="418" height="597">
+            <span>
+              <b>KSQ 2026 · Pentadbir</b>
+              <span>Masjid Kg. Sungai Lang Baru</span>
+            </span>
+          </a>
+          <div class="app-user">
+            <span class="badge" id="role-badge">Pentadbir</span>
+            <button class="btn btn-outline-light btn-sm" type="button" id="logout-button">Log keluar</button>
+          </div>
+        </div>
+        <nav class="app-nav" id="app-nav" aria-label="Navigasi pentadbir">
+          <button type="button" data-view="dashboard" class="active">Dashboard</button>
+          <button type="button" data-view="registrations">Daftar</button>
+          <button type="button" data-view="checklist">Checklist</button>
+          <button type="button" data-view="milestones">Milestone</button>
+          <button type="button" data-view="budget">Bajet</button>
+          <button type="button" data-view="attendance">Kehadiran</button>
+          <button type="button" data-view="data">Data</button>
+          <button type="button" data-view="settings">Tetapan</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="container-wide">
+
+        <!-- ============ DASHBOARD ============ -->
+        <section class="view" id="view-dashboard" data-view="dashboard">
+          <div class="view-head">
+            <div>
+              <h1>Dashboard</h1>
+              <p>Pantau pendaftaran, masa program, kewangan dan tugasan secara langsung.</p>
+            </div>
+            <div class="view-actions">
+              <span class="hint" id="dash-updated"></span>
+              <button class="btn btn-outline btn-sm" type="button" id="dash-refresh">Muat semula</button>
+            </div>
+          </div>
+
+          <div class="alert-list mb-2" id="dash-alerts"></div>
+
+          <div class="kpi-grid">
+            <div class="kpi kpi-gold">
+              <div class="kpi-label">Program bermula</div>
+              <div class="kpi-value" id="dash-program-value">—</div>
+              <div class="kpi-foot" id="dash-program-foot">Tarikh program belum dimuatkan.</div>
+            </div>
+            <div class="kpi kpi-blue">
+              <div class="kpi-label">Pendaftaran ditutup</div>
+              <div class="kpi-value" id="dash-close-value">—</div>
+              <div class="kpi-foot" id="dash-close-foot">Tarikh tutup belum dimuatkan.</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Baki slot</div>
+              <div class="kpi-value" id="dash-baki">—</div>
+              <div class="kpi-foot" id="dash-slot-foot">—</div>
+            </div>
+            <div class="kpi kpi-red">
+              <div class="kpi-label">Kutipan yuran</div>
+              <div class="kpi-value" id="dash-collected">—</div>
+              <div class="kpi-foot" id="dash-collected-foot">—</div>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div>
+              <div class="panel-card">
+                <div class="panel-head">
+                  <div>
+                    <h2>Slot dan pendaftaran</h2>
+                    <p>Kapasiti 40 peserta. Senarai tunggu tidak mengambil slot.</p>
+                  </div>
+                  <span id="dash-source-badge"></span>
+                </div>
+                <div class="slot-number">
+                  <strong id="dash-baki-big">—</strong>
+                  <span>daripada <b id="dash-capacity">40</b> slot masih terbuka</span>
+                </div>
+                <div class="progress thin mt-1">
+                  <span id="dash-slot-progress"></span>
+                </div>
+                <div class="progress-meta">
+                  <span id="dash-slot-progress-meta">—</span>
+                  <span id="dash-slot-percent">0%</span>
+                </div>
+
+                <div class="mt-2">
+                  <div class="progress-row">
+                    <div class="progress-row-head"><b>Disahkan</b><span id="dash-count-disahkan">0</span></div>
+                    <div class="progress thin"><span id="dash-bar-disahkan"></span></div>
+                  </div>
+                  <div class="progress-row">
+                    <div class="progress-row-head"><b>Menunggu pengesahan</b><span id="dash-count-menunggu">0</span></div>
+                    <div class="progress thin"><span id="dash-bar-menunggu"></span></div>
+                  </div>
+                  <div class="progress-row">
+                    <div class="progress-row-head"><b>Senarai tunggu</b><span id="dash-count-tunggu">0</span></div>
+                    <div class="progress thin"><span id="dash-bar-tunggu"></span></div>
+                  </div>
+                </div>
+
+                <p class="hint mt-2" id="dash-rate">Kadar pendaftaran akan dipaparkan selepas ada data.</p>
+              </div>
+
+              <div class="panel-card">
+                <div class="panel-head">
+                  <div><h2>Kewangan</h2><p>Berdasarkan yuran peserta dan item bajet.</p></div>
+                </div>
+                <div class="action-list">
+                  <div class="action-item"><div class="action-item-main"><b>Sasaran yuran peserta Disahkan</b><span>Jumlah yuran semua peserta yang telah disahkan</span></div><div class="cell-amount" id="dash-finance-target">RM 0</div></div>
+                  <div class="action-item"><div class="action-item-main"><b>Dikutip (status bayaran Sudah)</b><span>Termasuk bayaran yang telah direkod</span></div><div class="cell-amount" id="dash-finance-collected">RM 0</div></div>
+                  <div class="action-item"><div class="action-item-main"><b>Belum dikutip</b><span>Baki yuran yang masih perlu dijelaskan</span></div><div class="cell-amount" id="dash-finance-pending">RM 0</div></div>
+                  <div class="action-item"><div class="action-item-main"><b>Anggaran perbelanjaan</b><span>Jumlah anggaran item bajet</span></div><div class="cell-amount" id="dash-finance-budget">RM 0</div></div>
+                  <div class="action-item"><div class="action-item-main"><b>Perbelanjaan sebenar</b><span>Jumlah direkod dalam bajet</span></div><div class="cell-amount" id="dash-finance-actual">RM 0</div></div>
+                  <div class="action-item"><div class="action-item-main"><b>Baki kutipan − anggaran</b><span>Negatif bermaksud dana tambahan diperlukan</span></div><div class="cell-amount" id="dash-finance-gap">RM 0</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="panel-card">
+                <div class="panel-head">
+                  <div><h2>Perlu tindakan hari ini</h2><p>Tugasan lewat, hari ini dan 7 hari akan datang.</p></div>
+                </div>
+                <div class="action-list" id="dash-actions"></div>
+              </div>
+
+              <div class="panel-card">
+                <div class="panel-head">
+                  <div><h2>Milestone seterusnya</h2><p>Peristiwa penting yang akan datang.</p></div>
+                </div>
+                <div id="dash-next-milestone"></div>
+              </div>
+
+              <div class="panel-card">
+                <div class="panel-head">
+                  <div><h2>Kemajuan checklist</h2><p id="dash-checklist-overall">0% selesai</p></div>
+                </div>
+                <div id="dash-checklist-bars"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ REGISTRATIONS ============ -->
+        <section class="view hidden" id="view-registrations" data-view="registrations">
+          <div class="view-head">
+            <div>
+              <h1>Pendaftaran peserta</h1>
+              <p id="reg-count">Memuatkan senarai peserta…</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-gold btn-sm" type="button" id="reg-add">Tambah manual</button>
+              <button class="btn btn-outline btn-sm" type="button" id="reg-export">Eksport CSV</button>
+              <button class="btn btn-outline btn-sm" type="button" id="reg-copy-phones">Salin no. penjaga</button>
+              <button class="btn btn-outline btn-sm" type="button" id="reg-whatsapp">Jana mesej WhatsApp</button>
+              <button class="btn btn-ghost btn-sm" type="button" id="reg-refresh">Muat semula</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="field grow">
+              <label class="field-label" for="reg-search">Cari</label>
+              <input class="input" id="reg-search" type="search" placeholder="Nama peserta, penjaga, telefon atau ID">
+            </div>
+            <div class="field">
+              <label class="field-label" for="reg-filter-status">Status</label>
+              <select class="input" id="reg-filter-status">
+                <option value="">Semua status</option>
+                <option value="Disahkan">Disahkan</option>
+                <option value="Menunggu">Menunggu</option>
+                <option value="Senarai Tunggu">Senarai Tunggu</option>
+                <option value="Batal">Batal</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="reg-filter-payment">Bayaran</label>
+              <select class="input" id="reg-filter-payment">
+                <option value="">Semua bayaran</option>
+                <option value="Belum">Belum</option>
+                <option value="Sudah">Sudah</option>
+                <option value="Dikecualikan">Dikecualikan</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="reg-filter-method">Kaedah</label>
+              <select class="input" id="reg-filter-method">
+                <option value="">Semua kaedah</option>
+                <option value="online">Online</option>
+                <option value="manual">Manual</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label">&nbsp;</label>
+              <button class="btn btn-ghost btn-sm" type="button" id="reg-reset">Reset</button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID / Masa daftar</th>
+                  <th>Peserta</th>
+                  <th>Penjaga</th>
+                  <th>Kaedah</th>
+                  <th class="cell-amount">Yuran</th>
+                  <th>Bayaran</th>
+                  <th>Status</th>
+                  <th>Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="reg-table-body"></tbody>
+            </table>
+          </div>
+          <p class="table-scroll-hint">Tatal ke kanan pada telefon untuk melihat semua lajur. Perubahan status dan bayaran disimpan terus ke Google Sheets.</p>
+        </section>
+
+        <!-- ============ CHECKLIST ============ -->
+        <section class="view hidden" id="view-checklist" data-view="checklist">
+          <div class="view-head">
+            <div>
+              <h1>Checklist tugasan</h1>
+              <p>Semak tugasan mengikut kategori, PIC dan tarikh akhir.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-gold btn-sm" type="button" id="task-add">Tambah tugasan</button>
+              <button class="btn btn-ghost btn-sm" type="button" id="task-refresh">Muat semula</button>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="field grow">
+              <label class="field-label" for="task-search">Cari</label>
+              <input class="input" id="task-search" type="search" placeholder="Tugasan, PIC atau catatan">
+            </div>
+            <div class="field">
+              <label class="field-label" for="task-filter-category">Kategori</label>
+              <select class="input" id="task-filter-category">
+                <option value="">Semua kategori</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label" for="task-filter-status">Status</label>
+              <select class="input" id="task-filter-status">
+                <option value="">Semua</option>
+                <option value="open">Belum selesai</option>
+                <option value="overdue">Lewat</option>
+                <option value="today">Hari ini</option>
+                <option value="week">7 hari akan datang</option>
+                <option value="done">Selesai</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="task-summary" id="task-summary"></div>
+          <div class="task-list" id="task-list"></div>
+        </section>
+
+        <!-- ============ MILESTONES ============ -->
+        <section class="view hidden" id="view-milestones" data-view="milestones">
+          <div class="view-head">
+            <div>
+              <h1>Milestone program</h1>
+              <p>Garis masa persediaan dan pelaksanaan KSQ 2026.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-gold btn-sm" type="button" id="milestone-add">Tambah milestone</button>
+              <button class="btn btn-ghost btn-sm" type="button" id="milestone-refresh">Muat semula</button>
+            </div>
+          </div>
+          <div class="panel-card">
+            <div class="timeline" id="milestone-timeline"></div>
+          </div>
+        </section>
+
+        <!-- ============ BUDGET ============ -->
+        <section class="view hidden" id="view-budget" data-view="budget">
+          <div class="view-head">
+            <div>
+              <h1>Bajet</h1>
+              <p>Anggaran berbanding perbelanjaan sebenar. Semak dengan bendahari sebelum meluluskan.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-gold btn-sm" type="button" id="budget-add">Tambah item</button>
+              <button class="btn btn-ghost btn-sm" type="button" id="budget-refresh">Muat semula</button>
+            </div>
+          </div>
+          <div class="budget-summary" id="budget-summary"></div>
+          <div id="budget-groups"></div>
+        </section>
+
+        <!-- ============ ATTENDANCE ============ -->
+        <section class="view hidden" id="view-attendance" data-view="attendance">
+          <div class="view-head">
+            <div>
+              <h1>Kehadiran</h1>
+              <p>Hanya peserta berstatus Disahkan boleh ditanda hadir.</p>
+            </div>
+            <div class="view-actions">
+              <span class="hint" id="attendance-updated"></span>
+              <button class="btn btn-ghost btn-sm" type="button" id="attendance-refresh">Muat semula</button>
+            </div>
+          </div>
+
+          <div class="attendance-grid">
+            <div class="attendance-count"><b id="attendance-day1">0</b><span>Hadir Hari 1</span></div>
+            <div class="attendance-count"><b id="attendance-day2">0</b><span>Hadir Hari 2</span></div>
+            <div class="attendance-count"><b id="attendance-day3">0</b><span>Hadir Hari 3</span></div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="field grow">
+              <label class="field-label" for="attendance-search">Cari peserta</label>
+              <input class="input" id="attendance-search" type="search" placeholder="Nama atau ID peserta">
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table attendance-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Peserta</th>
+                  <th>Penjaga</th>
+                  <th>Alahan / kesihatan</th>
+                  <th>Hari 1</th>
+                  <th>Hari 2</th>
+                  <th>Hari 3</th>
+                </tr>
+              </thead>
+              <tbody id="attendance-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ DATA ============ -->
+        <section class="view hidden" id="view-data" data-view="data">
+          <div class="view-head">
+            <div>
+              <h1>Pengurusan pangkalan data</h1>
+              <p>Semak kesihatan helaian, muat data awal dan buat sandaran Google Sheets.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-outline btn-sm" type="button" id="data-refresh">Muat semula</button>
+              <button class="btn btn-outline btn-sm" type="button" id="data-setup">Sediakan helaian</button>
+              <button class="btn btn-outline btn-sm" type="button" id="data-seed">Muat data awal</button>
+              <button class="btn btn-gold btn-sm" type="button" id="data-backup">Sandarkan Sheet</button>
+            </div>
+          </div>
+
+          <div class="panel-card mb-2">
+            <div class="panel-head"><div><h2>Maklumat pangkalan data</h2><p id="data-updated"></p></div></div>
+            <div class="action-list" id="data-info"></div>
+          </div>
+
+          <div class="panel-card mb-2">
+            <div class="panel-head"><div><h2>Semakan kesihatan</h2><p>Isu dikesan secara automatik daripada struktur helaian.</p></div></div>
+            <div id="data-checks"></div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-head"><div><h2>Helaian</h2><p>Bilangan baris data dan status pengepala.</p></div></div>
+            <div class="sheet-grid" id="data-sheets"></div>
+            <div id="data-result" class="mt-2"></div>
+          </div>
+        </section>
+
+        <!-- ============ SETTINGS ============ -->
+        <section class="view hidden" id="view-settings" data-view="settings">
+          <div class="view-head">
+            <div>
+              <h1>Tetapan</h1>
+              <p>Kapasiti, yuran, tarikh, urus setia dan sumber pendaftaran.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-outline btn-sm" type="button" id="settings-test">Uji API</button>
+              <button class="btn btn-gold btn-sm" type="submit" form="settings-form" id="settings-save">Simpan tetapan</button>
+            </div>
+          </div>
+
+          <div class="panel-card mb-2">
+            <div class="panel-head"><div><h2>Status token</h2><p>Token disimpan dalam Script Properties, bukan dalam fail ini.</p></div></div>
+            <div class="action-list">
+              <div class="action-item"><div class="action-item-main"><b>Token pentadbir</b><span>ADMIN_TOKEN</span></div><span id="settings-token-admin"></span></div>
+              <div class="action-item"><div class="action-item-main"><b>Token fasilitator</b><span>FASILITATOR_TOKEN</span></div><span id="settings-token-facilitator"></span></div>
+            </div>
+          </div>
+
+          <form id="settings-form" class="panel-card">
+            <div class="form-grid">
+              <div class="field">
+                <label class="field-label" for="setting-kapasiti">Kapasiti peserta</label>
+                <input class="input" id="setting-kapasiti" name="kapasiti" type="number" min="1" max="500" step="1" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-pendaftaran">Pendaftaran dibuka</label>
+                <label class="check-label"><input id="setting-pendaftaran" name="pendaftaran_dibuka" type="checkbox"> Buka borang pendaftaran awam</label>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-yuran-asal">Yuran asal (RM)</label>
+                <input class="input" id="setting-yuran-asal" name="yuran_asal" type="number" min="0" step="1" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-yuran-promo">Yuran promosi (RM)</label>
+                <input class="input" id="setting-yuran-promo" name="yuran_promo" type="number" min="0" step="1" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-diskaun">Diskaun online (RM)</label>
+                <input class="input" id="setting-diskaun" name="diskaun_online" type="number" min="0" step="1" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-umur-min">Umur minimum</label>
+                <input class="input" id="setting-umur-min" name="umur_min" type="number" min="5" max="99" step="1" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-umur-max">Umur maksimum</label>
+                <input class="input" id="setting-umur-max" name="umur_max" type="number" min="5" max="99" step="1" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-tarikh-mula">Tarikh mula program</label>
+                <input class="input" id="setting-tarikh-mula" name="tarikh_mula" type="datetime-local" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-tarikh-tamat">Tarikh tamat program</label>
+                <input class="input" id="setting-tarikh-tamat" name="tarikh_tamat" type="datetime-local" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-tarikh-tutup">Tutup pendaftaran</label>
+                <input class="input" id="setting-tarikh-tutup" name="tarikh_tutup_daftar" type="datetime-local" required>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-tel">No. telefon urus setia</label>
+                <input class="input" id="setting-tel" name="tel_urus_setia" type="tel" placeholder="Contoh: 012-3456789">
+                <p class="hint">Gunakan nombor WhatsApp rasmi urus setia.</p>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-sumber">Sumber pendaftaran</label>
+                <select class="input" id="setting-sumber" name="sumber_pendaftaran">
+                  <option value="sistem">Sistem KSQ (disyorkan)</option>
+                  <option value="sheet_luar">Google Sheet luar</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-sheet-id">Pautan / ID Google Sheet luar</label>
+                <input class="input" id="setting-sheet-id" name="sheet_luar_id" type="text" placeholder="Tampal pautan Sheet jika digunakan">
+              </div>
+              <div class="field">
+                <label class="field-label" for="setting-sheet-tab">Nama tab Sheet luar</label>
+                <input class="input" id="setting-sheet-tab" name="sheet_luar_tab" type="text" placeholder="Contoh: Pendaftaran">
+              </div>
+              <div class="field field-full">
+                <label class="field-label" for="setting-bayaran">Butiran bayaran</label>
+                <textarea class="input" id="setting-bayaran" name="butiran_bayaran" rows="5" placeholder="Contoh: Pindahan bank ke akaun masjid…"></textarea>
+                <p class="hint">Teks ini dipaparkan kepada pendaftar selepas borang dihantar. Jangan letak kata laluan atau token.</p>
+              </div>
+            </div>
+            <p class="hint mt-2">Semua masa menggunakan Asia/Kuala_Lumpur (UTC+8). Selepas menyimpan, halaman awam akan menggunakan tetapan ini pada kemas kini seterusnya.</p>
+          </form>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ================= WHATSAPP MESSAGE DIALOG ================= -->
+  <dialog id="message-dialog" class="modal">
+    <div class="modal-head">
+      <div>
+        <h2>Jana mesej WhatsApp</h2>
+        <p>Salin mesej dan hantar melalui WhatsApp. Sistem tidak menghantar mesej secara automatik.</p>
+      </div>
+      <button class="icon-button" type="button" id="message-close" aria-label="Tutup">×</button>
+    </div>
+    <div class="modal-form">
+      <div class="form-grid">
+        <div class="field">
+          <label class="field-label" for="message-template">Jenis mesej</label>
+          <select class="input" id="message-template">
+            <option value="sah">Pengesahan pendaftaran</option>
+            <option value="bayar">Peringatan bayaran</option>
+            <option value="taklimat">Taklimat Hari 3</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="message-target">Sasaran</label>
+          <select class="input" id="message-target">
+            <option value="filtered">Senarai yang ditapis</option>
+            <option value="Disahkan">Hanya Disahkan</option>
+            <option value="Menunggu">Hanya Menunggu</option>
+            <option value="Senarai Tunggu">Hanya Senarai Tunggu</option>
+            <option value="Belum">Belum bayar</option>
+          </select>
+        </div>
+      </div>
+      <div class="field mt-2">
+        <label class="field-label" for="message-output">Mesej siap salin</label>
+        <textarea class="input" id="message-output" rows="12" readonly></textarea>
+      </div>
+      <p class="hint" id="message-note"></p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" type="button" id="message-close-2">Tutup</button>
+        <button class="btn btn-gold" type="button" id="message-copy">Salin semua mesej</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

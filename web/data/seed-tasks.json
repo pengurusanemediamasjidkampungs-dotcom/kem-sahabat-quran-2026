@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "nama": "Data awal KSQ 2026",
+    "nota": "Semua tarikh ialah cadangan dan boleh disunting. Tandakan 'Cadangan, sila sahkan' pada catatan.",
+    "versi": "1.0.0"
+  },
+  "milestones": [
+    {
+      "tajuk": "Pelancaran program dan sebar pautan pendaftaran di WhatsApp",
+      "tarikh": "2026-11-18",
+      "penerangan": "Cadangan, sila sahkan tarikh pelancaran.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Surat lawatan dihantar kepada Yayasan Restu dan Muzium",
+      "tarikh": "2026-11-22",
+      "penerangan": "Surat rasmi permohonan lawatan kumpulan.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Bas ditempah",
+      "tarikh": "2026-11-25",
+      "penerangan": "Bas mini untuk 40 peserta dan fasilitator.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Penceramah dan fasilitator disahkan",
+      "tarikh": "2026-11-30",
+      "penerangan": "Dua penceramah dan lima fasilitator.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Tutup pendaftaran (atau apabila 40 slot penuh)",
+      "tarikh": "2026-12-07",
+      "penerangan": "Kunci senarai peserta muktamad.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Modul dan tag siap dicetak",
+      "tarikh": "2026-12-09",
+      "penerangan": "Modul program, tag peserta dan sijil.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Senarai peserta muktamad dan borang kebenaran ibu bapa dikumpul",
+      "tarikh": "2026-12-11",
+      "penerangan": "Pastikan indemniti dan kebenaran lengkap.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Taklimat ibu bapa; pengesahan akhir makanan, bas dan destinasi",
+      "tarikh": "2026-12-12",
+      "penerangan": "Masa taklimat akan dimaklumkan.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Persiapan masjid",
+      "tarikh": "2026-12-13",
+      "penerangan": "Susun atur dewan, pendaftaran dan peralatan.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Hari 1 program",
+      "tarikh": "2026-12-14",
+      "penerangan": "Masjid Kg. Sungai Lang Baru.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Hari 2 program",
+      "tarikh": "2026-12-15",
+      "penerangan": "Masjid Kg. Sungai Lang Baru.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Hari 3 program (Shah Alam)",
+      "tarikh": "2026-12-16",
+      "penerangan": "Yayasan Restu, Muzium Sultan Alam Shah, Masjid Negeri.",
+      "status": "Belum"
+    },
+    {
+      "tajuk": "Laporan kewangan dan maklum balas",
+      "tarikh": "2026-12-18",
+      "penerangan": "Laporan akhir dan maklum balas ibu bapa.",
+      "status": "Belum"
+    }
+  ],
+  "tasks": [
+    {
+      "kategori": "Pendaftaran",
+      "tugasan": "Sedia dan uji borang pendaftaran online",
+      "pic": "Urus Setia",
+      "deadline": "2026-11-17",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Pendaftaran",
+      "tugasan": "Sebar pautan pendaftaran di WhatsApp",
+      "pic": "Urus Setia",
+      "deadline": "2026-11-18",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Pendaftaran",
+      "tugasan": "Hantar mesej pengesahan kepada pendaftar",
+      "pic": "Urus Setia",
+      "deadline": "2026-11-24",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Pendaftaran",
+      "tugasan": "Semak bayaran pendaftaran setiap hari",
+      "pic": "Bendahari",
+      "deadline": "2026-12-07",
+      "status": "Belum",
+      "catatan": "Semak sehingga pendaftaran ditutup. Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Pendaftaran",
+      "tugasan": "Urus senarai tunggu jika kapasiti penuh",
+      "pic": "Urus Setia",
+      "deadline": "2026-12-01",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Pendaftaran",
+      "tugasan": "Tutup pendaftaran dan kunci senarai peserta",
+      "pic": "Urus Setia",
+      "deadline": "2026-12-07",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Destinasi",
+      "tugasan": "Hubungi Yayasan Restu untuk lawatan kumpulan",
+      "pic": "AJK Lawatan",
+      "deadline": "2026-11-20",
+      "status": "Belum",
+      "catatan": "Kompleks Taman Seni Islam Antarabangsa, No. 2A Pesiaran Damai, Seksyen 10, Shah Alam. Sahkan yuran kumpulan."
+    },
+    {
+      "kategori": "Destinasi",
+      "tugasan": "Hantar surat rasmi lawatan ke Yayasan Restu",
+      "pic": "AJK Lawatan",
+      "deadline": "2026-11-22",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Destinasi",
+      "tugasan": "Hubungi Muzium Sultan Alam Shah",
+      "pic": "AJK Lawatan",
+      "deadline": "2026-11-20",
+      "status": "Belum",
+      "catatan": "+60 3-5519 0050. Selasa-Ahad 9:30-5:30. Sahkan kadar tiket kumpulan."
+    },
+    {
+      "kategori": "Destinasi",
+      "tugasan": "Hantar surat rasmi lawatan ke Muzium",
+      "pic": "AJK Lawatan",
+      "deadline": "2026-11-22",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Destinasi",
+      "tugasan": "Sahkan kadar tiket muzium untuk 40 peserta",
+      "pic": "AJK Lawatan",
+      "deadline": "2026-11-27",
+      "status": "Belum",
+      "catatan": "Laporan pelawat: RM5 dewasa, RM2 kanak-kanak 7-12. Sahkan dengan muzium."
+    },
+    {
+      "kategori": "Destinasi",
+      "tugasan": "Maklumkan Masjid Negeri Shah Alam (Zohor, makan, tasmik)",
+      "pic": "AJK Lawatan",
+      "deadline": "2026-11-25",
+      "status": "Belum",
+      "catatan": "Solat Zohor berjemaah, makan tengah hari dan tasmik di kawasan tasik."
+    },
+    {
+      "kategori": "Destinasi",
+      "tugasan": "Sahkan kebenaran penggunaan kawasan tasik dan masjid",
+      "pic": "AJK Lawatan",
+      "deadline": "2026-12-04",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Logistik",
+      "tugasan": "Tempah bas mini 40 peserta + fasilitator",
+      "pic": "AJK Logistik",
+      "deadline": "2026-11-25",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Logistik",
+      "tugasan": "Sahkan katering (minum pagi, tengah hari, petang)",
+      "pic": "AJK Logistik",
+      "deadline": "2026-11-27",
+      "status": "Belum",
+      "catatan": "Draf: RM4 minum pagi, RM7 tengah hari, RM4 minum petang. Sahkan."
+    },
+    {
+      "kategori": "Logistik",
+      "tugasan": "Sediakan senarai peralatan program",
+      "pic": "AJK Logistik",
+      "deadline": "2026-12-09",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Logistik",
+      "tugasan": "Sediakan pelan hujan dan pelan alternatif destinasi",
+      "pic": "AJK Logistik",
+      "deadline": "2026-12-07",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Logistik",
+      "tugasan": "Sediakan nombor kecemasan dan kit pertolongan cemas",
+      "pic": "AJK Logistik",
+      "deadline": "2026-12-11",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Logistik",
+      "tugasan": "Sahkan susun atur dewan dan ruang rehat",
+      "pic": "AJK Logistik",
+      "deadline": "2026-12-13",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kandungan",
+      "tugasan": "Sahkan penceramah Slot Akhlak (Ust Shahril)",
+      "pic": "AJK Program",
+      "deadline": "2026-11-27",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kandungan",
+      "tugasan": "Sahkan penceramah Slot Kepimpinan Remaja (Khairul Anuar)",
+      "pic": "AJK Program",
+      "deadline": "2026-11-27",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kandungan",
+      "tugasan": "Sahkan 3 fasilitator tambahan (jumlah 5)",
+      "pic": "AJK Program",
+      "deadline": "2026-11-30",
+      "status": "Belum",
+      "catatan": "Nama fasilitator belum ada dalam dokumen. Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kandungan",
+      "tugasan": "Muktamadkan modul program",
+      "pic": "AJK Program",
+      "deadline": "2026-12-04",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kandungan",
+      "tugasan": "Cetak modul program",
+      "pic": "AJK Program",
+      "deadline": "2026-12-09",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kandungan",
+      "tugasan": "Cetak tag peserta",
+      "pic": "AJK Program",
+      "deadline": "2026-12-09",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kandungan",
+      "tugasan": "Sediakan sijil penyertaan",
+      "pic": "AJK Program",
+      "deadline": "2026-12-11",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kewangan",
+      "tugasan": "Sahkan bajet dengan bendahari",
+      "pic": "Bendahari",
+      "deadline": "2026-11-20",
+      "status": "Belum",
+      "catatan": "Jumlah draf RM5,225; tiket muzium belum dimasukkan. Perlu disemak bendahari."
+    },
+    {
+      "kategori": "Kewangan",
+      "tugasan": "Kutip yuran peserta",
+      "pic": "Bendahari",
+      "deadline": "2026-12-07",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kewangan",
+      "tugasan": "Bayar deposit bas",
+      "pic": "Bendahari",
+      "deadline": "2026-11-30",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Kewangan",
+      "tugasan": "Bayar tiket muzium",
+      "pic": "Bendahari",
+      "deadline": "2026-12-07",
+      "status": "Belum",
+      "catatan": "Anggaran RM2-RM5 x 40 = RM80-RM200. Sahkan."
+    },
+    {
+      "kategori": "Kewangan",
+      "tugasan": "Bayar elaun fasilitator",
+      "pic": "Bendahari",
+      "deadline": "2026-12-16",
+      "status": "Belum",
+      "catatan": "Draf RM80/hari x 3 hari x 5 orang = RM1,200. Sahkan asas pengiraan."
+    },
+    {
+      "kategori": "Kewangan",
+      "tugasan": "Sediakan laporan kewangan akhir",
+      "pic": "Bendahari",
+      "deadline": "2026-12-18",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Promosi",
+      "tugasan": "Muktamadkan poster dan masukkan nombor telefon + QR",
+      "pic": "AJK Promosi",
+      "deadline": "2026-11-17",
+      "status": "Sedang",
+      "catatan": "Poster asal belum memuatkan nombor urus setia dan QR."
+    },
+    {
+      "kategori": "Promosi",
+      "tugasan": "Sebar poster di WhatsApp dan media sosial masjid",
+      "pic": "AJK Promosi",
+      "deadline": "2026-11-18",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Promosi",
+      "tugasan": "Pasang poster di papan kenyataan masjid",
+      "pic": "AJK Promosi",
+      "deadline": "2026-11-19",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Hari Program",
+      "tugasan": "Siapkan senarai semak Hari 1 (pendaftaran, kehadiran, solat, makan)",
+      "pic": "Urus Setia",
+      "deadline": "2026-12-13",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Hari Program",
+      "tugasan": "Siapkan senarai semak Hari 2 (hafazan, slot kepimpinan, murajaah)",
+      "pic": "Urus Setia",
+      "deadline": "2026-12-14",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Hari Program",
+      "tugasan": "Siapkan senarai semak Hari 3 (bas, destinasi, Zohor, tasmik)",
+      "pic": "Urus Setia",
+      "deadline": "2026-12-15",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Selepas program",
+      "tugasan": "Kumpul maklum balas ibu bapa",
+      "pic": "Urus Setia",
+      "deadline": "2026-12-18",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Selepas program",
+      "tugasan": "Tutup akaun dan sediakan laporan akhir",
+      "pic": "Bendahari",
+      "deadline": "2026-12-23",
+      "status": "Belum",
+      "catatan": "Cadangan, sila sahkan"
+    },
+    {
+      "kategori": "Selepas program",
+      "tugasan": "Muat naik gambar dan dokumentasi",
+      "pic": "AJK Promosi",
+      "deadline": "2026-12-23",
+      "status": "Belum",
+      "catatan": "Dapatkan kebenaran ibu bapa sebelum menyiarkan gambar peserta."
+    }
+  ],
+  "budget": [
+    {
+      "item": "Bas mini (lawatan Hari 3)",
+      "kategori": "Logistik",
+      "anggaran_rm": 1200,
+      "sebenar_rm": 0,
+      "catatan": "Draf; perlu disemak bendahari"
+    },
+    {
+      "item": "Slot ceramah (2 slot)",
+      "kategori": "Kandungan",
+      "anggaran_rm": 600,
+      "sebenar_rm": 0,
+      "catatan": "RM300 x 2. Perlu disemak bendahari"
+    },
+    {
+      "item": "Tag peserta",
+      "kategori": "Logistik",
+      "anggaran_rm": 100,
+      "sebenar_rm": 0,
+      "catatan": "Draf; perlu disemak bendahari"
+    },
+    {
+      "item": "Modul program",
+      "kategori": "Kandungan",
+      "anggaran_rm": 100,
+      "sebenar_rm": 0,
+      "catatan": "Draf; perlu disemak bendahari"
+    },
+    {
+      "item": "Elaun fasilitator (5 orang)",
+      "kategori": "Kandungan",
+      "anggaran_rm": 1200,
+      "sebenar_rm": 0,
+      "catatan": "Draf; asas pengiraan perlu disahkan"
+    },
+    {
+      "item": "Makanan dan minuman",
+      "kategori": "Logistik",
+      "anggaran_rm": 2025,
+      "sebenar_rm": 0,
+      "catatan": "RM45 x 45 orang. Perlu disemak bendahari"
+    },
+    {
+      "item": "Tiket muzium (anggaran, belum dimasukkan)",
+      "kategori": "Destinasi",
+      "anggaran_rm": 0,
+      "sebenar_rm": 0,
+      "catatan": "Anggaran RM2-RM5 x 40 = RM80-RM200. Belum dimasukkan dalam jumlah draf."
+    }
+  ]
+}

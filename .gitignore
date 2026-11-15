@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Secrets and local settings
+.env
+.env.local
+mcp-ksq26/.env
+
+# Editor and OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Temp
+*.tmp
+*.log

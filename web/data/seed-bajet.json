@@ -1,0 +1,199 @@
+{
+  "nota": "Angka ialah anggaran daripada nota tulisan tangan dan cadangan agent; perlu disemak dan diluluskan bendahari. Hanya item berstatus Draf, Dicadangkan (jika diterima) dan Diluluskan dikira dalam jumlah. Item Cadangan (pilihan) tidak dikira sehingga diluluskan dan diberi harga.",
+  "sasaran_kos_rm": 5400,
+  "siling_rm": 5500,
+  "kapasiti": 40,
+  "yuran_online_rm": 110,
+  "yuran_manual_rm": 120,
+  "kos_teras_anggaran_rm": 5495,
+  "pembiayaan": {
+    "hasil_yuran_semua_online_rm": 4400,
+    "hasil_yuran_semua_manual_rm": 4800,
+    "dana_masjid_diperlukan_pada_siling_rm": {
+      "semua_online": 1100,
+      "semua_manual": 700
+    },
+    "dana_masjid_diperlukan_pada_kos_teras_rm": {
+      "semua_online": 1095,
+      "semua_manual": 695
+    },
+    "formula": "dana_masjid = max(0, jumlah_kos_dikira - hasil_yuran_diterima)"
+  },
+  "status_kelulusan_dibenarkan": [
+    "Cadangan",
+    "Dicadangkan",
+    "Draf",
+    "Diluluskan",
+    "Ditolak"
+  ],
+  "items": [
+    {
+      "id": "B01",
+      "kategori": "Pengangkutan",
+      "item": "Bas mini (lawatan Hari 3, Banting-Shah Alam pergi balik)",
+      "kuantiti": 1,
+      "unit": "trip",
+      "harga_unit": 1200,
+      "anggaran_rm": 1200,
+      "status_kelulusan": "Draf",
+      "sebenar_rm": null,
+      "catatan": "Daripada nota tulisan tangan. Dapatkan sebut harga."
+    },
+    {
+      "id": "B02",
+      "kategori": "Penceramah",
+      "item": "Slot ceramah (Slot Akhlak dan Slot Kepimpinan Remaja)",
+      "kuantiti": 2,
+      "unit": "slot",
+      "harga_unit": 300,
+      "anggaran_rm": 600,
+      "status_kelulusan": "Draf",
+      "sebenar_rm": null,
+      "catatan": "RM300 setiap slot."
+    },
+    {
+      "id": "B03",
+      "kategori": "Fasilitator",
+      "item": "Elaun fasilitator",
+      "kuantiti": 5,
+      "unit": "orang",
+      "harga_unit": 240,
+      "anggaran_rm": 1200,
+      "status_kelulusan": "Draf",
+      "sebenar_rm": null,
+      "catatan": "RM80 sehari x 3 hari x 5 orang. Nota tulisan tangan ada 4 dan 5; sahkan bilangan."
+    },
+    {
+      "id": "B04",
+      "kategori": "Makanan",
+      "item": "Makan minum (minum pagi, tengah hari, minum petang)",
+      "kuantiti": 45,
+      "unit": "orang",
+      "harga_unit": 45,
+      "anggaran_rm": 2025,
+      "status_kelulusan": "Draf",
+      "sebenar_rm": null,
+      "catatan": "RM15 sehari x 3 hari x 45 orang (40 peserta + 5 fasilitator). Makan tengah hari Hari 3 dianggar RM9-10; mungkin tambah sedikit."
+    },
+    {
+      "id": "B05",
+      "kategori": "Modul",
+      "item": "Cetak modul program",
+      "kuantiti": 40,
+      "unit": "naskhah",
+      "harga_unit": null,
+      "anggaran_rm": 100,
+      "status_kelulusan": "Draf",
+      "sebenar_rm": null,
+      "catatan": "Jumlah draf RM100."
+    },
+    {
+      "id": "B06",
+      "kategori": "Peralatan",
+      "item": "Tag nama dan tali (lanyard)",
+      "kuantiti": 45,
+      "unit": "unit",
+      "harga_unit": null,
+      "anggaran_rm": 100,
+      "status_kelulusan": "Draf",
+      "sebenar_rm": null,
+      "catatan": "Jumlah draf RM100. Templat tag: templates/tag-nama.html."
+    },
+    {
+      "id": "B07",
+      "kategori": "Lawatan",
+      "item": "Tiket masuk Muzium Sultan Alam Shah",
+      "kuantiti": 40,
+      "unit": "orang",
+      "harga_unit": 5,
+      "anggaran_rm": 200,
+      "status_kelulusan": "Dicadangkan",
+      "sebenar_rm": null,
+      "catatan": "Anggaran atas (RM5). Kanak-kanak 7-12 tahun RM2; sahkan kadar kumpulan dengan muzium."
+    },
+    {
+      "id": "B08",
+      "kategori": "Lawatan",
+      "item": "Yuran lawatan Yayasan Restu",
+      "kuantiti": 0,
+      "unit": "orang",
+      "harga_unit": null,
+      "anggaran_rm": 0,
+      "status_kelulusan": "Dicadangkan",
+      "sebenar_rm": null,
+      "catatan": "Tidak disahkan. Hubungi pihak Yayasan."
+    },
+    {
+      "id": "B09",
+      "kategori": "Sijil",
+      "item": "Cetak sijil penyertaan (kertas berkualiti)",
+      "kuantiti": 40,
+      "unit": "keping",
+      "harga_unit": 1.75,
+      "anggaran_rm": 70,
+      "status_kelulusan": "Dicadangkan",
+      "sebenar_rm": null,
+      "catatan": "Anggaran agent; dapatkan sebut harga pencetak. Templat: templates/sijil.html."
+    },
+    {
+      "id": "P01",
+      "kategori": "Merchandise (pilihan)",
+      "item": "Baju-T program",
+      "kuantiti": 45,
+      "unit": "helai",
+      "harga_unit": null,
+      "anggaran_rm": 0,
+      "status_kelulusan": "Cadangan",
+      "sebenar_rm": null,
+      "catatan": "BELUM DIKIRA. Perlu sebut harga. Risiko masa tempah (lihat spesifikasi)."
+    },
+    {
+      "id": "P02",
+      "kategori": "Merchandise (pilihan)",
+      "item": "Lencana (badge)",
+      "kuantiti": 40,
+      "unit": "unit",
+      "harga_unit": null,
+      "anggaran_rm": 0,
+      "status_kelulusan": "Cadangan",
+      "sebenar_rm": null,
+      "catatan": "BELUM DIKIRA. Perlu sebut harga."
+    },
+    {
+      "id": "P03",
+      "kategori": "Merchandise (pilihan)",
+      "item": "Fail / folder peserta",
+      "kuantiti": 40,
+      "unit": "unit",
+      "harga_unit": null,
+      "anggaran_rm": 0,
+      "status_kelulusan": "Cadangan",
+      "sebenar_rm": null,
+      "catatan": "BELUM DIKIRA."
+    },
+    {
+      "id": "P04",
+      "kategori": "Merchandise (pilihan)",
+      "item": "Beg kain atau botol air",
+      "kuantiti": 40,
+      "unit": "unit",
+      "harga_unit": null,
+      "anggaran_rm": 0,
+      "status_kelulusan": "Cadangan",
+      "sebenar_rm": null,
+      "catatan": "BELUM DIKIRA. Pilihan jika ada tajaan."
+    },
+    {
+      "id": "P05",
+      "kategori": "Lain-lain",
+      "item": "Kit pertolongan cemas",
+      "kuantiti": 1,
+      "unit": "set",
+      "harga_unit": null,
+      "anggaran_rm": 0,
+      "status_kelulusan": "Cadangan",
+      "sebenar_rm": null,
+      "catatan": "BELUM DIKIRA."
+    }
+  ]
+}
