@@ -739,9 +739,9 @@ export const STRINGS = {
   ],
   'faq.q6': ['Siapa boleh saya hubungi?', 'Who can I contact?', 'بمن يمكنني التواصل؟'],
   'faq.a6': [
-    'Sila hubungi urus setia masjid untuk pertanyaan lanjut.',
-    'Please contact the mosque secretariat for further questions.',
-    'يرجى التواصل مع أمانة المسجد لمزيد من الاستفسارات.'
+    'Sila hubungi urus setia masjid: 013 693 0292 atau 018 2150 108 (WhatsApp).',
+    'Please contact the mosque secretariat: 013 693 0292 or 018 2150 108 (WhatsApp).',
+    'يرجى التواصل مع أمانة المسجد: 013 693 0292 أو 018 2150 108 (واتساب).'
   ],
 
   /* ---------- Footer ---------- */
@@ -820,9 +820,9 @@ export const STRINGS = {
     'واتساب الأمانة: {phone}.'
   ],
   'js.contactDefault': [
-    'Sila hubungi urus setia masjid untuk pertanyaan lanjut.',
-    'Please contact the mosque secretariat for further questions.',
-    'يرجى التواصل مع أمانة المسجد لمزيد من الاستفسارات.'
+    'Urus setia KSQ 2026: 013 693 0292 / 018 2150 108 (WhatsApp)',
+    'KSQ 2026 secretariat: 013 693 0292 / 018 2150 108 (WhatsApp)',
+    'أمانة مخيم 2026: 013 693 0292 / 018 2150 108 (واتساب)'
   ],
   'js.footerContact': [
     'Urus setia KSQ 2026 · {phone}',
@@ -830,9 +830,9 @@ export const STRINGS = {
     'أمانة مخيم 2026 · {phone}'
   ],
   'js.footerContactDefault': [
-    'Urus setia KSQ 2026',
-    'KSQ 2026 secretariat',
-    'أمانة مخيم 2026'
+    'Urus setia KSQ 2026: 013 693 0292 / 018 2150 108',
+    'KSQ 2026 secretariat: 013 693 0292 / 018 2150 108',
+    'أمانة مخيم 2026: 013 693 0292 / 018 2150 108'
   ],
   'js.noticeAttention': ['Perhatian: ', 'Attention: ', 'تنبيه: '],
   'js.notOpen': [
