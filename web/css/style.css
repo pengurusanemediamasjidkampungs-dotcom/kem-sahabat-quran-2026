@@ -1288,8 +1288,8 @@ ul, ol {
 .location-main-overlay h3 {
   font-family: var(--font-poster);
   font-weight: 700;
-  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-  line-height: 1.15;
+  font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+  line-height: 1.1;
   color: var(--gold);
   text-align: center;
   text-shadow:
@@ -1297,7 +1297,10 @@ ul, ol {
     0 2px 8px rgba(0, 0, 0, 0.7),
     0 0 20px rgba(214, 173, 82, 0.4);
   letter-spacing: 0.01em;
-  max-width: 90%;
+  max-width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   animation: gold-shimmer 3s ease-in-out infinite;
 }
 
