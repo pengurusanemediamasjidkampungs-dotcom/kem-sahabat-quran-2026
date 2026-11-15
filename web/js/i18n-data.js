@@ -465,14 +465,14 @@ export const STRINGS = {
   'dest1.kicker': ['Destinasi 1', 'Destination 1', 'المحطة 1'],
   'dest1.name': ['Yayasan Restu', 'Yayasan Restu', 'مؤسسة رستو'],
   'dest1.addr': [
-    'Kompleks Taman Seni Islam Antarabangsa, No. 2A Pesiaran Damai, Seksyen 10, 40100 Shah Alam. Bersebelahan Masjid Negeri dan Taman Tasik Shah Alam.',
-    'Kompleks Taman Seni Islam Antarabangsa, No. 2A Pesiaran Damai, Section 10, 40100 Shah Alam. Next to the State Mosque and Shah Alam Lake Park.',
-    'مجمع حديقة الفن الإسلامي الدولي، رقم 2A بيسياران داماي، القسم 10، 40100 شاه علم. بجوار مسجد الولاية وحديقة بحيرة شاه علم.'
+    'Kompleks Taman Seni Islam Antarabangsa\nNo. 2A Pesiaran Damai, Seksyen 10, 40100 Shah Alam\nBersebelahan Masjid Negeri dan Taman Tasik Shah Alam',
+    'Kompleks Taman Seni Islam Antarabangsa\nNo. 2A Pesiaran Damai, Section 10, 40100 Shah Alam\nNext to the State Mosque and Shah Alam Lake Park',
+    'مجمع حديقة الفن الإسلامي الدولي\nرقم 2A بيسياران داماي، القسم 10، 40100 شاه علم\nبجوار مسجد الولاية وحديقة بحيرة شاه علم'
   ],
   'dest1.desc': [
-    'Pusat seni Islam yang dikaitkan dengan penyalinan, pencetakan dan penghiasan mashaf Al-Quran. Yuran kumpulan akan disahkan dengan pihak Yayasan.',
-    'An Islamic arts centre associated with copying, printing and decorating Quran manuscripts. The group fee will be confirmed with the foundation.',
-    'مركز للفنون الإسلامية مرتبط بنسخ المصاحف وطبعها وتزيينها. ستُؤكَّد رسوم المجموعة مع المؤسسة.'
+    'Pusat seni Islam yang dikenali dengan proses penyalinan, pencetakan dan penghiasan mashaf Al-Quran.',
+    'An Islamic arts centre known for the process of copying, printing and decorating Quran manuscripts.',
+    'مركز للفنون الإسلامية معروف بعملية نسخ المصاحف وطبعها وتزيينها.'
   ],
   'dest2.kicker': ['Destinasi 2', 'Destination 2', 'المحطة 2'],
   'dest2.name': [
