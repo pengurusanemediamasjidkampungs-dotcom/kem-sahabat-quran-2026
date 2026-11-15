@@ -771,14 +771,9 @@ export const STRINGS = {
   'footer.whatsapp': ['WhatsApp urus setia', 'Secretariat WhatsApp', 'واتساب الأمانة'],
   'footer.register': ['Daftar peserta', 'Register a participant', 'تسجيل مشارك'],
   'footer.copyright': [
-    '© 2026 Masjid Kampung Sungai Lang Baru. Data peserta digunakan untuk pengurusan program sahaja.',
-    '© 2026 Kampung Sungai Lang Baru Mosque. Participant data is used for programme management only.',
-    '© 2026 مسجد كامبونغ سوغاي لانغ بارو. تُستخدم بيانات المشاركين لإدارة البرنامج فقط.'
-  ],
-  'footer.timezone': [
-    'Dikemas kini mengikut masa Asia/Kuala_Lumpur.',
-    'Updated according to Asia/Kuala_Lumpur time.',
-    'يُحدَّث حسب توقيت آسيا/كوالا لمبور.'
+    '© 2026 Masjid Kampung Sungai Lang Baru',
+    '© 2026 Kampung Sungai Lang Baru Mosque',
+    '© 2026 مسجد كامبونغ سوغاي لانغ بارو'
   ],
 
   /* ---------- Language switcher ---------- */
