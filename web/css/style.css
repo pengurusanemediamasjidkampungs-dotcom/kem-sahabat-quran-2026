@@ -724,7 +724,7 @@ ul, ol {
   border: 3px solid var(--gold);
   border-radius: 26px 26px 26px 8px;
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 16 / 9;
   background: var(--forest-deep);
 }
 
@@ -3113,7 +3113,7 @@ pre.code-block {
   }
 
   .hero-video {
-    aspect-ratio: 16 / 12;
+    aspect-ratio: 16 / 9;
   }
 
   .quota-badge {
