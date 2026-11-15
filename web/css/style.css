@@ -162,6 +162,11 @@ ul, ol {
   font-size: 0.85rem;
 }
 
+.contact-lines {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
 .nowrap {
   white-space: nowrap;
 }
