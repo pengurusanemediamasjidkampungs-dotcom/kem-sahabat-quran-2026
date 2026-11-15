@@ -510,9 +510,9 @@ export const STRINGS = {
   /* ---------- Poster ---------- */
   'poster.eyebrow': ['Poster rasmi', 'Official poster', 'الملصق الرسمي'],
   'poster.title': [
-    'Kongsi poster KSQ 2026',
-    'Share the KSQ 2026 poster',
-    'شارك ملصق KSQ 2026'
+    'Kongsi poster Kem Sahabat Quran 2026',
+    'Share the Kem Sahabat Quran 2026 poster',
+    'شارك ملصق مخيم صاحب القرآن 2026'
   ],
   'poster.lead': [
     'Muat turun poster untuk dicetak atau kongsikan melalui WhatsApp. Maklumat program, yuran dan kod QR pendaftaran semuanya ada pada poster.',
