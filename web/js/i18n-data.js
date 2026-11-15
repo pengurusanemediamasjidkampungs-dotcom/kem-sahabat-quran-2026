@@ -55,6 +55,11 @@ export const STRINGS = {
     'Programme locations',
     'مواقع البرنامج'
   ],
+  'a11y.locationMain': [
+    'Lokasi utama program',
+    'Main programme location',
+    'موقع البرنامج الرئيسي'
+  ],
   'a11y.radioQuran': [
     'Kelancaran membaca Al-Quran',
     'Quran reading fluency',
@@ -527,6 +532,13 @@ export const STRINGS = {
   'loc3.title': ['Muzium Sultan Alam Shah', 'Sultan Alam Shah Museum', 'متحف السلطان عالم شاه'],
   'loc3.addr': ['Persiaran Bandaraya, Seksyen 14, Shah Alam', 'Persiaran Bandaraya, Section 14, Shah Alam', 'بيسياران بندرايا، القسم 14، شاه علم'],
   'loc3.desc': ['Galeri Sejarah, Adat & Kebudayaan, Alam Semula Jadi.', 'History, Customs & Culture, Natural History galleries.', 'معارض التاريخ والعادات والثقافة والتاريخ الطبيعي.'],
+
+  /* ---------- Main location hero (Program section) ---------- */
+  'locMain.title': [
+    'Masjid Kampung Sungai Lang Baru',
+    'Kampung Sungai Lang Baru Mosque',
+    'مسجد كامبونغ سوغاي لانغ بارو'
+  ],
 
   /* ---------- Poster ---------- */
   'poster.eyebrow': ['Poster rasmi', 'Official poster', 'الملصق الرسمي'],

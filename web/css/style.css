@@ -1240,71 +1240,87 @@ ul, ol {
   margin: 10px 0 0;
 }
 
-/* ---------- Location cards ---------- */
+/* ---------- Main location hero (single image with overlay) ---------- */
 
-.location-card {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+.location-hero {
+  margin: 0 auto;
+  max-width: 900px;
 }
 
-.location-photo {
+.location-main-card {
   position: relative;
-  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
   overflow: hidden;
-  margin: calc(clamp(18px, 2.4vw, 24px) * -1) calc(clamp(18px, 2.4vw, 24px) * -1) 0;
-  border-radius: var(--radius) var(--radius) 0 0;
+  box-shadow: var(--shadow);
   background: var(--forest-deep);
 }
 
-.location-photo img {
+.location-main-photo {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.location-main-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 55%;
-  transition: transform 0.4s ease;
+  transition: transform 0.6s ease;
 }
 
-.location-card:hover .location-photo img,
-.location-card:focus-within .location-photo img {
-  transform: scale(1.05);
+.location-main-card:hover .location-main-photo img,
+.location-main-card:focus-within .location-main-photo img {
+  transform: scale(1.03);
 }
 
-.location-info {
-  flex: 1;
+.location-main-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: column;
-  padding: 4px 0 0;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: clamp(24px, 4vw, 40px);
+  background: linear-gradient(0deg, rgba(5, 40, 29, 0.92) 0%, rgba(5, 40, 29, 0.65) 40%, transparent 100%);
+  pointer-events: none;
 }
 
-.location-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-  color: var(--forest);
-  margin: 6px 0 4px;
+.location-main-overlay h3 {
+  font-family: var(--font-poster);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  line-height: 1.15;
+  color: var(--gold);
+  text-align: center;
+  text-shadow:
+    0 0 4px rgba(214, 173, 82, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(214, 173, 82, 0.4);
+  letter-spacing: 0.01em;
+  max-width: 90%;
+  animation: gold-shimmer 3s ease-in-out infinite;
 }
 
-.location-info .muted {
-  font-size: 0.84rem;
-  margin-bottom: 6px;
-}
-
-.location-info p:last-child {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--ink);
-  margin-top: auto;
-}
-
-/* Responsive: stack to single column on narrow screens */
-@media (max-width: 760px) {
-  .location-card {
-    flex-direction: column;
+@keyframes gold-shimmer {
+  0%, 100% {
+    text-shadow:
+      0 0 4px rgba(214, 173, 82, 0.8),
+      0 2px 8px rgba(0, 0, 0, 0.7),
+      0 0 20px rgba(214, 173, 82, 0.4);
   }
-  .location-photo {
-    margin: calc(clamp(18px, 2.4vw, 24px) * -1) calc(clamp(18px, 2.4vw, 24px) * -1) 0;
-    border-radius: var(--radius) var(--radius) 0 0;
+  50% {
+    text-shadow:
+      0 0 8px rgba(214, 173, 82, 1),
+      0 2px 12px rgba(0, 0, 0, 0.8),
+      0 0 30px rgba(214, 173, 82, 0.6),
+      0 0 40px rgba(214, 173, 82, 0.3);
   }
+}
+
+/* RTL support */
+html[dir="rtl"] .location-main-overlay h3 {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
 }
 
 .list-clean li {
