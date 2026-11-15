@@ -134,6 +134,11 @@ export const STRINGS = {
     'Kampung Sungai Lang Baru Mosque',
     'مسجد كامبونغ سوغاي لانغ بارو'
   ],
+  'hero.videoLabel': [
+    'Masjid Kampung Sungai Lang Baru',
+    'Kampung Sungai Lang Baru Mosque',
+    'مسجد كامبونغ سوغاي لانغ بارو'
+  ],
 
   /* ---------- Live panel ---------- */
   'live.program': ['Kiraan detik program', 'Programme countdown', 'العد التنازلي للبرنامج'],
