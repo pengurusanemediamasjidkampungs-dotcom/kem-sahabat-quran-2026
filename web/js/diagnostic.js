@@ -5,6 +5,8 @@
  * if all backend setup steps are complete.
  * 
  * Usage: Copy-paste entire script into browser console (F12 > Console)
+ * AMARAN: JANGAN muatkan fail ini dalam index.html. Semakan #4 menghantar
+ * pendaftaran sebenar ("Test Diagnostic") ke Sheet setiap kali ia dijalankan.
  */
 
 (async function() {
@@ -12,7 +14,7 @@
   console.log('║  KSQ 2026 Backend Setup Diagnostic                        ║');
   console.log('╚══════════════════════════════════════════════════════════╝');
 
-  const API_URL = 'https://script.google.com/macros/s/AKfycbzjPKel795KECV6i_Vve7qvMcS_yIndoevmQ5ms9uIG4pqEW5Ey/exec';
+  const API_URL = 'https://script.google.com/macros/s/AKfycbyoqbyikLNwPZpgHSkDocU4fbzFhbLuobD9ajVdAmR7sx4AvZjfCfylA15mfVhMRIfEgw/exec';
   
   let checks = [];
   let passed = 0;
@@ -35,7 +37,7 @@
   await check('config.js API_URL', async () => {
     const resp = await fetch('/config.js');
     const text = await resp.text();
-    if (text.includes('AKfycbzjPKel795KECV6i_Vve7qvMcS_yIndoevmQ5ms9uIG4pqEW5Ey')) {
+    if (text.includes('AKfycbyoqbyikLNwPZpgHSkDocU4fbzFhbLuobD9ajVdAmR7sx4AvZjfCfylA15mfVhMRIfEgw')) {
       return 'Production URL detected';
     }
     throw new Error('config.js still has placeholder URL');
@@ -137,7 +139,7 @@
   } else {
     console.log('\n⚠️  SOME CHECKS FAILED. Complete these steps in Google Apps Script:');
     console.log('');
-    console.log('1. Paste Code-v2.gs into Code.gs (Apps Script editor)');
+    console.log('1. Pastikan Apps Script guna backend/Code.gs (BUKAN Code-v2/v3 — API tak serasi)');
     console.log('2. Add Script Properties:');
     console.log('   - ADMIN_TOKEN');
     console.log('   - FASILITATOR_TOKEN');
