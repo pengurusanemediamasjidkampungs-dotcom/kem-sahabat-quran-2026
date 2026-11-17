@@ -807,7 +807,7 @@ function appendRegistration_(db, record) {
     record.umur,
     safeCell_(record.jantina),
     safeCell_(record.nama_penjaga),
-    safeCell_(record.tel_penjaga),
+    phoneCell_(record.tel_penjaga),
     safeCell_(record.lancar_quran),
     safeCell_(record.alahan_kesihatan),
     safeCell_(record.kaedah_daftar),
@@ -1525,9 +1525,17 @@ function normalizeNameKey_(value) {
   return String(value || '').toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
+// Simpan telefon sebagai teks supaya Sheets tidak membuang sifar di depan.
+function phoneCell_(value) {
+  var text = String(value || '').trim();
+  return text ? "'" + text : '';
+}
+
 function normalizePhone_(value) {
   var digits = String(value || '').replace(/\D/g, '');
   if (digits.indexOf('60') === 0) digits = '0' + digits.slice(2);
+  // Sel lama yang Sheets tukar jadi nombor kehilangan sifar depan (107925079).
+  if (/^1\d{8,9}$/.test(digits)) digits = '0' + digits;
   if (!/^01\d{8,9}$/.test(digits)) return '';
   return digits;
 }
@@ -1626,6 +1634,8 @@ function whatsappNumber_(value) {
   if (!digits) return '';
   if (digits.indexOf('60') === 0) return digits;
   if (digits.indexOf('0') === 0) return '60' + digits.slice(1);
+  // Nombor 01x yang hilang sifar depan dalam Sheets (contoh 136930292).
+  if (/^1\d{8,9}$/.test(digits)) return '60' + digits;
   return digits.length >= 9 ? digits : '';
 }
 
